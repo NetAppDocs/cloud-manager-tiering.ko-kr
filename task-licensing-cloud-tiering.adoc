@@ -1,0 +1,216 @@
+---
+sidebar: sidebar 
+permalink: task-licensing-cloud-tiering.html 
+keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, tiering, cloud tiering 
+summary: Cloud Tiering의 30일 무료 체험은 첫 번째 클러스터에서 계층화를 설정할 때 시작됩니다. 무료 평가판이 끝나면 클라우드 공급자 마켓플레이스에서 종량제 Cloud Manager 구독, NetApp의 BYOL 라이센스 또는 이 둘을 결합하여 Cloud Tiering에 대한 비용을 지불해야 합니다. 
+---
+= Cloud Tiering의 라이센스 설정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Tiering의 30일 무료 체험은 첫 번째 클러스터에서 계층화를 설정할 때 시작됩니다. 무료 평가판이 끝나면 클라우드 공급자 마켓플레이스에서 종량제 Cloud Manager 구독, NetApp의 BYOL 라이센스 또는 이 둘을 결합하여 Cloud Tiering에 대한 비용을 지불해야 합니다.
+
+추가 내용을 읽기 전에 몇 가지 참고 사항을 확인하십시오.
+
+* 클라우드 공급자 마켓플레이스에서 이미 PAYGO(Cloud Manager 구독)를 구독한 경우 사내 ONTAP 시스템에서도 Cloud Tiering에 자동으로 가입됩니다. Cloud Tiering * Licensing * 탭에서 활성 서브스크립션을 확인할 수 있습니다. 다시 가입하지 않아도 됩니다.
+* BYOL Cloud Tiering 라이센스는 Cloud Manager 계정의 여러 사내 ONTAP 클러스터에서 사용할 수 있는 _floating_license입니다. 이는 각 클러스터에 대해 _FabricPool_라이센스를 구입한 과거와 다릅니다.
+* 데이터를 StorageGRID로 계층화할 경우 비용이 발생하지 않으므로 BYOL 라이센스 또는 PAYGO 등록이 필요하지 않습니다. 이 계층화된 데이터는 라이센스에 구입한 용량에 포함되지 않습니다.
+
+
+link:concept-cloud-tiering.html#pricing-and-licenses["Cloud Tiering의 라이센스 기능에 대해 자세히 알아보십시오"].
+
+
+
+== Cloud Tiering PAYGO 구독 사용
+
+클라우드 공급자 마켓플레이스의 용량제 구독을 통해 Cloud Volumes ONTAP 시스템과 Cloud Tiering과 같은 다양한 클라우드 데이터 서비스 사용에 대한 라이센스를 받을 수 있습니다.
+
+
+
+=== AWS Marketplace에서 구독
+
+AWS Marketplace에서 Cloud Tiering을 구독하여 ONTAP 클러스터에서 AWS S3로 데이터 계층화를 위한 용량제 구독 설정
+
+[[subscribe-aws]]
+.단계
+. Cloud Manager에서 * Tiering > Licensing * 을 클릭합니다.
+. AWS Marketplace에서 * Subscribe * 를 클릭한 다음 * Continue * 를 클릭합니다.
+. 에서 구독하십시오 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS 마켓플레이스 를 참조하십시오"^]그런 다음 Cloud Central에 다시 로그인하여 등록을 완료합니다.
++
+다음 비디오는 프로세스를 보여 줍니다.
+
++
+video::video_subscribing_aws_tiering.mp4[width=848,height=480]
+
+
+
+
+=== Azure 마켓플레이스에서 구독
+
+Azure Marketplace에서 Cloud Tiering을 구독하여 ONTAP 클러스터에서 Azure Blob 스토리지까지 데이터 계층화에 대한 용량제 구독 설정
+
+[[subscribe-azure]]
+.단계
+. Cloud Manager에서 * Tiering > Licensing * 을 클릭합니다.
+. Azure Marketplace에서 * Subscribe * 를 클릭한 다음 * Continue * 를 클릭합니다.
+. 에서 구독하십시오 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure 마켓플레이스 를 참조하십시오"^]그런 다음 Cloud Central에 다시 로그인하여 등록을 완료합니다.
++
+다음 비디오는 프로세스를 보여 줍니다.
+
++
+video::video_subscribing_azure_tiering.mp4[width=848,height=480]
+
+
+
+
+=== GCP Marketplace에서 구독
+
+GCP Marketplace에서 Cloud Tiering을 구독하여 ONTAP 클러스터에서 Google Cloud 스토리지까지 데이터 계층화를 위한 용량제 구독을 설정하십시오.
+
+[[subscribe-gcp]]
+.단계
+. Cloud Manager에서 * Tiering > Licensing * 을 클릭합니다.
+. GCP Marketplace에서 * Subscribe * 를 클릭한 다음 * Continue * 를 클릭합니다.
+. 에서 구독하십시오 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 마켓플레이스"^]그런 다음 Cloud Central에 다시 로그인하여 등록을 완료합니다.
++
+다음 비디오는 프로세스를 보여 줍니다.
+
++
+video::video_subscribing_gcp_tiering.mp4[width=848,height=480]
+
+
+
+
+== Cloud Tiering BYOL 라이센스 사용
+
+NetApp에서 제공하는 자체 라이센스는 2, 12, 24 또는 36개월 기간을 제공합니다. BYOL * Cloud Tiering * 라이센스는 Cloud Manager 계정의 여러 사내 ONTAP 클러스터에서 사용할 수 있는 _floating_license입니다. Cloud Tiering 라이센스에 정의된 총 계층화 용량이 * 모든 온프레미스 클러스터 * 간에 공유되므로 초기 라이센스와 갱신을 간편하게 수행할 수 있습니다.
+
+Cloud Tiering 라이센스가 없는 경우 NetApp에 문의하여 라이센스를 구입하십시오.
+
+* mailto:ng-cloud-tiering@netapp.com?subject=Licensing [라이센스 구매를 위해 이메일 보내기].
+* Cloud Manager의 오른쪽 하단에 있는 채팅 아이콘을 클릭하여 라이센스를 요청하십시오.
+
+
+선택적으로 사용하지 않을 Cloud Volumes ONTAP에 대해 할당되지 않은 노드 기반 라이센스가 있는 경우 동일한 달러 당량 및 만료 날짜가 있는 Cloud Tiering 라이센스로 전환할 수 있습니다. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-licenses.html#exchange-unassigned-node-based-licenses["자세한 내용을 보려면 여기를 클릭하십시오"^].
+
+Cloud Manager의 Digital Wallet 페이지를 사용하여 Cloud Tiering BYOL 라이센스를 관리할 수 있습니다. 새 라이센스를 추가하고 기존 라이센스를 업데이트할 수 있습니다.
+
+
+
+=== 2021년 8월 21일부터 새로운 Cloud Tiering BYOL 라이센싱 제공
+
+클라우드 계층화 서비스를 사용하는 Cloud Manager 내에서 지원되는 계층화 구성을 위해 2021년 8월에 새로운 * Cloud Tiering * 라이센스가 도입되었습니다. Cloud Manager는 현재 Amazon S3, Azure Blob 스토리지, Google Cloud Storage, S3 호환 오브젝트 스토리지 및 StorageGRID와 같은 클라우드 스토리지에 대한 계층화를 지원합니다.
+
+이전에 온프레미스 ONTAP 데이터를 클라우드로 계층화하기 위해 사용되었을 수 있는 * FabricPool * 라이센스는 인터넷에 액세스할 수 없는 사이트("어두운 사이트"라고도 함)에서 ONTAP 배포에 대해서만 유지됩니다. 사이트 구축이 어두운 경우 System Manager 또는 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이센스를 설치합니다.
+
+
+TIP: StorageGRID로 계층화하려면 FabricPool 또는 Cloud Tiering 라이센스가 필요하지 않습니다.
+
+현재 FabricPool 라이센스를 사용 중인 경우 FabricPool 라이센스가 만료 날짜 또는 최대 용량에 도달할 때까지 영향을 받지 않습니다. 라이센스를 업데이트해야 하는 경우 또는 그 이전에 데이터를 클라우드로 계층화할 수 있는 기능이 중단되지 않도록 NetApp에 문의하십시오.
+
+* Cloud Manager에서 지원되는 구성을 사용하는 경우 FabricPool 라이센스가 Cloud Tiering 라이센스로 변환되어 Digital Wallet에 표시됩니다. 이러한 초기 라이센스가 만료되면 Cloud Tiering 라이센스를 업데이트해야 합니다.
+* Cloud Manager에서 지원되지 않는 구성을 사용 중인 경우 FabricPool 라이센스를 계속 사용하게 됩니다. https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html["System Manager를 사용하여 계층화의 라이선스를 취득하는 방법을 알아보십시오"^].
+
+
+다음은 두 라이센스에 대해 알아야 할 몇 가지 사항입니다.
+
+[cols="50,50"]
+|===
+| Cloud Tiering 라이센스 | FabricPool 라이센스 
+
+
+| 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _floating_license입니다. | every_cluster에 대해 구입하고 라이센스를 부여하는 클러스터 단위 라이센스입니다. 
+
+
+| Cloud Manager의 Digital Wallet에 등록됩니다. | System Manager 또는 ONTAP CLI를 사용하여 개별 클러스터에 적용됩니다. 
+
+
+| 계층화 구성 및 관리는 Cloud Manager의 Cloud Tiering 서비스를 통해 수행됩니다. | 계층화 구성 및 관리는 System Manager 또는 ONTAP CLI를 통해 수행됩니다. 
+
+
+| 구성이 완료되면 무료 평가판을 사용하여 30일 동안 라이센스 없이 계층화 서비스를 사용할 수 있습니다. | 구성이 완료되면 처음 10TB의 데이터를 무료로 계층화할 수 있습니다. 
+|===
+
+
+=== Cloud Tiering 라이센스 파일을 받으십시오
+
+Cloud Tiering 라이센스를 구입한 후에는 Cloud Tiering 일련 번호 및 NSS 계정을 입력하거나 NLF 라이센스 파일을 업로드하여 Cloud Manager에서 라이센스를 활성화합니다. 아래 단계에서는 NLF 라이센스 파일을 가져오는 방법을 보여 줍니다(해당 방법을 사용하려는 경우).
+
+.단계
+. 에 로그인합니다 https://mysupport.netapp.com["NetApp Support 사이트"^] 시스템 > 소프트웨어 라이센스 * 를 클릭합니다.
+. Cloud Tiering 라이센스 일련 번호를 입력합니다.
++
+image:screenshot_cloud_tiering_license_step1.gif["일련 번호로 검색한 후 라이센스 테이블을 보여 주는 스크린샷"]
+
+. 라이센스 키 * 에서 * NetApp 라이센스 파일 가져오기 * 를 클릭합니다.
+. Cloud Manager 계정 ID(지원 사이트에서 테넌트 ID라고 함)를 입력하고 * 제출 * 을 클릭하여 라이센스 파일을 다운로드합니다.
++
+image:screenshot_cloud_tiering_license_step2.gif["테넌트 ID를 입력한 다음 제출을 클릭하여 라이센스 파일을 다운로드할 수 있는 라이센스 가져오기 대화 상자가 표시된 스크린샷"]
+
++
+Cloud Manager 상단의 * Account * (계정 *) 드롭다운을 선택한 다음 계정 옆의 * Manage Account * 를 클릭하여 Cloud Manager 계정 ID를 찾을 수 있습니다. 계정 ID는 개요 탭에 있습니다.
+
+
+
+
+
+=== Cloud Tiering BYOL 라이센스를 계정에 추가
+
+Cloud Manager 계정에 대한 Cloud Tiering 라이센스를 구입한 후에는 Cloud Manager에 라이센스를 추가하여 Cloud Tiering 서비스를 사용해야 합니다.
+
+.단계
+. 모든 서비스 > 디지털 지갑 > 데이터 서비스 라이센스 * 를 클릭합니다.
+. 라이선스 추가 * 를 클릭합니다.
+. Add License_대화 상자에서 라이센스 정보를 입력하고 * Add License * 를 클릭합니다.
++
+** 계층화 라이선스 일련 번호가 있고 NSS 계정을 알고 있는 경우 * 일련 번호 입력 * 옵션을 선택하고 해당 정보를 입력합니다.
++
+드롭다운 목록에서 NetApp Support 사이트 계정을 사용할 수 없는 경우 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["NSS 계정을 Cloud Manager에 추가합니다"^].
+
+** 계층화 라이센스 파일이 있는 경우 * 라이센스 파일 업로드 * 옵션을 선택하고 표시되는 메시지에 따라 파일을 첨부합니다.
++
+image:screenshot_services_license_add.png["Cloud Tiering BYOL 라이센스를 추가하는 페이지를 보여 주는 스크린샷"]
+
+
+
+
+
+Cloud Manager에 라이센스가 추가되어 Cloud Tiering 서비스가 활성화됩니다.
+
+
+
+=== Cloud Tiering BYOL 라이센스 업데이트
+
+라이센스 기간이 만료일이 다가오고 있거나 라이센스 용량이 한도에 도달한 경우 Cloud Tiering에 알림을 받게 됩니다.
+
+image:screenshot_services_license_expire2.png["Cloud Tiering 페이지에 만료 예정인 라이센스가 표시된 스크린샷"]
+
+이 상태는 Digital Wallet 페이지에도 표시됩니다.
+
+image:screenshot_services_license_expire1.png["Digital Wallet 페이지에 만료 중인 라이센스를 보여 주는 스크린샷."]
+
+Cloud Tiering 라이센스가 만료되기 전에 업데이트하여 데이터를 클라우드에 계층화할 수 있는 기능을 무중단으로 수행할 수 있습니다.
+
+.단계
+. Cloud Manager 오른쪽 하단의 채팅 아이콘을 클릭하여 특정 일련 번호에 대한 Cloud Tiering 라이센스의 기간 연장 또는 추가 용량을 요청합니다.
++
+라이센스 비용을 지불하고 NetApp Support 사이트에 등록된 Cloud Manager는 Digital Wallet의 라이센스를 자동으로 업데이트하며, 데이터 서비스 라이센스 페이지에는 변경 사항이 5~10분 안에 반영됩니다.
+
+. Cloud Manager에서 라이센스를 자동으로 업데이트할 수 없는 경우 라이센스 파일을 수동으로 업로드해야 합니다.
++
+.. 가능합니다 <<Obtain your Cloud Tiering license file,NetApp Support 사이트에서 라이센스 파일을 받으십시오>>.
+.. Data Services Licenses_탭의 Digital Wallet 페이지에서 을 클릭합니다 image:screenshot_horizontal_more_button.gif["추가 아이콘"] 업데이트하는 서비스 일련 번호에 대해 * Update License * 를 클릭합니다.
++
+image:screenshot_services_license_update.png["특정 서비스에 대한 라이센스 업데이트 단추를 선택하는 스크린샷"]
+
+.. Update License_page에서 라이센스 파일을 업로드하고 * Update License * 를 클릭합니다.
+
+
+
+
+Cloud Manager에서 라이센스를 업데이트하여 Cloud Tiering 서비스를 계속 활성화합니다.

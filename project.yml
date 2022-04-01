@@ -1,0 +1,109 @@
+---
+settings:
+  name: Cloud Tiering
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: 모든 Cloud Manager 설명서
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: Cloud Tiering 문서
+    url: "/index.html"
+  - title: 릴리스 정보
+    url: "/whats-new.html"
+  - title: 시작하십시오
+    entries:
+    - title: Cloud Tiering에 대해 알아보십시오
+      url: "/concept-cloud-tiering.html"
+    - title: 사내 데이터를 클라우드로 계층화합니다
+      entries:
+      - title: Amazon S3에 계층화
+        url: "/task-tiering-onprem-aws.html"
+      - title: Azure Blob 저장소에 계층화
+        url: "/task-tiering-onprem-azure.html"
+      - title: Google Cloud Storage로 계층화합니다
+        url: "/task-tiering-onprem-gcp.html"
+      - title: StorageGRID로 계층화
+        url: "/task-tiering-onprem-storagegrid.html"
+      - title: S3 오브젝트 스토리지로 계층화합니다
+        url: "/task-tiering-onprem-s3-compat.html"
+    - title: 라이센스를 설정합니다
+      url: "/task-licensing-cloud-tiering.html"
+    - title: FAQ 를 참조하십시오
+      url: "/faq-cloud-tiering.html"
+  - title: Cloud Tiering을 사용하십시오
+    entries:
+    - title: 클라우드 성능 테스트
+      url: "/task-tiering-test.html"
+    - title: 데이터 계층화 관리
+      url: "/task-managing-tiering.html"
+    - title: 모든 클러스터의 계층화 개요 보기
+      url: "/task-tiering-onprem-overview.html"
+    - title: 참조하십시오
+      entries:
+      - title: 지원되는 Amazon S3 스토리지 클래스 및 지역
+        url: "/reference-aws-support.html"
+      - title: 지원되는 Azure 액세스 계층 및 지역
+        url: "/reference-azure-support.html"
+      - title: 지원되는 Google Cloud 스토리지 클래스 및 지역
+        url: "/reference-google-support.html"
+  - title: 지식 및 지원
+    entries:
+    - title: 지원을 위해 등록하십시오
+      url: "/task-support-registration.html"
+    - title: 도움을 받으십시오
+      url: "/task-get-help.html"
+  - title: 법적 고지
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 시작하십시오
+    links:
+    - title: Cloud Tiering에 대해 알아보십시오
+      url: concept-cloud-tiering.html
+    - title: 새로운 기능
+      url: whats-new.html
+    - title: 라이센스를 설정합니다
+      url: task-licensing-cloud-tiering.html
+  - title: 사내 ONTAP 데이터를 클라우드에 계층화
+    links:
+    - title: Amazon S3에 계층화
+      url: task-tiering-onprem-aws.html
+    - title: Azure Blob에 계층화
+      url: task-tiering-onprem-azure.html
+    - title: Google Cloud로 계층화합니다
+      url: task-tiering-onprem-gcp.html
+    - title: StorageGRID로 계층화
+      url: task-tiering-onprem-storagegrid.html
+    - title: 일반 S3로 계층화
+      url: task-tiering-onprem-s3-compat.html
+  - title: 계층화 설정을 관리합니다
+    links:
+    - title: 볼륨의 계층화 정책을 변경합니다
+      url: task-managing-tiering.html#changing-a-volumes-tiering-policy
+    - title: 클러스터의 계층화 정보를 검토합니다
+      url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
+    - title: 추가 볼륨의 데이터를 계층화합니다
+      url: task-managing-tiering.html#tiering-data-from-additional-volumes
+    - title: 클라우드에서 성능 계층으로 데이터 이동
+      url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
+    - title: 애그리게이트에서 계층화 설정을 관리합니다
+      url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
+  - title: 블로그 커뮤니티
+    links:
+    - title: NetApp 커뮤니티
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central 블로그
+      url: https://cloud.netapp.com/blog
+    - title: 클라우드 웨비나
+      url: https://cloud.netapp.com/events
+  - title: 기타 리소스
+    links:
+    - title: Cloud Central 사용 사례
+      url: https://cloud.netapp.com/cloud-tiering
+product-family: {}

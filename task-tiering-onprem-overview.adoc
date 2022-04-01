@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-overview.html 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+summary: Cloud Tiering은 각 사내 클러스터에서 데이터 계층화의 통합된 뷰를 제공합니다. 이 개요는 작업 환경을 명확하게 보여 주는 것으로 적절한 조치를 취할 수 있도록 해 줍니다. 
+---
+= 클러스터에서 데이터 계층화에 대한 개요를 확인하십시오
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Cloud Tiering은 각 사내 클러스터에서 데이터 계층화의 통합된 뷰를 제공합니다. 이 개요는 작업 환경을 명확하게 보여 주는 것으로 적절한 조치를 취할 수 있도록 해 줍니다.
+
+Cloud Tiering은 환경에 대해 다음과 같은 세부 정보를 제공합니다.
+
+image:screenshot_tiering_onprem_overview.gif["온프레미스 개요 페이지의 스크린샷."]
+
+활성 클러스터:: 데이터를 클라우드로 현재 계층화하고 있는 클러스터의 수, 데이터를 클라우드로 계층화하지 않는 클러스터, 데이터 계층화를 지원하지 않는 클러스터의 수
+데이터 개요:: 클라우드로 계층화된 데이터의 양과 클러스터에서 핫 데이터와 콜드 데이터의 양
+총 절감액:: 데이터를 클라우드로 계층화하여 절약한 비용과 더 많은 데이터를 클라우드에 계층화하여 절감할 수 있는 비용의 양을 확인하십시오.
+정책:: 각 계층화 정책이 볼륨에 적용된 횟수
+마켓플레이스 구독:: 각 마켓플레이스 가입 유형과 연결된 클러스터의 수 및 구독 상태에 대한 표시.
+
+
+.단계
+. 계층화 > 온프레미스 개요 * 를 클릭합니다.
+
