@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>Cloud Tiering에 대해 알아보십시오 | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Cloud Tiering에 대해 알아보십시오 | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/cloud-manager-tiering/concept-cloud-tiering.html" />
+	<meta property="og:description" content="NetApp의 Cloud Tiering 서비스는 비활성 데이터를 사내 ONTAP 클러스터에서 오브젝트 스토리지로 자동으로 계층화하여 데이터 센터를 클라우드로 확장합니다. 따라서 애플리케이션 계층을 변경하지 않고 클러스터에서 귀중한 공간을 확보하여 더 많은 워크로드를 사용할 수 있습..." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/cloud-manager-tiering/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="NetApp의 Cloud Tiering 서비스는 비활성 데이터를 사내 ONTAP 클러스터에서 오브젝트 스토리지로 자동으로 계층화하여 데이터 센터를 클라우드로 확장합니다. 따라서 애플리케이션 계층을 변경하지 않고 클러스터에서 귀중한 공간을 확보하여 더 많은 워크로드를 사용할 수 있습...">
+  <meta name="keywords" content=" cloud tiering, overview, conceptual, value, features, cost, charging, tiering policies, cooling period, fabricpool"><!-- Icons -->
+  <link rel="icon" href="/ko-kr/cloud-manager-tiering/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/cloud-manager-tiering/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/cloud-manager-tiering/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/cloud-manager-tiering/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/cloud-manager-tiering/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/cloud-manager-tiering/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/cloud-manager-tiering/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/cloud-manager-tiering/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/cloud-manager-tiering/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/cloud-manager-tiering/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/cloud-manager-tiering/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/cloud-manager-tiering/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/cloud-manager-tiering/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/cloud-manager-tiering/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/cloud-manager-tiering/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/cloud-manager-tiering/css/tabbed-blocks.css" type="text/css">
+  <link rel='stylesheet' href='/ko-kr/cloud-manager-tiering/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/ko-kr/cloud-manager-tiering/css/product-family.css' type="text/css">
+  <script src='/ko-kr/cloud-manager-tiering/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/cloud-manager-tiering/js/na-search.js'></script><script src='/ko-kr/cloud-manager-tiering/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/cloud-manager-tiering/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/cloud-manager-tiering/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/cloud-manager-tiering/js/na-utility.js'></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ko-kr/cloud-manager-tiering/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/toc.js'></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ko-kr/cloud-manager-tiering/js/version-dropdown.js'></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/jszip.min.js'></script>
+  <script src='/ko-kr/cloud-manager-tiering/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-tiering/issues/new?body=Page%3A%20[Cloud Tiering에 대해 알아보십시오](https://docs.netapp.com/ko-kr/cloud-manager-tiering/concept-cloud-tiering.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-tiering/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-tiering/blob/main/concept-cloud-tiering.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/cloud-manager-tiering/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/cloud-manager-tiering/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/cloud-manager-tiering/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-tiering/concept-cloud-tiering.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-tiering/concept-cloud-tiering.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-tiering/concept-cloud-tiering.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ko-kr/cloud-manager-tiering/pdfs/fullsite-sidebar/Cloud_Tiering_설명서.pdf" >
+          <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/cloud-manager-tiering/pdfs/sidebar/시작하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>
+            시작하십시오
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/cloud-manager-tiering/pdfs/pages/concept-cloud-tiering.pdf" >
+    <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/cloud-manager-tiering/pdfs/sidebar/사내_데이터를_클라우드로_계층화합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>
+            사내 데이터를 클라우드로 계층화합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/cloud-manager-tiering/pdfs/sidebar/Cloud_Tiering을_사용하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>
+            Cloud Tiering을 사용하십시오
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/cloud-manager-tiering/pdfs/sidebar/참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>
+            참조하십시오
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/cloud-manager-tiering/pdfs/sidebar/지식_및_지원.pdf" 
+            
+          >
+            <img src="/ko-kr/cloud-manager-tiering/images/pdf.png" width="16" height="16"/>
+            지식 및 지원
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/cloud-manager-tiering/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
+        모든 Cloud Manager 설명서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/index.html">
+        Cloud Tiering 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/whats-new.html">
+        릴리스 정보
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 시작하십시오</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/concept-cloud-tiering.html">
+        Cloud Tiering에 대해 알아보십시오
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 사내 데이터를 클라우드로 계층화합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-onprem-aws.html">
+        Amazon S3에 계층화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-onprem-azure.html">
+        Azure Blob 저장소에 계층화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-onprem-gcp.html">
+        Google Cloud Storage로 계층화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-onprem-storagegrid.html">
+        StorageGRID로 계층화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-onprem-s3-compat.html">
+        S3 오브젝트 스토리지로 계층화합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-licensing-cloud-tiering.html">
+        라이센스를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/faq-cloud-tiering.html">
+        FAQ 를 참조하십시오
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Tiering을 사용하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-test.html">
+        클라우드 성능 테스트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-managing-tiering.html">
+        데이터 계층화 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-tiering-onprem-overview.html">
+        모든 클러스터의 계층화 개요 보기
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 참조하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/reference-aws-support.html">
+        지원되는 Amazon S3 스토리지 클래스 및 지역
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/reference-azure-support.html">
+        지원되는 Azure 액세스 계층 및 지역
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/reference-google-support.html">
+        지원되는 Google Cloud 스토리지 클래스 및 지역
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 지식 및 지원</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-support-registration.html">
+        지원을 위해 등록하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/task-get-help.html">
+        도움을 받으십시오
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/cloud-manager-tiering/legal-notices.html">
+        법적 고지
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/ko-kr/cloud/">클라우드 문서</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/cloud-manager-tiering/">Cloud&nbsp;Tiering</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Cloud Tiering에 대해 알아보십시오</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-04-01 18:31:47 +0000">04/01/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>NetApp의 Cloud Tiering 서비스는 비활성 데이터를 사내 ONTAP 클러스터에서 오브젝트 스토리지로 자동으로 계층화하여 데이터 센터를 클라우드로 확장합니다. 따라서 애플리케이션 계층을 변경하지 않고 클러스터에서 귀중한 공간을 확보하여 더 많은 워크로드를 사용할 수 있습니다. Cloud Tiering을 사용하면 데이터 센터의 비용을 절감하고 자본 지출 모델에서 운영 비용 모델로 전환할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Tiering 서비스는 _FabricPool_의 기능을 활용합니다. FabricPool는 데이터를 저비용 오브젝트 스토리지로 자동 계층화하는 NetApp Data Fabric 기술입니다. 활성(핫) 데이터는 로컬 계층(사내 ONTAP 애그리게이트)에 남아 있고 비활성(콜드) 데이터는 클라우드 계층으로 이동되며 ONTAP 데이터 효율성은 그대로 유지됩니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>참고: * ONTAP 9.8부터 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 함께 계층화할 수 있습니다. 이 릴리즈 이전에는 All-SSD 애그리게이트를 사용하는 AFF 시스템 또는 FAS 시스템에서만 데이터를 계층화할 수 있었습니다. 을 참조하십시오 <a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8E421CC9-1DE1-492F-A84C-9EB1B0177807.html" target="_blank" rel="noopener">"FabricPool 사용에 대한 요구 사항"</a> 를 참조하십시오.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="피처">피처</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Tiering은 자동화, 모니터링, 보고서 및 공통 관리 인터페이스를 제공합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>자동화를 통해 사내 ONTAP 클러스터에서 클라우드로 데이터 계층화를 간편하게 설정 및 관리할 수 있습니다</p>
+</li>
+<li>
+<p>기본 클라우드 공급자 스토리지 클래스/액세스 계층을 선택하거나, 수명 주기 관리를 사용하여 오래된 계층적 데이터를 보다 비용 효율적인 계층으로 이동할 수 있습니다</p>
+</li>
+<li>
+<p>단일 창을 통해 여러 클러스터에서 FabricPool를 독립적으로 관리할 필요가 없습니다</p>
+</li>
+<li>
+<p>보고서에는 각 클러스터에서 활성 및 비활성 데이터의 양이 표시됩니다</p>
+</li>
+<li>
+<p>계층화 상태는 문제가 발생할 때 이를 식별하고 해결하는 데 도움이 됩니다</p>
+</li>
+<li>
+<p>Cloud Volumes ONTAP 시스템이 있는 경우 클러스터 대시보드에서 하이브리드 클라우드 인프라의 데이터 계층화를 완전히 파악할 수 있습니다</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cloud Tiering이 제공하는 가치에 대해 자세히 알아보려면 <a href="https://cloud.netapp.com/cloud-tiering" target="_blank" rel="noopener">"NetApp Cloud Central에서 Cloud Tiering 페이지를 확인하십시오"</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/tip.svg" alt="팁">
+</td>
+<td class="content">
+Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering.html" target="_blank" rel="noopener">"Cloud Volumes ONTAP의 작업 환경에서 Cloud Manager의 계층화를 설정합니다"</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="지원되는-오브젝트-스토리지-공급자">지원되는 오브젝트 스토리지 공급자</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>비활성 데이터를 사내 ONTAP 클러스터에서 다음 오브젝트 스토리지 공급자로 계층화할 수 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon S3</p>
+</li>
+<li>
+<p>Microsoft Azure Blob</p>
+</li>
+<li>
+<p>Google 클라우드 스토리지</p>
+</li>
+<li>
+<p>S3 호환 오브젝트 스토리지</p>
+</li>
+<li>
+<p>NetApp StorageGRID를 참조하십시오</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
+</td>
+<td class="content">
+NAS 볼륨의 데이터를 퍼블릭 클라우드 또는 StorageGRID와 같은 프라이빗 클라우드로 계층화할 수 있습니다. SAN 프로토콜에서 액세스하는 데이터를 계층화할 경우 연결 고려사항으로 인해 프라이빗 클라우드를 사용하는 것이 좋습니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="오브젝트-스토리지-계층">오브젝트 스토리지 계층</h3>
+<div class="paragraph">
+<p>각 ONTAP 클러스터는 비활성 데이터를 단일 오브젝트 저장소에 계층화합니다. 데이터 계층화를 설정할 때는 스토리지 클래스 또는 액세스 계층과 함께 새 버킷/컨테이너를 추가하거나 기존 버킷/컨테이너를 선택할 수 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="reference-aws-support.html">"지원되는 AWS S3 스토리지 클래스에 대해 알아보십시오"</a></p>
+</li>
+<li>
+<p><a href="reference-azure-support.html">"지원되는 Azure Blob 액세스 계층에 대해 자세히 알아보십시오"</a></p>
+</li>
+<li>
+<p><a href="reference-google-support.html">"지원되는 Google Cloud 스토리지 클래스에 대해 알아보십시오"</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cloud Tiering은 비활성 데이터에 클라우드 공급자의 기본 스토리지 클래스/액세스 계층을 사용합니다. 그러나 일정 일 후에 기본 스토리지 클래스에서 다른 스토리지 클래스로 데이터가 자동으로 전환되도록 수명주기 규칙을 적용할 수 있습니다. 따라서 매우 낮은 콜드 데이터를 저렴한 스토리지로 이동하여 비용을 절감할 수 있습니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
+</td>
+<td class="content">
+StorageGRID 또는 S3 호환 스토리지로 계층화된 데이터에 대한 라이프사이클 규칙을 선택할 수 없습니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="가격-및-라이센스">가격 및 라이센스</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>사용한 만큼만 지불하는 구독, 자체 Cloud Tiering 라이센스 또는 이 둘을 함께 사용하면 Cloud Tiering을 결제할 수 있습니다. 라이센스가 없는 경우 첫 번째 클러스터에 대해 30일 무료 평가판을 사용할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>데이터를 StorageGRID로 계층화할 경우 비용이 발생하지 않습니다. BYOL 라이센스 또는 PAYGO 등록이 필요하지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-tiering" target="_blank" rel="noopener">"가격 세부 정보를 봅니다"</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="30일-무료-평가판">30일 무료 평가판</h3>
+<div class="paragraph">
+<p>Cloud Tiering 라이센스가 없는 경우 첫 번째 클러스터에 계층화를 설정할 때 Cloud Tiering의 30일 무료 평가판이 시작됩니다. 30일 무료 평가판 사용 기간이 끝나면 용량제 구독, BYOL 라이센스 또는 이 두 가지를 결합하여 Cloud Tiering에 대한 비용을 지불해야 합니다.</p>
+</div>
+<div class="paragraph">
+<p>무료 평가판이 끝나고 라이센스를 구독하거나 추가하지 않은 경우 ONTAP는 콜드 데이터를 오브젝트 스토리지에 더 이상 계층화하지 않지만 기존 데이터를 계속 액세스할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="용량제-구독">용량제 구독</h3>
+<div class="paragraph">
+<p>Cloud Tiering은 종량제 모델로 소비 기반 라이센스를 제공합니다. 클라우드 공급자의 마켓플레이스를 통해 구독한 후에는 계층화된 데이터의 GB당 요금을 지불해야 합니다. 선불금은 없습니다. 클라우드 공급자가 월별 요금을 청구합니다.</p>
+</div>
+<div class="paragraph">
+<p>무료 평가판을 가지고 있거나 BYOL(Bring Your Own License)을 사용하는 경우에도 가입해야 합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>구독하면 무료 평가판이 종료된 후에도 서비스가 중단되지 않습니다.</p>
+<div class="paragraph">
+<p>평가판이 종료되면 계층별 데이터 양에 따라 매시간 요금이 부과됩니다.</p>
+</div>
+</li>
+<li>
+<p>BYOL 라이센스에서 허용하는 것보다 더 많은 데이터를 계층화하는 경우 데이터 계층화는 용량제 구독을 통해 계속 유지됩니다.</p>
+<div class="paragraph">
+<p>예를 들어, 10TB 라이센스가 있는 경우 10TB 이상의 모든 용량은 선불 종량제 구독을 통해 부과됩니다.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>무료 평가판 사용 중 또는 Cloud Tiering BYOL 라이센스를 초과하지 않는 경우 용량제 구독을 통해 요금이 부과되지 않습니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-licensing-cloud-tiering.html#Use-a-cloud-tiering-paygo-subscription">"선불 종량제 구독을 설정하는 방법을 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="각자-보유한-라이센스를-가지고-오시기-바랍니다">각자 보유한 라이센스를 가지고 오시기 바랍니다</h3>
+<div class="paragraph">
+<p>NetApp에서 * Cloud Tiering * 라이센스를 구입하여 자체 라이센스를 구입하십시오. 2개월, 12개월, 24개월 또는 36개월 기간 동안 라이센스를 구입하고 계층화 용량을 지정할 수 있습니다. BYOL Cloud Tiering 라이센스는 여러 사내 ONTAP 클러스터에서 사용할 수 있는 _floating_license입니다. Cloud Tiering 라이센스에 정의한 전체 계층화 용량을 모든 사내 클러스터에서 사용할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Tiering 라이센스를 구입한 후에는 Cloud Manager의 Digital Wallet 페이지를 사용하여 라이센스를 추가해야 합니다. <a href="task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license">"Cloud Tiering BYOL 라이센스 사용 방법에 대해 알아보십시오"</a>.</p>
+</div>
+<div class="paragraph">
+<p>앞서 설명한 것처럼 BYOL 라이센스를 구입한 경우에도 사용한 만큼만 지불하는 구독을 설정하는 것이 좋습니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
+</td>
+<td class="content">
+2021년 8월부터 기존 * FabricPool * 라이센스가 * Cloud Tiering * 라이센스로 대체되었습니다. <a href="task-licensing-cloud-tiering.html#new-cloud-tiering-byol-licensing-starting-august-21-2021">"Cloud Tiering 라이센스가 FabricPool 라이센스와 어떻게 다른지 자세히 알아보십시오"</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-tiering의-작동-방식">Cloud Tiering의 작동 방식</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Tiering은 FabricPool 기술을 사용하여 사내 ONTAP 클러스터에서 비활성(콜드) 데이터를 퍼블릭 클라우드 또는 프라이빗 클라우드의 오브젝트 스토리지로 자동으로 계층화해주는 NetApp 관리 서비스입니다. ONTAP에 대한 연결은 커넥터로부터 연결됩니다.</p>
+</div>
+<div class="paragraph">
+<p>다음 이미지는 각 구성 요소 간의 관계를 보여줍니다.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_tiering.png" alt="클라우드 공급자의 커넥터에 연결되는 Cloud Tiering 서비스, ONTAP 클러스터에 대한 연결을 지원하는 커넥터, 클라우드 공급자의 ONTAP 클러스터와 오브젝트 스토리지 간 연결을 보여 주는 아키텍처 이미지입니다. 활성 데이터는 ONTAP 클러스터에 있고 비활성 데이터는 오브젝트 스토리지에 상주합니다."></span></p>
+</div>
+<div class="paragraph">
+<p>상위 레벨에서 Cloud Tiering은 다음과 같이 작동합니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Cloud Manager에서 온프레미스 클러스터를 검색할 수 있습니다.</p>
+</li>
+<li>
+<p>버킷/컨테이너, 스토리지 클래스 또는 액세스 계층, 계층형 데이터에 대한 라이프사이클 규칙 등 오브젝트 스토리지에 대한 세부 정보를 제공하여 계층화를 설정합니다.</p>
+</li>
+<li>
+<p>Cloud Manager는 오브젝트 스토리지 공급자를 사용하도록 ONTAP을 구성하고 클러스터에서 활성 데이터와 비활성 데이터의 양을 검색합니다.</p>
+</li>
+<li>
+<p>계층화할 볼륨과 해당 볼륨에 적용할 계층화 정책을 선택합니다.</p>
+</li>
+<li>
+<p>ONTAP는 비활성 데이터가 비활성 상태로 간주되기 위한 임계값에 도달하는 즉시 비활성 데이터를 오브젝트 저장소로 계층화하기 시작합니다( 참조) <a href="#Volume tiering policies">[Volume tiering policies]</a>)를 클릭합니다.</p>
+</li>
+<li>
+<p>계층 데이터에 수명 주기 규칙을 적용한 경우(일부 공급자에서만 사용 가능), 특정 기간 동안 오래된 계층화된 데이터는 보다 비용 효율적인 계층으로 이동됩니다.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="볼륨-계층화-정책">볼륨 계층화 정책</h3>
+<div class="paragraph">
+<p>계층화할 볼륨을 선택할 때 각 볼륨에 적용할 _ 볼륨 계층화 정책 _ 을(를) 선택합니다. 계층화 정책은 볼륨의 사용자 데이터 블록을 클라우드로 이동할 시기 또는 시기를 결정합니다.</p>
+</div>
+<div class="paragraph">
+<p>또한 * 냉각 기간 * 을 조정할 수 있습니다. 볼륨의 사용자 데이터가 "콜드" 상태로 간주되어 오브젝트 스토리지로 이동되기 전에 비활성 상태로 유지해야 하는 일 수입니다. 냉각 기간을 조정할 수 있는 계층화 정책의 경우 ONTAP 9.8 이상을 사용할 경우 2 ~ 183일, 이전 ONTAP 버전의 경우 2 ~ 63일, 권장 모범 사례는 2 ~ 63일입니다.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">정책 없음(없음)</dt>
+<dd>
+<p>성능 계층의 볼륨에 데이터를 유지하여 클라우드 계층으로 이동하는 것을 방지합니다.</p>
+</dd>
+<dt class="hdlist1">콜드 스냅샷(스냅샷만)</dt>
+<dd>
+<p>ONTAP는 활성 파일 시스템과 공유되지 않는 볼륨의 콜드 스냅샷 블록을 오브젝트 스토리지로 계층화합니다. 읽으면 클라우드 계층의 콜드 데이터 블록이 핫 상태가 되고 성능 계층으로 이동합니다.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>데이터는 Aggregate가 50% 용량에 도달하고 데이터가 냉각 기간에 도달한 후에만 계층화되어 있습니다. 기본 냉각 일 수는 2이지만 이 수를 조정할 수 있습니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
+</td>
+<td class="content">
+다시 가열된 데이터는 공간이 있는 경우에만 성능 계층에 다시 기록됩니다. 성능 계층 용량이 70% 이상 차면 클라우드 계층에서 블록이 계속 액세스됩니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">콜드 사용자 데이터 및 스냅샷(자동)</dt>
+<dd>
+<p>ONTAP는 메타데이터를 제외한 볼륨의 모든 콜드 블록을 오브젝트 스토리지에 계층화합니다. 콜드 데이터에는 스냅샷 복사본뿐만 아니라 액티브 파일 시스템의 콜드 사용자 데이터도 포함됩니다.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>랜덤 읽기로 읽는 경우 클라우드 계층의 콜드 데이터 블록이 핫 상태가 되고 성능 계층으로 이동합니다. 인덱스 및 바이러스 백신 검사와 관련된 읽기 작업을 순차적으로 수행하면 클라우드 계층의 콜드 데이터 블록이 성능 계층에 기록되지 않고 차가운 상태를 유지합니다. 이 정책은 ONTAP 9.4부터 사용할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>데이터는 Aggregate가 50% 용량에 도달하고 데이터가 냉각 기간에 도달한 후에만 계층화되어 있습니다. 기본 냉각 일 수는 31이지만 이 수를 조정할 수 있습니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
+</td>
+<td class="content">
+다시 가열된 데이터는 공간이 있는 경우에만 성능 계층에 다시 기록됩니다. 성능 계층 용량이 70% 이상 차면 클라우드 계층에서 블록이 계속 액세스됩니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">모든 사용자 데이터(모두)</dt>
+<dd>
+<p>모든 데이터(메타데이터 제외)는 즉시 오브젝트 스토리지에 대해 콜드 및 계층화되도록 빨리 표시됩니다. 볼륨의 새 블록이 냉각될 때까지 48시간 동안 기다릴 필요가 없습니다. 모든 정책을 설정하기 전에 볼륨에 있는 블록이 콜드 상태가 되려면 48시간이 걸립니다.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>읽으면 클라우드 계층의 콜드 데이터 블록이 콜드 상태를 유지하고 성능 계층에 다시 기록되지 않습니다. 이 정책은 ONTAP 9.6부터 사용할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>이 계층화 정책을 선택하기 전에 다음 사항을 고려하십시오.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>데이터를 계층화하면 스토리지 효율성이 즉시 낮아집니다(인라인만 해당).</p>
+</li>
+<li>
+<p>볼륨의 콜드 데이터가 변경되지 않을 것으로 확신하는 경우에만 이 정책을 사용해야 합니다.</p>
+</li>
+<li>
+<p>오브젝트 스토리지는 트랜잭션이 아니므로 변경이 발생할 경우 상당한 조각화가 발생합니다.</p>
+</li>
+<li>
+<p>데이터 보호 관계의 소스 볼륨에 모든 계층화 정책을 할당하기 전에 SnapMirror 전송이 미치는 영향을 고려하십시오.</p>
+<div class="paragraph">
+<p>데이터는 즉시 계층화되므로 SnapMirror는 성능 계층이 아닌 클라우드 계층에서 데이터를 읽습니다. 이로 인해 SnapMirror 작업 속도가 느려지며, 다른 계층화 정책을 사용하는 경우에도 나중에 다른 SnapMirror 작업이 느려집니다.</p>
+</div>
+</li>
+<li>
+<p>마찬가지로, Cloud Backup은 계층화 정책을 통해 설정된 볼륨의 영향을 받습니다. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html#fabricpool-tiering-policy-considerations" target="_blank" rel="noopener">"Cloud Backup을 사용한 계층화 정책 고려 사항 을 참조하십시오"</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">모든 DP 사용자 데이터(백업)</dt>
+<dd>
+<p>데이터 보호 볼륨의 모든 데이터(메타데이터 제외)가 즉시 클라우드 계층으로 이동됩니다. 읽는 경우 클라우드 계층의 콜드 데이터 블록이 콜드 상태를 유지하고 성능 계층에 다시 기록되지 않습니다(ONTAP 9.4부터 시작).</p>
+<div class="openblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
+</td>
+<td class="content">
+이 정책은 ONTAP 9.5 이전 버전에 사용할 수 있습니다. ONTAP 9.6부터 * All * 계층화 정책으로 대체되었습니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/cloud-manager-tiering/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
+  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/cloud-manager-tiering/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/cloud-manager-tiering/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/cloud-manager-tiering/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/cloud-manager-tiering/js/www-ntap.js'></script>
+    <script src='/ko-kr/cloud-manager-tiering/js/tabbed-blocks.js'></script>
+  </body></html>
