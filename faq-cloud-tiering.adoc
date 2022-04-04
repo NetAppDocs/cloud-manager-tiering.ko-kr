@@ -90,7 +90,7 @@ Amazon S3, Azure Blob 스토리지, Google Cloud Storage, NetApp StorageGRID 및
 
 === 지원되는 S3 스토리지 클래스는 무엇입니까?
 
-Cloud Tiering은 _Standard_,_Standard - Infrequent Access_, _One Zone - IA_ 또는 _Intelligent_Storage 클래스에 대한 데이터 계층화를 지원합니다. 을 참조하십시오 link:reference-aws-support.html["지원되는 S3 스토리지 클래스"] 를 참조하십시오.
+Cloud Tiering은 _Standard_,_Standard - Infrequent Access_, _One Zone - Infrequent Access_, _Intelligent Tiering_ 및 _Glacier Instant Retrieval_storage 클래스에 대한 데이터 계층화를 지원합니다. 을 참조하십시오 link:reference-aws-support.html["지원되는 S3 스토리지 클래스"] 를 참조하십시오.
 
 
 
