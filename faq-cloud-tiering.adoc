@@ -171,7 +171,7 @@ ONTAP는 오브젝트 스토리지 간에 데이터를 읽고 씁니다. 오브�
 
 === AWS에 필요한 사용 권한은 무엇입니까?
 
-권한이 필요합니다 link:task-tiering-onprem-aws#preparing-amazon-s3["S3 버킷을 관리합니다"].
+권한이 필요합니다 link:task-tiering-onprem-aws.html#preparing-amazon-s3["S3 버킷을 관리합니다"].
 
 
 
