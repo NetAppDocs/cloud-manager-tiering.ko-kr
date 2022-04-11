@@ -6,6 +6,7 @@ summary: 이제 사내 ONTAP 클러스터에서 데이터 계층화를 설정했
 ---
 = 클러스터에서 데이터 계층화 관리
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

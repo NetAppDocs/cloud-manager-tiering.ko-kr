@@ -6,6 +6,7 @@ summary: 'S3(Simple Storage Service) 프로토콜을 사용하는 오브젝트 �
 ---
 = 사내 ONTAP 클러스터에서 S3 오브젝트 스토리지로 데이터 계층화
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

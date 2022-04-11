@@ -6,6 +6,7 @@ summary: 비활성 데이터를 StorageGRID로 계층화하여 온프레미스 O
 ---
 = 사내 ONTAP 클러스터에서 StorageGRID로 데이터 계층화
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

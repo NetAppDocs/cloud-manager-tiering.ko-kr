@@ -6,6 +6,7 @@ summary: 비활성 데이터를 Azure Blob 저장소에 계층화하여 온프�
 ---
 = 사내 ONTAP 클러스터에서 Azure Blob 스토리지로 데이터 계층화
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

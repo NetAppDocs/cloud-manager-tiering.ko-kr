@@ -7,6 +7,7 @@ summary: Cloud Tiering은 비활성 데이터를 사내 ONTAP 클러스터에서
 ---
 = Cloud Tiering 설명서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: Cloud Tiering의 30일 무료 체험은 첫 번째 클러스터에서 �
 ---
 = Cloud Tiering의 라이센스 설정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

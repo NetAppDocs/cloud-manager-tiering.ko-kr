@@ -6,6 +6,7 @@ summary: 비활성 데이터를 Google 클라우드 스토리지로 계층화하
 ---
 = 사내 ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 계층화
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

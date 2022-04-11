@@ -6,6 +6,7 @@ summary: 비활성 데이터를 Amazon S3에 계층화하여 온프레미스 ONT
 ---
 = 사내 ONTAP 클러스터에서 Amazon S3로 데이터 계층화
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
