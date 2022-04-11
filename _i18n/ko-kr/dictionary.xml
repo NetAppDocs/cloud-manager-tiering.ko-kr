@@ -170,31 +170,23 @@
   <block id="931c42fa613d6d1d1197c547b4e6a7e3" category="summary">Cloud Tiering의 새로운 기능 알아보기</block>
   <block id="ad9a656fa18a582d87590e28dce5af00" category="doc">Cloud Tiering의 새로운 기능</block>
   <block id="d798cbf5a08fbeb9fdd3652e5b00bb4c" category="section-title">2021년 9월 2일</block>
-  <block id="de34abb57e3fabd81532295568286b3d" category="section-title">Cloud Tiering BYOL 라이센스는 FabricPool 라이센스를 대체합니다.</block>
   <block id="2817937e51c403b4b9929eaa298b82dd" category="paragraph">이제 Cloud Tiering 서비스를 사용하여 Cloud Manager 내에서 지원되는 계층화 구성에 새로운 * Cloud Tiering * 라이센스를 사용할 수 있습니다. 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 부동 라이센스입니다. 이전에 사용했을 수 있는 * FabricPool * 라이센스는 Cloud Manager 내에서 지원되지 않는 구성에만 유지됩니다.</block>
   <block id="54b8200ba1ce85a7ad931e091de0ed98" category="inline-link-macro">새로운 Cloud Tiering 라이센스에 대해 자세히 알아보십시오</block>
-  <block id="e7fccc6a6a9e8c8bcd302d9d7daefd1f" category="section-title">사내 ONTAP 클러스터에서 S3 호환 오브젝트 스토리지로 비활성 데이터 계층화</block>
   <block id="59e10c49329cd1a0a55e4a0d27f6a584" category="inline-link-macro">데이터를 S3 호환 오브젝트 스토리지에 계층화하는 방법을 알아보십시오</block>
   <block id="916678dfdf53de83f6afdf8fca563fb3" category="section-title">2021년 7월 7일</block>
-  <block id="e5e19e9abc2fc2780cfda120acc4f7d0" category="section-title">Connector는 Azure Blob 저장소에 데이터를 계층화할 때 사내에서 실행할 수 있습니다.</block>
   <block id="def40345e2d3c9101a49141b1956c58d" category="paragraph">Azure VNET에 설치된 커넥터를 더 이상 사용할 필요가 없습니다. Azure Blob 저장소에 데이터를 계층화할 때 Connector를 사내 호스트에서 실행할 수 있습니다.</block>
   <block id="945fb8f32f58d1cc36cb9f1e9e4c6fe5" category="section-title">2021년 6월 7일</block>
-  <block id="379376a340ce5a2f52aae2612118a1bd" category="section-title">이제 특정 클라우드 공급자 스토리지에 새로운 계층화 클래스를 사용할 수 있습니다.</block>
   <block id="277a1d3dc69ddcb600b5564bbfee2f99" category="paragraph">이전 릴리스에서는 Amazon S3 또는 Google Cloud 오브젝트 스토리지를 사용하는 경우 30일 후에 표준 스토리지 클래스에서 다른 스토리지 클래스로 계층적 데이터를 전환할 수 있었습니다. 이 릴리즈에는 몇 가지 새로운 기능이 추가되었습니다.</block>
   <block id="92a8cc3e0000b5a588f5e5a545d580b8" category="list-text">계층형 데이터를 보다 비용 효율적인 계층으로 이동하는 일 수를 선택할 수 있습니다. 이를 데이터 "라이프사이클 관리"라고 합니다.</block>
   <block id="e7e39728235a606f9321e32048703018" category="list-text">Azure Blob은 이제 _Cool_access 계층을 지원합니다.</block>
   <block id="b2c1efe1106d7a3c0771b064bea9957c" category="list-text">Google Cloud Storage는 시간에 따라 계층화된 데이터를 여러 스토리지 계층으로 이동할 수 있도록 지원합니다. 예를 들어 45일 후에 _Standard_class에서 _Nearline_class로 계층화된 데이터를 이동한 다음 75일 후에 _Coldline_class로 이동한 다음 270일 후에 _Archive_class로 이동할 수 있습니다.</block>
-  <block id="d3a691a2ed6d63a991a7682ab144013f" category="section-title">이제 클라우드 계층에서 성능 계층으로 데이터를 사전 예방적으로 이동할 수 있습니다.</block>
   <block id="c2c0bee6af3a5a60056d41dcc371d786" category="paragraph">이 기능은 볼륨에 대한 계층화 사용을 중단하거나 모든 사용자 데이터를 성능 계층에 유지하되 스냅샷 복사본을 클라우드 계층에 보관하려는 경우에 유용합니다. 이 기능은 ONTAP 9.8 이상을 사용할 때 사용할 수 있습니다.</block>
   <block id="296729a9ae6cd989b611bbaa8f279cba" category="inline-link-macro">데이터를 성능 계층으로 다시 마이그레이션</block>
   <block id="ef010ff21ef40a36a12794034bd76e1b" category="paragraph">자세한 내용은 를 참조하십시오 <block ref="81dc96fdd3bce727e4737236967f1536" category="inline-link-macro-rx"></block>.</block>
   <block id="824b76af9549cb14fd2443aa485afb15" category="section-title">2021년 5월 2일</block>
-  <block id="5de9b4ed62b2e6832897a1f7b7d93636" category="section-title">이제 계층화 정책을 적용할 때 모든 볼륨을 선택할 수 있습니다.</block>
   <block id="bf6525c86100838072a02751028c3547" category="inline-link-macro">클러스터의 모든 볼륨을 선택하는 방법을 알아봅니다</block>
   <block id="36ce0e84f37feb90fb719b27375ae5e7" category="paragraph">ONTAP 시스템에서 계층화할 볼륨을 선택할 때 이제 Tier Volumes 페이지에서 * All * volumes를 선택하여 모든 볼륨에 동일한 정책을 쉽게 적용할 수 있는 확인란이 있습니다. <block ref="fe9c671df76431123a5e8d8776c7cef2" category="inline-link-macro-rx"></block>.</block>
-  <block id="493c9069f29fa48faaa688db1fa4661e" category="section-title">이제 "냉각" 일 수를 183일로 설정할 수 있습니다.</block>
   <block id="2296f192167be3972e69fc3d386a3e66" category="paragraph">ONTAP 9.8 이상을 사용할 때 볼륨의 데이터를 오브젝트 스토리지로 이동하기 전에 비활성 상태로 유지해야 하는 기간을 결정하는 "냉각 일" 수를 변경해야 하는 경우 최대 183일(최대 63일)까지 지정할 수 있습니다.</block>
-  <block id="4f82c39e99959a1e5fa5a9a696bc2f05" category="section-title">Google 클라우드 스토리지로 계층화할 때 라이프사이클 규칙을 사용할 수 있습니다.</block>
   <block id="b4baef0a3a494382cb3865753733f031" category="paragraph">Google Cloud Storage로 계층화할 때 30일 후에 계층형 데이터가 Standard 스토리지 클래스에서 저비용 Nearline, Coldline 또는 아카이브 스토리지로 전환되도록 수명주기 규칙을 적용할 수 있습니다.</block>
   <block id="56e7e76078700fc13565626e04d55715" category="summary">S3(Simple Storage Service) 프로토콜을 사용하는 오브젝트 스토리지 서비스에 비활성 데이터를 계층화하여 온프레미스 ONTAP 클러스터의 여유 공간을 확보하십시오.</block>
   <block id="6fcd419d9b16c5368ab2877625e80567" category="doc">사내 ONTAP 클러스터에서 S3 오브젝트 스토리지로 데이터 계층화</block>
@@ -378,8 +370,6 @@
   <block id="6b5920220b135ba1ff95cfb5b149f138" category="summary">NetApp의 Cloud Tiering 서비스는 비활성 데이터를 사내 ONTAP 클러스터에서 오브젝트 스토리지로 자동으로 계층화하여 데이터 센터를 클라우드로 확장합니다. 따라서 애플리케이션 계층을 변경하지 않고 클러스터에서 귀중한 공간을 확보하여 더 많은 워크로드를 사용할 수 있습니다. Cloud Tiering을 사용하면 데이터 센터의 비용을 절감하고 자본 지출 모델에서 운영 비용 모델로 전환할 수 있습니다.</block>
   <block id="36afa058c74d288178950c27927bdb38" category="doc">Cloud Tiering에 대해 알아보십시오</block>
   <block id="647439c1467c8118206ec0bd264e5f44" category="paragraph">Cloud Tiering 서비스는 _FabricPool_의 기능을 활용합니다. FabricPool는 데이터를 저비용 오브젝트 스토리지로 자동 계층화하는 NetApp Data Fabric 기술입니다. 활성(핫) 데이터는 로컬 계층(사내 ONTAP 애그리게이트)에 남아 있고 비활성(콜드) 데이터는 클라우드 계층으로 이동되며 ONTAP 데이터 효율성은 그대로 유지됩니다.</block>
-  <block id="011e4b5a7fb442bf2848da9c53ef3cd0" category="inline-link">FabricPool 사용에 대한 요구 사항</block>
-  <block id="14e790da71b49de4665d3ddb7594a860" category="paragraph">* 참고: * ONTAP 9.8부터 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 함께 계층화할 수 있습니다. 이 릴리즈 이전에는 All-SSD 애그리게이트를 사용하는 AFF 시스템 또는 FAS 시스템에서만 데이터를 계층화할 수 있었습니다. 을 참조하십시오<block ref="e0a79ddede56a90935247b71be1bce6a" category="inline-link-rx"></block> 를 참조하십시오.</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
   <block id="c6a7db5c25117c443a476e127b47fb7e" category="paragraph">Cloud Tiering은 자동화, 모니터링, 보고서 및 공통 관리 인터페이스를 제공합니다.</block>
   <block id="e06e7e77771ffb8d53ca2e5570304aa3" category="list-text">자동화를 통해 사내 ONTAP 클러스터에서 클라우드로 데이터 계층화를 간편하게 설정 및 관리할 수 있습니다</block>
@@ -392,7 +382,6 @@
   <block id="4074a4b2af431bb41b7d6a27a4a0fa8c" category="paragraph">Cloud Tiering이 제공하는 가치에 대해 자세히 알아보려면<block ref="2b48faa4b3be6c213b2f92c388d8c1e9" category="inline-link-rx"></block>.</block>
   <block id="0f2fe86a510d6ffda7900a01b49c88f9" category="inline-link">Cloud Volumes ONTAP의 작업 환경에서 Cloud Manager의 계층화를 설정합니다</block>
   <block id="002fca37a5e7d8eb724e874566419716" category="section-title">지원되는 오브젝트 스토리지 공급자</block>
-  <block id="9c66b95e4870e124c7162efbed0394e2" category="paragraph">비활성 데이터를 사내 ONTAP 클러스터에서 다음 오브젝트 스토리지 공급자로 계층화할 수 있습니다.</block>
   <block id="270fcb785810d0206945029bb05f4e97" category="list-text">Amazon S3</block>
   <block id="6a51ed7bcacdfb13f78abc1e0f69c201" category="list-text">Microsoft Azure Blob</block>
   <block id="833c2c211a541e50ad94433664e4b5c1" category="list-text">Google 클라우드 스토리지</block>
@@ -426,7 +415,6 @@
   <block id="3f08769be064240fa25ba129ac43d9a4" category="paragraph">예를 들어, 10TB 라이센스가 있는 경우 10TB 이상의 모든 용량은 선불 종량제 구독을 통해 부과됩니다.</block>
   <block id="ad05b2f231e5f48f63b30a2913fa7fef" category="paragraph">무료 평가판 사용 중 또는 Cloud Tiering BYOL 라이센스를 초과하지 않는 경우 용량제 구독을 통해 요금이 부과되지 않습니다.</block>
   <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">선불 종량제 구독을 설정하는 방법을 알아보십시오</block>
-  <block id="ae35798c86544bd373763be071197bcd" category="paragraph"><block ref="695e49e1d7c93e1531d22946f3605e9b" category="inline-link-macro-rx"></block>.</block>
   <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">각자 보유한 라이센스를 가지고 오시기 바랍니다</block>
   <block id="df3841822547641e1f0490414fb8f19e" category="paragraph">NetApp에서 * Cloud Tiering * 라이센스를 구입하여 자체 라이센스를 구입하십시오. 2개월, 12개월, 24개월 또는 36개월 기간 동안 라이센스를 구입하고 계층화 용량을 지정할 수 있습니다. BYOL Cloud Tiering 라이센스는 여러 사내 ONTAP 클러스터에서 사용할 수 있는 _floating_license입니다. Cloud Tiering 라이센스에 정의한 전체 계층화 용량을 모든 사내 클러스터에서 사용할 수 있습니다.</block>
   <block id="7b31eba1fa6d2aa1d3bf4ddb10d4b302" category="inline-link-macro">Cloud Tiering BYOL 라이센스 사용 방법에 대해 알아보십시오</block>
@@ -865,7 +853,6 @@
   <block id="4c7d5d7dfde4a7bd82b54348182043d3" category="sidebar">기타 리소스</block>
   <block id="cc81b1698333ba727fd5bde305c3cf08" category="sidebar">Cloud Central 사용 사례</block>
   <block id="ad806d4b803a5aa7358400786d14dec0" category="section-title">2022년 4월 4일</block>
-  <block id="7c8a4291aea538c22d3b7597f39f6683" category="section-title">이제 Amazon S3 Glacier Instant Retrieval 저장소 클래스를 사용할 수 있습니다.</block>
   <block id="073223fc83a8b7f1f274f1af1f635f2f" category="paragraph">Cloud Tiering을 설정할 때 특정 일 수 후에 비활성 데이터가 _Standard_storage 클래스에서 _Glacier Instant Retrieval_로 전환되도록 수명주기 규칙을 구성할 수 있습니다. 이를 통해 AWS 인프라 비용을 절감할 수 있습니다.</block>
   <block id="34a4923a0f84a1bc223389cfed6e2b62" category="paragraph"><block ref="3054f156a0693c67de0611c0445f676e" category="inline-link-rx"></block>.</block>
   <block id="df94b79ab63138be1c03382ae20c338d" category="paragraph">이제 S3(Simple Storage Service) 프로토콜을 사용하는 오브젝트 스토리지 서비스에 비활성 데이터를 계층화할 수 있습니다.<block ref="26932bf166134e05b1ade0d7ecb1b6d8" category="inline-link-rx"></block>.</block>
@@ -877,4 +864,22 @@
   <block id="ce34acaac9ca080c6cf882736711598e" category="admonition">Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다.<block ref="9af043ec07eda2b8761144420bc7ff5f" category="inline-link-rx"></block>.</block>
   <block id="1c8b696d9c11af6b6bfbc6c0a7e4a61f" category="list-text">마찬가지로, Cloud Backup은 계층화 정책을 통해 설정된 볼륨의 영향을 받습니다.<block ref="4e28c1a1682c24a0aaf57d23ca62ce4e" category="inline-link-rx"></block>.</block>
   <block id="7399e8f6e7163289ee0ecfe3413b3c7a" category="paragraph">권한이 필요합니다 <block ref="169af6556d92f8f176136d72d4ee3858" category="inline-link-macro-rx"></block>.</block>
+  <block id="6cb8333618f00b139da255e7f5a82ea0" category="section-title">이제 Amazon S3 Glacier Instant Retrieval 저장소 클래스를 사용할 수 있습니다</block>
+  <block id="199090bb5d58df554b18a5cb68acb0b7" category="section-title">Cloud Tiering은 ONTAP Select 시스템에서 완벽하게 검증되었습니다</block>
+  <block id="a74220a8acc78d1041352afb305af18f" category="paragraph">AFF 및 FAS 시스템의 데이터를 계층화할 뿐만 아니라, 이제 ONTAP Select 시스템의 비활성 데이터를 클라우드 스토리지로 계층화할 수 있습니다.</block>
+  <block id="99c3c55ceb085b94e53d8b7984863037" category="section-title">Cloud Tiering BYOL 라이센스는 FabricPool 라이센스를 대체합니다</block>
+  <block id="24263383a842093a8c2b6b9b8a88989d" category="section-title">사내 ONTAP 클러스터에서 S3 호환 오브젝트 스토리지로 비활성 데이터 계층화</block>
+  <block id="154176674c0672732a91f2bd7ca5d8e0" category="section-title">Connector는 Azure Blob 저장소에 데이터를 계층화할 때 사내에서 실행할 수 있습니다</block>
+  <block id="c4f829b7ae242ef2fe076d1c69689d01" category="section-title">이제 특정 클라우드 공급자 스토리지에 새로운 계층화 클래스를 사용할 수 있습니다</block>
+  <block id="84cada6f6939410de8fc42b2cea10895" category="section-title">이제 클라우드 계층에서 성능 계층으로 데이터를 사전 예방적으로 이동할 수 있습니다</block>
+  <block id="011ff5422aa046bd5cf08306e8b04fde" category="section-title">이제 계층화 정책을 적용할 때 모든 볼륨을 선택할 수 있습니다</block>
+  <block id="f268cb0b89ceae31cbeb9f1cf4669fd0" category="section-title">이제 "냉각" 일 수를 183일로 설정할 수 있습니다</block>
+  <block id="5a294035d7c08dc10d36a9f693e9bdb7" category="section-title">Google 클라우드 스토리지로 계층화할 때 라이프사이클 규칙을 사용할 수 있습니다</block>
+  <block id="7beb276ec918c2d8eb132df5ed6fe576" category="section-title">어떤 유형의 ONTAP 시스템이 지원됩니까?</block>
+  <block id="9b07339421cb8fc38c122eac748e7d25" category="paragraph">Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.</block>
+  <block id="ec0515a8a06c1c0cf10efc6cbb1bfab9" category="inline-link">FabricPool 사용에 대한 고려 사항 및 요구 사항</block>
+  <block id="2e1c93e13afa4226049aaf573620580e" category="paragraph">원래 AFF 및 All-SSD 애그리게이트를 포함한 FAS 시스템에서 지원되었지만 ONTAP 9.8부터는 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 모두 계층화할 수 있습니다. 을 참조하십시오<block ref="6b92341e29e5578d52c0690ebbf4bdb7" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="ba7f44ea95b8ea6bdfe58a881b0dbc4d" category="admonition">Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.</block>
+  <block id="403df42df80267a7b2bc0be8c3e6685d" category="paragraph">비활성 데이터를 사내 ONTAP 시스템에서 다음 오브젝트 스토리지 공급자로 계층화할 수 있습니다.</block>
+  <block id="02778b04e5a037c1f79623dbe0edaeaa" category="paragraph"><block ref="ec35df1b46bc45bcde27ce05d4c1911f" category="inline-link-macro-rx"></block>.</block>
 </blocks>

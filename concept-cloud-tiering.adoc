@@ -17,7 +17,10 @@ NetApp의 Cloud Tiering 서비스는 비활성 데이터를 사내 ONTAP 클러�
 
 Cloud Tiering 서비스는 _FabricPool_의 기능을 활용합니다. FabricPool는 데이터를 저비용 오브젝트 스토리지로 자동 계층화하는 NetApp Data Fabric 기술입니다. 활성(핫) 데이터는 로컬 계층(사내 ONTAP 애그리게이트)에 남아 있고 비활성(콜드) 데이터는 클라우드 계층으로 이동되며 ONTAP 데이터 효율성은 그대로 유지됩니다.
 
-* 참고: * ONTAP 9.8부터 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 함께 계층화할 수 있습니다. 이 릴리즈 이전에는 All-SSD 애그리게이트를 사용하는 AFF 시스템 또는 FAS 시스템에서만 데이터를 계층화할 수 있었습니다. 을 참조하십시오 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8E421CC9-1DE1-492F-A84C-9EB1B0177807.html["FabricPool 사용에 대한 요구 사항"^] 를 참조하십시오.
+원래 AFF 및 All-SSD 애그리게이트를 포함한 FAS 시스템에서 지원되었지만 ONTAP 9.8부터는 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 모두 계층화할 수 있습니다. 을 참조하십시오 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html["FabricPool 사용에 대한 고려 사항 및 요구 사항"^] 를 참조하십시오.
+
+
+TIP: Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.
 
 
 
@@ -42,7 +45,7 @@ TIP: Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다
 
 == 지원되는 오브젝트 스토리지 공급자
 
-비활성 데이터를 사내 ONTAP 클러스터에서 다음 오브젝트 스토리지 공급자로 계층화할 수 있습니다.
+비활성 데이터를 사내 ONTAP 시스템에서 다음 오브젝트 스토리지 공급자로 계층화할 수 있습니다.
 
 * Amazon S3
 * Microsoft Azure Blob
@@ -108,7 +111,7 @@ Cloud Tiering은 종량제 모델로 소비 기반 라이센스를 제공합니�
 
 무료 평가판 사용 중 또는 Cloud Tiering BYOL 라이센스를 초과하지 않는 경우 용량제 구독을 통해 요금이 부과되지 않습니다.
 
-link:task-licensing-cloud-tiering.html#Use-a-cloud-tiering-paygo-subscription["선불 종량제 구독을 설정하는 방법을 알아보십시오"].
+link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-paygo-subscription["선불 종량제 구독을 설정하는 방법을 알아보십시오"].
 
 
 
