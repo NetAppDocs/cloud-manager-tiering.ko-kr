@@ -498,7 +498,6 @@
   <block id="670aaecb1a526fbed439dad3ec353a96" category="section-title">오브젝트 스토리지</block>
   <block id="6145ae0abac8e546e57c1ba1c83ea8f8" category="paragraph">다음 질문은 오브젝트 스토리지와 관련이 있습니다.</block>
   <block id="8dc2f269c974385fca1dd7d4bf3a051f" category="section-title">어떤 오브젝트 스토리지 공급자가 지원됩니까?</block>
-  <block id="25d34ec058b5c4a2dc5896e71520c30a" category="paragraph">Amazon S3, Azure Blob 스토리지, Google Cloud Storage, NetApp StorageGRID 및 S3 호환 오브젝트 스토리지 공급자가 지원됩니다.</block>
   <block id="aebd5d0546886eb95ec68319ef820add" category="section-title">나만의 버킷/컨테이너를 사용할 수 있습니까?</block>
   <block id="810cfe74648d752af199cb664dfa9bfe" category="paragraph">예, 가능합니다. 데이터 계층화를 설정할 때는 새 버킷/컨테이너를 추가하거나 기존 버킷/컨테이너를 선택할 수 있습니다.</block>
   <block id="a1d779f1e2893c12885589862adf575b" category="section-title">지원되는 지역은 어디입니까?</block>
@@ -679,8 +678,6 @@
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">자세한 내용을 보려면 여기를 클릭하십시오</block>
   <block id="3868e848af85900de1f54ff09666ee69" category="paragraph">Cloud Manager의 Digital Wallet 페이지를 사용하여 Cloud Tiering BYOL 라이센스를 관리할 수 있습니다. 새 라이센스를 추가하고 기존 라이센스를 업데이트할 수 있습니다.</block>
   <block id="52cae96a75c3f07b159891ff3d6a95c0" category="section-title">2021년 8월 21일부터 새로운 Cloud Tiering BYOL 라이센싱 제공</block>
-  <block id="85ae9bef317bd3c11475e84eb54944db" category="paragraph">클라우드 계층화 서비스를 사용하는 Cloud Manager 내에서 지원되는 계층화 구성을 위해 2021년 8월에 새로운 * Cloud Tiering * 라이센스가 도입되었습니다. Cloud Manager는 현재 Amazon S3, Azure Blob 스토리지, Google Cloud Storage, S3 호환 오브젝트 스토리지 및 StorageGRID와 같은 클라우드 스토리지에 대한 계층화를 지원합니다.</block>
-  <block id="02314cdf232761d74eff28877a685faa" category="paragraph">이전에 온프레미스 ONTAP 데이터를 클라우드로 계층화하기 위해 사용되었을 수 있는 * FabricPool * 라이센스는 인터넷에 액세스할 수 없는 사이트("어두운 사이트"라고도 함)에서 ONTAP 배포에 대해서만 유지됩니다. 사이트 구축이 어두운 경우 System Manager 또는 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이센스를 설치합니다.</block>
   <block id="b5a6f9ddeef29501280ea54ee2e1a6a9" category="admonition">StorageGRID로 계층화하려면 FabricPool 또는 Cloud Tiering 라이센스가 필요하지 않습니다.</block>
   <block id="63b75697f87dc9e5a0f1c93ebf6056b5" category="paragraph">현재 FabricPool 라이센스를 사용 중인 경우 FabricPool 라이센스가 만료 날짜 또는 최대 용량에 도달할 때까지 영향을 받지 않습니다. 라이센스를 업데이트해야 하는 경우 또는 그 이전에 데이터를 클라우드로 계층화할 수 있는 기능이 중단되지 않도록 NetApp에 문의하십시오.</block>
   <block id="718a81b2bb7ab3ba5eaabdc569ee059d" category="list-text">Cloud Manager에서 지원되는 구성을 사용하는 경우 FabricPool 라이센스가 Cloud Tiering 라이센스로 변환되어 Digital Wallet에 표시됩니다. 이러한 초기 라이센스가 만료되면 Cloud Tiering 라이센스를 업데이트해야 합니다.</block>
@@ -849,7 +846,6 @@
   <block id="4c7d5d7dfde4a7bd82b54348182043d3" category="sidebar">기타 리소스</block>
   <block id="cc81b1698333ba727fd5bde305c3cf08" category="sidebar">Cloud Central 사용 사례</block>
   <block id="ad806d4b803a5aa7358400786d14dec0" category="section-title">2022년 4월 4일</block>
-  <block id="073223fc83a8b7f1f274f1af1f635f2f" category="paragraph">Cloud Tiering을 설정할 때 특정 일 수 후에 비활성 데이터가 _Standard_storage 클래스에서 _Glacier Instant Retrieval_로 전환되도록 수명주기 규칙을 구성할 수 있습니다. 이를 통해 AWS 인프라 비용을 절감할 수 있습니다.</block>
   <block id="34a4923a0f84a1bc223389cfed6e2b62" category="paragraph"><block ref="3054f156a0693c67de0611c0445f676e" category="inline-link-rx"></block>.</block>
   <block id="df94b79ab63138be1c03382ae20c338d" category="paragraph">이제 S3(Simple Storage Service) 프로토콜을 사용하는 오브젝트 스토리지 서비스에 비활성 데이터를 계층화할 수 있습니다.<block ref="26932bf166134e05b1ade0d7ecb1b6d8" category="inline-link-rx"></block>.</block>
   <block id="dbbd746e2d2c019dcb0c3c40b74f4f75" category="section-title">2021년 3월 8일</block>
@@ -872,10 +868,7 @@
   <block id="f268cb0b89ceae31cbeb9f1cf4669fd0" category="section-title">이제 "냉각" 일 수를 183일로 설정할 수 있습니다</block>
   <block id="5a294035d7c08dc10d36a9f693e9bdb7" category="section-title">Google 클라우드 스토리지로 계층화할 때 라이프사이클 규칙을 사용할 수 있습니다</block>
   <block id="7beb276ec918c2d8eb132df5ed6fe576" category="section-title">어떤 유형의 ONTAP 시스템이 지원됩니까?</block>
-  <block id="9b07339421cb8fc38c122eac748e7d25" category="paragraph">Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.</block>
   <block id="ec0515a8a06c1c0cf10efc6cbb1bfab9" category="inline-link">FabricPool 사용에 대한 고려 사항 및 요구 사항</block>
-  <block id="2e1c93e13afa4226049aaf573620580e" category="paragraph">원래 AFF 및 All-SSD 애그리게이트를 포함한 FAS 시스템에서 지원되었지만 ONTAP 9.8부터는 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 모두 계층화할 수 있습니다. 을 참조하십시오<block ref="6b92341e29e5578d52c0690ebbf4bdb7" category="inline-link-rx"></block> 를 참조하십시오.</block>
-  <block id="ba7f44ea95b8ea6bdfe58a881b0dbc4d" category="admonition">Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.</block>
   <block id="403df42df80267a7b2bc0be8c3e6685d" category="paragraph">비활성 데이터를 사내 ONTAP 시스템에서 다음 오브젝트 스토리지 공급자로 계층화할 수 있습니다.</block>
   <block id="02778b04e5a037c1f79623dbe0edaeaa" category="paragraph"><block ref="ec35df1b46bc45bcde27ce05d4c1911f" category="inline-link-macro-rx"></block>.</block>
   <block id="aeaeee19a7c393222e407a525cf01991" category="section-title">NSS 계정을 추가합니다</block>
@@ -928,4 +921,52 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">NetApp 기술 지원을 위한 전화 번호를 찾으려면 * 문의하다</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">문제 열기 * 를 클릭하고 옵션 중 하나를 선택한 다음 * 보내기 * 를 클릭합니다.</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 담당자가 귀하의 케이스를 검토하고 곧 다시 귀하에 연락을 드릴 것입니다.</block>
+  <block id="fd01295dbf857b2bc6bcef4166b23207" category="paragraph">원래 ONTAP 9.8부터 All-SSD 애그리게이트를 포함한 AFF, FAS 및 ONTAP Select 시스템에서 지원되어 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 함께 계층화할 수 있습니다. 을 참조하십시오<block ref="6b92341e29e5578d52c0690ebbf4bdb7" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="2435df85f1fbddfaa74ed9d9b389396e" category="inline-link">이러한 유형의 클러스터에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다.</block>
+  <block id="602d3c419c8a2f0671f1f332facbd3f6" category="paragraph">Cloud Tiering 라이센스는 FabricPool 미러 구성(MetroCluster 구성 제외)에 있는 클러스터와도 공유할 수 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만<block ref="f01d00e65c71afcc96316056bf32ae1d" category="inline-link-rx"></block></block>
+  <block id="17284df03fb9788b01cced519aa7b242" category="inline-link">이러한 유형의 구성에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다.</block>
+  <block id="41229158c41a9daeb4112753b1bf2ea1" category="paragraph">Cloud Tiering 라이센스는 데이터를 IBM Cloud Object Storage로 계층화하는 클러스터와 공유할 수도 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만<block ref="ed2970faba694b446adb4cf5afc34bcc" category="inline-link-rx"></block></block>
+  <block id="dcc42a339dcf66c4ea4b130eaa04710e" category="paragraph">클라우드 계층화는 단일 노드 및 고가용성 AFF, FAS, ONTAP Select 클러스터에서 지원됩니다. FabricPool 미러 구성의 클러스터도 지원되지만 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 합니다.</block>
+  <block id="dfbee056730af589714f6061683bf3c8" category="paragraph">Cloud Tiering은 다음 오브젝트 스토리지 공급자를 지원합니다.</block>
+  <block id="5463fae7936bec29b8ec624ad9b684b3" category="list-text">IBM 클라우드 오브젝트 스토리지(단, FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 함)</block>
+  <block id="d3e8cd2e370974f27de1b310b4aa8cb3" category="section-title">2022년 5월 3일</block>
+  <block id="a74300b6b08791dda4f54d473a58e17a" category="section-title">Cloud Tiering 라이센스는 추가 클러스터 구성을 지원합니다</block>
+  <block id="afacb33ad65bcd63eb15aeba04b4aed0" category="inline-link">이러한 유형의 클러스터에 대한 라이센스 부여 및 구성 방법을 확인하십시오.</block>
+  <block id="4675a948ea93098e22976c0848737e1a" category="paragraph">이제 Cloud Tiering 라이센스는 MetroCluster 구성이 아닌 Tiering Mirror 구성 클러스터와 IBM Cloud Object Storage로 계층화되는 클러스터와 공유할 수 있습니다. 이러한 시나리오에 더 이상 사용되지 않는 FabricPool 라이센스를 사용할 필요가 없습니다. 따라서 더 많은 클러스터에서 "유동" Cloud Tiering 라이센스를 더 쉽게 사용할 수 있습니다.<block ref="4e8c6c7f1b8cf8bbca1bc62528b46ae2" category="inline-link-rx"></block></block>
+  <block id="75ad6cd4979a906c67e27abc9ee1c14e" category="inline-link">지원되는 S3 스토리지 클래스를 참조하십시오.</block>
+  <block id="d3028cb26dae3dbde1ec068c17d15383" category="paragraph">Cloud Tiering을 설정할 때 특정 일 수 후에 비활성 데이터가 _Standard_storage 클래스에서 _Glacier Instant Retrieval_로 전환되도록 수명주기 규칙을 구성할 수 있습니다. 이를 통해 AWS 인프라 비용을 절감할 수 있습니다.<block ref="99f36cc81f33df65a0349e719000fada" category="inline-link-rx"></block></block>
+  <block id="c37d8d783a15bb3dc29d360fd96058fa" category="paragraph">클라우드 계층화 서비스를 사용하는 Cloud Manager 내에서 지원되는 계층화 구성을 위해 2021년 8월에 새로운 * Cloud Tiering * 라이센스가 도입되었습니다. Cloud Manager는 현재 Amazon S3, Azure Blob 스토리지, Google Cloud Storage, S3 호환 오브젝트 스토리지, IBM Cloud Object Storage 및 StorageGRID와 같은 클라우드 스토리지에 대한 계층화를 지원합니다.</block>
+  <block id="6ddd4d2b3e22e1f0dbfa3f2cfb99611d" category="paragraph">이전에 온프레미스 ONTAP 데이터를 클라우드로 계층화하는데 사용한 * FabricPool * 라이센스는 인터넷 액세스 권한이 없는 사이트("어두운 사이트")나 FabricPool 미러를 사용하는 MetroCluster 시스템의 ONTAP 배포에만 유지됩니다. 이러한 구성을 사용하는 경우 System Manager 또는 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이센스를 설치합니다.</block>
+  <block id="d99641589694e93765fada1790db2a0e" category="section-title">특수 구성의 클러스터에 Cloud Tiering 라이센스 적용</block>
+  <block id="418b697bde99089a773007515cb577ff" category="paragraph">다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이센스를 사용할 수 있지만 일반적인 단일 노드 및 HA 구성 ONTAP 클러스터와 다른 방식으로 적용되어야 합니다.</block>
+  <block id="ec4ebd20c319e970c3f59b1f47802c0b" category="list-text">Tiering Mirror의 클러스터 구성(2개의 오브젝트 저장소에 연결된 클러스터)</block>
+  <block id="6d495d0178eaa5b62f4c916a1b7fcfc4" category="paragraph">MetroCluster 구성을 사용하는 FabricPool 미러는 현재 지원되지 않습니다</block>
+  <block id="04b39654e6e5a443553195d1e2779190" category="list-text">IBM Cloud Object Storage로 계층화된 클러스터</block>
+  <block id="c8fe0ffee9071759c56b9a7d98bae676" category="section-title">FabricPool 라이센스가 있는 기존 클러스터에 대한 프로세스입니다</block>
+  <block id="1451b23352470f925dac87a3da139fca" category="inline-link-macro">Cloud Tiering에서 이러한 특수 클러스터 유형을 확인하십시오</block>
+  <block id="f9e397eb4495d4b3c8a7097b4ea8b610" category="paragraph">언제 <block ref="20b85fbda0982633cbcc10be992f4ea5" category="inline-link-macro-rx"></block>, Cloud Tiering은 FabricPool 라이센스를 인식하여 디지털 지갑에 라이센스를 추가합니다. 이러한 클러스터는 평소와 같이 데이터를 계속 계층화합니다. FabricPool 라이센스가 만료되면 Cloud Tiering 라이센스를 구입해야 합니다.</block>
+  <block id="eb5050df74a7237bec4864cad6113b55" category="section-title">새로 생성된 클러스터에 대한 프로세스입니다</block>
+  <block id="9cf61e4fc9ad253b398c1c3be905176d" category="paragraph">Cloud Tiering의 일반 클러스터를 검색할 때 Cloud Tiering 인터페이스를 사용하여 계층화를 구성합니다. 이러한 경우 다음과 같은 동작이 발생합니다.</block>
+  <block id="dc0f43ea8bf22779955c42555129035b" category="list-text">"상위" Cloud Tiering 라이센스는 모든 클러스터가 계층화하는 데 사용되는 용량을 추적하여 라이센스에 충분한 용량이 있는지 확인합니다</block>
+  <block id="c2b88dd33c3d9222a13179594b55f74e" category="list-text">"하위" 계층화 라이센스가 각 클러스터에 자동으로 설치되어 Digital Wallet의 "상위" 라이센스와 통신합니다</block>
+  <block id="5c47f5b94c062cb59e1084e7104a35ad" category="paragraph">위에 나열된 두 가지 구성의 경우 Cloud Tiering 인터페이스를 사용하지 않고 System Manager 또는 ONTAP CLI를 사용하여 계층화를 구성해야 합니다. 따라서 이러한 경우에는 Cloud Tiering 인터페이스에서 이러한 클러스터에 "하위" 라이센스를 수동으로 푸시해야 합니다.</block>
+  <block id="6cd8bf8bc514f4f1998e5110df5d1db8" category="admonition">계층화 미러 구성을 위해 데이터가 서로 다른 두 오브젝트 스토리지 위치로 계층화되므로 두 위치로 계층화할 수 있는 충분한 용량의 라이센스를 구입해야 합니다.</block>
+  <block id="f457a5079118a07f91a021318abf923e" category="list-text">시스템 관리자 또는 ONTAP CLI를 사용하여 ONTAP 클러스터를 설치 및 구성합니다.</block>
+  <block id="a91bdb81c68f1a37a469fa1d5933a14b" category="paragraph">이 시점에서는 계층화를 구성하지 마십시오.</block>
+  <block id="a49fb32c3dc821374473edfc6c43950a" category="inline-link-macro">Cloud Tiering 라이센스를 구입합니다</block>
+  <block id="1bde59815d02b55060d6e8d13346a689" category="list-text"><block ref="7f252ad1d739a8ecccf6d5db96c80d7b" category="inline-link-macro-rx"></block> 새 클러스터 또는 클러스터에 필요한 용량</block>
+  <block id="cd545dee97443a0461021080f3101dc7" category="inline-link-macro">디지털 지갑에 라이센스를 추가합니다</block>
+  <block id="25b9b4168a6301bf6c9a74727e1b576b" category="list-text">Cloud Manager에서, <block ref="fe2e5134b9c10f1de1aa1ca1472fd7e2" category="inline-link-macro-rx"></block>.</block>
+  <block id="2ef78cf4a1d7bf5f762483337e16bb3b" category="inline-link-macro">새로운 클러스터를 만나보세요</block>
+  <block id="8ba93d5fbdf24a09ecf1780c63d1122d" category="list-text">클라우드 계층화, <block ref="7e9f01463f0c1bdc0791002bcf190788" category="inline-link-macro-rx"></block>.</block>
+  <block id="2577e5e77f7a58d0996e4f2dd6bcb05e" category="list-text">클러스터 대시보드에서 를 클릭합니다 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 클러스터에 대해 * 라이선스 배포 * 를 선택합니다.</block>
+  <block id="b84ead730259e42d0aaa3247f1351b36" category="inline-image-macro">ONTAP 클러스터에 계층화 라이센스를 구축하는 방법을 보여 주는 스크린샷</block>
+  <block id="54cfdff2d2e56824adbc46c622ea54b0" category="paragraph"><block ref="54cfdff2d2e56824adbc46c622ea54b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d6cde62acc90805ee457b7dc44915c98" category="list-text">Deploy License_대화상자에서 * deploy * 를 클릭합니다.</block>
+  <block id="9b0c8b391da3036b3219d496d996a102" category="paragraph">하위 라이센스가 ONTAP 클러스터에 배포됩니다.</block>
+  <block id="8b0a08ec64fa62214a614acb1efe653a" category="list-text">시스템 관리자 또는 ONTAP CLI로 돌아가서 계층화 구성을 설정하십시오.</block>
+  <block id="4bd3288276aa6f67f33d76d6902047a2" category="inline-link">FabricPool 미러 구성 정보</block>
+  <block id="72c2d35b547a9f20d83b2001c0deb1de" category="paragraph"><block ref="72c2d35b547a9f20d83b2001c0deb1de" category="inline-link-rx"></block></block>
+  <block id="653000cdcda1dc1026b9ce4d1c8f33bd" category="inline-link">IBM 클라우드 오브젝트 스토리지로 계층화 정보</block>
+  <block id="5bc01400af176dafcc4180cd4038b69d" category="paragraph"><block ref="5bc01400af176dafcc4180cd4038b69d" category="inline-link-rx"></block></block>
 </blocks>

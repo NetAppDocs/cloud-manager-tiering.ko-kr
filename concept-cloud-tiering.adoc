@@ -18,10 +18,9 @@ NetApp의 Cloud Tiering 서비스는 비활성 데이터를 사내 ONTAP 클러�
 
 Cloud Tiering 서비스는 _FabricPool_의 기능을 활용합니다. FabricPool는 데이터를 저비용 오브젝트 스토리지로 자동 계층화하는 NetApp Data Fabric 기술입니다. 활성(핫) 데이터는 로컬 계층(사내 ONTAP 애그리게이트)에 남아 있고 비활성(콜드) 데이터는 클라우드 계층으로 이동되며 ONTAP 데이터 효율성은 그대로 유지됩니다.
 
-원래 AFF 및 All-SSD 애그리게이트를 포함한 FAS 시스템에서 지원되었지만 ONTAP 9.8부터는 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 모두 계층화할 수 있습니다. 을 참조하십시오 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html["FabricPool 사용에 대한 고려 사항 및 요구 사항"^] 를 참조하십시오.
+원래 ONTAP 9.8부터 All-SSD 애그리게이트를 포함한 AFF, FAS 및 ONTAP Select 시스템에서 지원되어 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 함께 계층화할 수 있습니다. 을 참조하십시오 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html["FabricPool 사용에 대한 고려 사항 및 요구 사항"^] 를 참조하십시오.
 
-
-TIP: Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.
+Cloud Tiering 라이센스는 FabricPool 미러 구성(MetroCluster 구성 제외)에 있는 클러스터와도 공유할 수 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만 https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations["이러한 유형의 클러스터에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다."]
 
 
 
@@ -54,6 +53,8 @@ TIP: Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다
 * S3 호환 오브젝트 스토리지
 * NetApp StorageGRID를 참조하십시오
 
+
+Cloud Tiering 라이센스는 데이터를 IBM Cloud Object Storage로 계층화하는 클러스터와 공유할 수도 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만 https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations["이러한 유형의 구성에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다."]
 
 
 NOTE: NAS 볼륨의 데이터를 퍼블릭 클라우드 또는 StorageGRID와 같은 프라이빗 클라우드로 계층화할 수 있습니다. SAN 프로토콜에서 액세스하는 데이터를 계층화할 경우 연결 고려사항으로 인해 프라이빗 클라우드를 사용하는 것이 좋습니다.

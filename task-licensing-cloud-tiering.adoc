@@ -105,9 +105,9 @@ Cloud Manager의 Digital Wallet 페이지를 사용하여 Cloud Tiering BYOL 라
 
 === 2021년 8월 21일부터 새로운 Cloud Tiering BYOL 라이센싱 제공
 
-클라우드 계층화 서비스를 사용하는 Cloud Manager 내에서 지원되는 계층화 구성을 위해 2021년 8월에 새로운 * Cloud Tiering * 라이센스가 도입되었습니다. Cloud Manager는 현재 Amazon S3, Azure Blob 스토리지, Google Cloud Storage, S3 호환 오브젝트 스토리지 및 StorageGRID와 같은 클라우드 스토리지에 대한 계층화를 지원합니다.
+클라우드 계층화 서비스를 사용하는 Cloud Manager 내에서 지원되는 계층화 구성을 위해 2021년 8월에 새로운 * Cloud Tiering * 라이센스가 도입되었습니다. Cloud Manager는 현재 Amazon S3, Azure Blob 스토리지, Google Cloud Storage, S3 호환 오브젝트 스토리지, IBM Cloud Object Storage 및 StorageGRID와 같은 클라우드 스토리지에 대한 계층화를 지원합니다.
 
-이전에 온프레미스 ONTAP 데이터를 클라우드로 계층화하기 위해 사용되었을 수 있는 * FabricPool * 라이센스는 인터넷에 액세스할 수 없는 사이트("어두운 사이트"라고도 함)에서 ONTAP 배포에 대해서만 유지됩니다. 사이트 구축이 어두운 경우 System Manager 또는 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이센스를 설치합니다.
+이전에 온프레미스 ONTAP 데이터를 클라우드로 계층화하는데 사용한 * FabricPool * 라이센스는 인터넷 액세스 권한이 없는 사이트("어두운 사이트")나 FabricPool 미러를 사용하는 MetroCluster 시스템의 ONTAP 배포에만 유지됩니다. 이러한 구성을 사용하는 경우 System Manager 또는 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이센스를 설치합니다.
 
 
 TIP: StorageGRID로 계층화하려면 FabricPool 또는 Cloud Tiering 라이센스가 필요하지 않습니다.
@@ -215,3 +215,62 @@ image:screenshot_services_license_update.png["특정 서비스에 대한 라이�
 
 
 Cloud Manager에서 라이센스를 업데이트하여 Cloud Tiering 서비스를 계속 활성화합니다.
+
+
+
+== 특수 구성의 클러스터에 Cloud Tiering 라이센스 적용
+
+다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이센스를 사용할 수 있지만 일반적인 단일 노드 및 HA 구성 ONTAP 클러스터와 다른 방식으로 적용되어야 합니다.
+
+* Tiering Mirror의 클러스터 구성(2개의 오브젝트 저장소에 연결된 클러스터)
++
+MetroCluster 구성을 사용하는 FabricPool 미러는 현재 지원되지 않습니다
+
+* IBM Cloud Object Storage로 계층화된 클러스터
+
+
+
+
+=== FabricPool 라이센스가 있는 기존 클러스터에 대한 프로세스입니다
+
+언제 link:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["Cloud Tiering에서 이러한 특수 클러스터 유형을 확인하십시오"], Cloud Tiering은 FabricPool 라이센스를 인식하여 디지털 지갑에 라이센스를 추가합니다. 이러한 클러스터는 평소와 같이 데이터를 계속 계층화합니다. FabricPool 라이센스가 만료되면 Cloud Tiering 라이센스를 구입해야 합니다.
+
+
+
+=== 새로 생성된 클러스터에 대한 프로세스입니다
+
+Cloud Tiering의 일반 클러스터를 검색할 때 Cloud Tiering 인터페이스를 사용하여 계층화를 구성합니다. 이러한 경우 다음과 같은 동작이 발생합니다.
+
+. "상위" Cloud Tiering 라이센스는 모든 클러스터가 계층화하는 데 사용되는 용량을 추적하여 라이센스에 충분한 용량이 있는지 확인합니다
+. "하위" 계층화 라이센스가 각 클러스터에 자동으로 설치되어 Digital Wallet의 "상위" 라이센스와 통신합니다
+
+
+위에 나열된 두 가지 구성의 경우 Cloud Tiering 인터페이스를 사용하지 않고 System Manager 또는 ONTAP CLI를 사용하여 계층화를 구성해야 합니다. 따라서 이러한 경우에는 Cloud Tiering 인터페이스에서 이러한 클러스터에 "하위" 라이센스를 수동으로 푸시해야 합니다.
+
+
+TIP: 계층화 미러 구성을 위해 데이터가 서로 다른 두 오브젝트 스토리지 위치로 계층화되므로 두 위치로 계층화할 수 있는 충분한 용량의 라이센스를 구입해야 합니다.
+
+.단계
+. 시스템 관리자 또는 ONTAP CLI를 사용하여 ONTAP 클러스터를 설치 및 구성합니다.
++
+이 시점에서는 계층화를 구성하지 마십시오.
+
+. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license["Cloud Tiering 라이센스를 구입합니다"] 새 클러스터 또는 클러스터에 필요한 용량
+. Cloud Manager에서, link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account["디지털 지갑에 라이센스를 추가합니다"].
+. 클라우드 계층화, link:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["새로운 클러스터를 만나보세요"].
+. 클러스터 대시보드에서 를 클릭합니다 image:screenshot_horizontal_more_button.gif["추가 아이콘"] 클러스터에 대해 * 라이선스 배포 * 를 선택합니다.
++
+image:screenshot_tiering_deploy_license.png["ONTAP 클러스터에 계층화 라이센스를 구축하는 방법을 보여 주는 스크린샷"]
+
+. Deploy License_대화상자에서 * deploy * 를 클릭합니다.
++
+하위 라이센스가 ONTAP 클러스터에 배포됩니다.
+
+. 시스템 관리자 또는 ONTAP CLI로 돌아가서 계층화 구성을 설정하십시오.
++
+https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html["FabricPool 미러 구성 정보"^]
+
++
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html["IBM 클라우드 오브젝트 스토리지로 계층화 정보"^]
+
+
