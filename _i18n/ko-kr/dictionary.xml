@@ -479,22 +479,8 @@
   <block id="713c8c828c3a489fe12e8ff542eb2cf5" category="doc">Cloud Tiering 기술 FAQ</block>
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
   <block id="f44f871d75a3f8fcde43750355e19ee9" category="paragraph">다음 질문은 ONTAP과 관련이 있습니다.</block>
-  <block id="bcfdd572996c92a17253dd02c94ff05a" category="section-title">ONTAP 클러스터에 대한 요구사항은 무엇입니까?</block>
-  <block id="54f08daff48062927bd5b6e1520b9cfb" category="paragraph">콜드 데이터의 계층화 위치에 따라 달라짐 다음을 참조하십시오.</block>
-  <block id="e840aa898e671e53d4915f12ee8a5246" category="list-text"><block ref="e840aa898e671e53d4915f12ee8a5246" category="inline-link-macro-rx"></block></block>
-  <block id="732f8e26a83d5646c5dd2f3b4d84df9b" category="list-text"><block ref="732f8e26a83d5646c5dd2f3b4d84df9b" category="inline-link-macro-rx"></block></block>
   <block id="be0b62dd35badd1c098da00c97d5157d" category="inline-link-macro">사내 ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 계층화</block>
-  <block id="e9e8757e1d3fdb62e5334f4f52b5f2ae" category="list-text"><block ref="e9e8757e1d3fdb62e5334f4f52b5f2ae" category="inline-link-macro-rx"></block></block>
-  <block id="b6044fdf5525c992857d43d67b37c602" category="list-text"><block ref="b6044fdf5525c992857d43d67b37c602" category="inline-link-macro-rx"></block></block>
-  <block id="d50216d7a2176675e25061e3259b0fb1" category="list-text"><block ref="d50216d7a2176675e25061e3259b0fb1" category="inline-link-macro-rx"></block></block>
-  <block id="e6665ff477e45a0cedda0dbc3bab0e98" category="section-title">Cloud Tiering은 비활성 데이터 보고를 지원합니까?</block>
-  <block id="8b1c9ee3f402b49f0590fe82777e52c0" category="paragraph">예. Cloud Tiering은 각 애그리게이트에 대해 비활성 데이터 보고를 지원합니다. 이 설정을 통해 저비용 오브젝트 스토리지로 계층화할 수 있는 비활성 데이터의 양을 파악할 수 있습니다.</block>
-  <block id="cfc2bd864df293e5fa96159d48f1bf8a" category="admonition">Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD 애그리게이트에 대해 비활성 데이터 보고를 지원합니다.</block>
-  <block id="fd5a180b1aa0e05f447f1549bd1b6619" category="section-title">NAS 볼륨 및 SAN 볼륨의 데이터를 계층화할 수 있습니까?</block>
   <block id="ca9d6825e8e49fc14bc0fe4d1949090e" category="section-title">Cloud Volumes ONTAP는 어떻습니까?</block>
-  <block id="a89eb92e67fd2797dc2f3fa39a6f0792" category="paragraph">Cloud Volumes ONTAP 시스템이 있는 경우 클러스터 대시보드에서 하이브리드 클라우드 인프라의 데이터 계층화를 완전히 파악할 수 있습니다.</block>
-  <block id="6586ab793558594cad75789c4381a459" category="paragraph">클러스터 대시보드에서 운영 상태, 현재 절감 효과, 절약 기회, 볼륨 및 Aggregate와 같은 온프레미스 ONTAP 클러스터와 유사한 계층화 정보를 확인할 수 있습니다.</block>
-  <block id="f004a8cb46c29c98ed7882ef7bd2d0b9" category="paragraph">Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. Cloud Tiering에서 Cloud Volumes ONTAP의 데이터 계층화를 설정할 수 없습니다.<block ref="9af043ec07eda2b8761144420bc7ff5f" category="inline-link-rx"></block>.</block>
   <block id="670aaecb1a526fbed439dad3ec353a96" category="section-title">오브젝트 스토리지</block>
   <block id="6145ae0abac8e546e57c1ba1c83ea8f8" category="paragraph">다음 질문은 오브젝트 스토리지와 관련이 있습니다.</block>
   <block id="8dc2f269c974385fca1dd7d4bf3a051f" category="section-title">어떤 오브젝트 스토리지 공급자가 지원됩니까?</block>
@@ -521,38 +507,16 @@
   <block id="76897a6305088a3a5d1fece5a33249ea" category="paragraph">예. Cloud Tiering은 특정 일 수가 지나면 기본 스토리지 클래스/액세스 계층에서 보다 비용 효율적인 계층으로 데이터를 전환할 수 있도록 라이프사이클 관리를 설정할 수 있습니다.</block>
   <block id="984a9d1964e75fac051f5e1514887373" category="paragraph">라이프사이클 규칙은 Amazon S3 및 Google Cloud 스토리지에 대해 선택한 버킷의 모든 오브젝트 및 Azure Blob에 대해 선택한 스토리지 계정의 모든 컨테이너에 적용됩니다.</block>
   <block id="fe4a785cf549e843e958f443c4baf0fe" category="section-title">커넥터</block>
-  <block id="b98538bd234ddf101a9b69e18a449c2d" category="paragraph">다음 질문은 커넥터와 관련이 있습니다.</block>
   <block id="417cf0f3678f81efde443c4a85c2acb8" category="section-title">커넥터를 어디에 설치해야 합니까?</block>
   <block id="ca4f429ffa25591e74f6645a3406d7cd" category="list-text">데이터를 S3로 계층화할 때 Connector는 AWS VPC 또는 사내에 상주할 수 있습니다.</block>
   <block id="5eade04032997f0b51380954af58692a" category="list-text">데이터를 Blob 저장소에 계층화할 때 Connector는 Azure VNET 또는 사내에 상주할 수 있습니다.</block>
   <block id="b52bc8ec3f512acf9ca7f97350155425" category="list-text">데이터를 Google 클라우드 스토리지로 계층화할 때 Connector는 Google Cloud Platform VPC에 상주해야 합니다.</block>
   <block id="98dae1b8caf3c488a405b3624212dfe9" category="list-text">데이터를 StorageGRID 또는 다른 S3 호환 스토리지 공급자와 계층화할 경우 커넥터가 사내에 있어야 합니다.</block>
-  <block id="a5fa5746370b608090b994a97b49e98b" category="section-title">네트워킹</block>
-  <block id="37a6612a08909d34d57127975e9d38f6" category="paragraph">다음 질문은 네트워킹과 관련이 있습니다.</block>
   <block id="ca2633366002c259c5cb1fa92bcb6f34" category="section-title">네트워킹 요구 사항은 무엇입니까?</block>
   <block id="a857e8cbfb2339a889d916977b65ec57" category="list-text">ONTAP 클러스터는 포트 443을 통해 객체 스토리지 공급자에 대한 HTTPS 연결을 시작합니다.</block>
   <block id="e66bf922da0fd7062be32c8f9adf5f7c" category="list-text">StorageGRID의 경우 ONTAP 클러스터는 사용자가 지정한 포트를 통해 StorageGRID에 HTTPS 연결을 시작합니다(계층화 설정 중에 포트 구성 가능).</block>
   <block id="5a7b146826969db8fcec8237bb37ca9e" category="list-text">Connector는 포트 443을 통해 ONTAP 클러스터, 오브젝트 저장소 및 Cloud Tiering 서비스에 아웃바운드 HTTPS 연결을 필요로 합니다.</block>
   <block id="2f3ccf86e44d85ac02e49b28a63a02ba" category="paragraph">자세한 내용은 다음을 참조하십시오.</block>
-  <block id="6210ce9e459f6f7906c54777241e8e60" category="list-text"><block ref="6210ce9e459f6f7906c54777241e8e60" category="inline-link-macro-rx"></block></block>
-  <block id="b69744f0287fc376a04b40d2175488e8" category="list-text"><block ref="b69744f0287fc376a04b40d2175488e8" category="inline-link-macro-rx"></block></block>
-  <block id="3203d9b009980256b26bb52b34d66725" category="list-text"><block ref="3203d9b009980256b26bb52b34d66725" category="inline-link-macro-rx"></block></block>
-  <block id="c0fd9ad13373a5f80c5206c79b2cec2a" category="list-text"><block ref="c0fd9ad13373a5f80c5206c79b2cec2a" category="inline-link-macro-rx"></block></block>
-  <block id="09c6943c8caf27166a1a55855f099dda" category="list-text"><block ref="09c6943c8caf27166a1a55855f099dda" category="inline-link-macro-rx"></block></block>
-  <block id="d08ccf52b4cdd08e41cfb99ec42e0b29" category="section-title">권한</block>
-  <block id="f62dcb7386eaf506309de5160bd02c50" category="paragraph">다음 질문은 권한과 관련이 있습니다.</block>
-  <block id="4522a1d4b0d9206d13528cf542a074b3" category="section-title">AWS에 필요한 사용 권한은 무엇입니까?</block>
-  <block id="130be31a684effcc1ca233dec9da47e3" category="inline-link-macro">S3 버킷을 관리합니다</block>
-  <block id="0639b88e83c9fb75f608ce27a4447149" category="section-title">Azure에 필요한 사용 권한은 무엇입니까?</block>
-  <block id="516e07b4e60ac0b13608986f125a4fba" category="paragraph">Cloud Manager에 제공해야 하는 권한 이외에 추가 권한이 필요하지 않습니다.</block>
-  <block id="fe3f9db90b5b9920406818b6f2f9b91e" category="section-title">Google Cloud Platform에 필요한 사용 권한은 무엇입니까?</block>
-  <block id="e8cb0b84cef9a781a29475aba9138119" category="inline-link-macro">스토리지 액세스 키가 있는 서비스 계정입니다</block>
-  <block id="12c393c7d96a847b834f4ea7fd4cfb18" category="paragraph">에 대한 스토리지 관리 권한이 필요합니다 <block ref="6c3c925162f58f657b5fbeaa3563c6dd" category="inline-link-macro-rx"></block>.</block>
-  <block id="4c22f29fabd1d7091b7c451833ecdce4" category="section-title">StorageGRID에 필요한 권한은 무엇입니까?</block>
-  <block id="b9e0a0d3dfde0dac493e32dc02dc43a7" category="inline-link-macro">S3 권한이 필요합니다</block>
-  <block id="937f664f7c63d50553031b05e7756597" category="paragraph"><block ref="351190b29c1f7a3844dd35967fd2ae54" category="inline-link-macro-rx"></block>.</block>
-  <block id="5e569ca5b951c17bf4802afb37a89bf3" category="section-title">S3 호환 오브젝트 스토리지에 필요한 권한은 무엇입니까?</block>
-  <block id="8c006bf4272613635c13c9ff5db1f075" category="paragraph"><block ref="d2239b3c87c0305d493f4a0ee8888f47" category="inline-link-macro-rx"></block>.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
   <block id="4940124e8487cb4ea36f1511a195cf66" category="inline-link-macro">Cloud Manager 3.9에 대한 고지 사항</block>
   <block id="c069fcc68c5dfa73ccc99924c836cae9" category="list-text"><block ref="c069fcc68c5dfa73ccc99924c836cae9" category="inline-link-macro-rx"></block></block>
@@ -855,7 +819,6 @@
   <block id="cb6793246bf8a1d9872b2f128304ed8c" category="list-text">Glacier 빠른 검색</block>
   <block id="ce34acaac9ca080c6cf882736711598e" category="admonition">Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다.<block ref="9af043ec07eda2b8761144420bc7ff5f" category="inline-link-rx"></block>.</block>
   <block id="1c8b696d9c11af6b6bfbc6c0a7e4a61f" category="list-text">마찬가지로, Cloud Backup은 계층화 정책을 통해 설정된 볼륨의 영향을 받습니다.<block ref="4e28c1a1682c24a0aaf57d23ca62ce4e" category="inline-link-rx"></block>.</block>
-  <block id="7399e8f6e7163289ee0ecfe3413b3c7a" category="paragraph">권한이 필요합니다 <block ref="169af6556d92f8f176136d72d4ee3858" category="inline-link-macro-rx"></block>.</block>
   <block id="6cb8333618f00b139da255e7f5a82ea0" category="section-title">이제 Amazon S3 Glacier Instant Retrieval 저장소 클래스를 사용할 수 있습니다</block>
   <block id="199090bb5d58df554b18a5cb68acb0b7" category="section-title">Cloud Tiering은 ONTAP Select 시스템에서 완벽하게 검증되었습니다</block>
   <block id="a74220a8acc78d1041352afb305af18f" category="paragraph">AFF 및 FAS 시스템의 데이터를 계층화할 뿐만 아니라, 이제 ONTAP Select 시스템의 비활성 데이터를 클라우드 스토리지로 계층화할 수 있습니다.</block>
@@ -925,10 +888,7 @@
   <block id="2435df85f1fbddfaa74ed9d9b389396e" category="inline-link">이러한 유형의 클러스터에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다.</block>
   <block id="602d3c419c8a2f0671f1f332facbd3f6" category="paragraph">Cloud Tiering 라이센스는 FabricPool 미러 구성(MetroCluster 구성 제외)에 있는 클러스터와도 공유할 수 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만<block ref="f01d00e65c71afcc96316056bf32ae1d" category="inline-link-rx"></block></block>
   <block id="17284df03fb9788b01cced519aa7b242" category="inline-link">이러한 유형의 구성에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다.</block>
-  <block id="41229158c41a9daeb4112753b1bf2ea1" category="paragraph">Cloud Tiering 라이센스는 데이터를 IBM Cloud Object Storage로 계층화하는 클러스터와 공유할 수도 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만<block ref="ed2970faba694b446adb4cf5afc34bcc" category="inline-link-rx"></block></block>
-  <block id="dcc42a339dcf66c4ea4b130eaa04710e" category="paragraph">클라우드 계층화는 단일 노드 및 고가용성 AFF, FAS, ONTAP Select 클러스터에서 지원됩니다. FabricPool 미러 구성의 클러스터도 지원되지만 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 합니다.</block>
   <block id="dfbee056730af589714f6061683bf3c8" category="paragraph">Cloud Tiering은 다음 오브젝트 스토리지 공급자를 지원합니다.</block>
-  <block id="5463fae7936bec29b8ec624ad9b684b3" category="list-text">IBM 클라우드 오브젝트 스토리지(단, FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 함)</block>
   <block id="d3e8cd2e370974f27de1b310b4aa8cb3" category="section-title">2022년 5월 3일</block>
   <block id="a74300b6b08791dda4f54d473a58e17a" category="section-title">Cloud Tiering 라이센스는 추가 클러스터 구성을 지원합니다</block>
   <block id="afacb33ad65bcd63eb15aeba04b4aed0" category="inline-link">이러한 유형의 클러스터에 대한 라이센스 부여 및 구성 방법을 확인하십시오.</block>
@@ -938,9 +898,7 @@
   <block id="c37d8d783a15bb3dc29d360fd96058fa" category="paragraph">클라우드 계층화 서비스를 사용하는 Cloud Manager 내에서 지원되는 계층화 구성을 위해 2021년 8월에 새로운 * Cloud Tiering * 라이센스가 도입되었습니다. Cloud Manager는 현재 Amazon S3, Azure Blob 스토리지, Google Cloud Storage, S3 호환 오브젝트 스토리지, IBM Cloud Object Storage 및 StorageGRID와 같은 클라우드 스토리지에 대한 계층화를 지원합니다.</block>
   <block id="6ddd4d2b3e22e1f0dbfa3f2cfb99611d" category="paragraph">이전에 온프레미스 ONTAP 데이터를 클라우드로 계층화하는데 사용한 * FabricPool * 라이센스는 인터넷 액세스 권한이 없는 사이트("어두운 사이트")나 FabricPool 미러를 사용하는 MetroCluster 시스템의 ONTAP 배포에만 유지됩니다. 이러한 구성을 사용하는 경우 System Manager 또는 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이센스를 설치합니다.</block>
   <block id="d99641589694e93765fada1790db2a0e" category="section-title">특수 구성의 클러스터에 Cloud Tiering 라이센스 적용</block>
-  <block id="418b697bde99089a773007515cb577ff" category="paragraph">다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이센스를 사용할 수 있지만 일반적인 단일 노드 및 HA 구성 ONTAP 클러스터와 다른 방식으로 적용되어야 합니다.</block>
   <block id="ec4ebd20c319e970c3f59b1f47802c0b" category="list-text">Tiering Mirror의 클러스터 구성(2개의 오브젝트 저장소에 연결된 클러스터)</block>
-  <block id="6d495d0178eaa5b62f4c916a1b7fcfc4" category="paragraph">MetroCluster 구성을 사용하는 FabricPool 미러는 현재 지원되지 않습니다</block>
   <block id="04b39654e6e5a443553195d1e2779190" category="list-text">IBM Cloud Object Storage로 계층화된 클러스터</block>
   <block id="c8fe0ffee9071759c56b9a7d98bae676" category="section-title">FabricPool 라이센스가 있는 기존 클러스터에 대한 프로세스입니다</block>
   <block id="1451b23352470f925dac87a3da139fca" category="inline-link-macro">Cloud Tiering에서 이러한 특수 클러스터 유형을 확인하십시오</block>
@@ -969,4 +927,174 @@
   <block id="72c2d35b547a9f20d83b2001c0deb1de" category="paragraph"><block ref="72c2d35b547a9f20d83b2001c0deb1de" category="inline-link-rx"></block></block>
   <block id="653000cdcda1dc1026b9ce4d1c8f33bd" category="inline-link">IBM 클라우드 오브젝트 스토리지로 계층화 정보</block>
   <block id="5bc01400af176dafcc4180cd4038b69d" category="paragraph"><block ref="5bc01400af176dafcc4180cd4038b69d" category="inline-link-rx"></block></block>
+  <block id="4380a240602c0c6f68e3e1f76af87ade" category="paragraph">Cloud Tiering 라이센스는 데이터를 IBM Cloud Object Storage로 계층화하는 클러스터와 공유할 수도 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만<block ref="ed2970faba694b446adb4cf5afc34bcc" category="inline-link-rx"></block></block>
+  <block id="1457e49f8dccec856889afc7198d7b7f" category="section-title">Cloud Tiering 서비스</block>
+  <block id="38f452586e2a055585812c12639a1c00" category="paragraph">다음 FAQ는 Cloud Tiering의 작동 방식과 관련이 있습니다.</block>
+  <block id="56f1d5aa6fc7801567f63a1a34bbe555" category="section-title">Cloud Tiering 서비스를 사용하면 어떤 이점이 있습니까?</block>
+  <block id="e6f922dcb93508c2afcbdd85566ed3b8" category="paragraph">Cloud Tiering은 빠른 데이터 증가에 따른 당면 과제를 해결하므로 다음과 같은 이점이 있습니다.</block>
+  <block id="a1f517fb951a64f2e9c18d82ac80635c" category="list-text">데이터 센터를 클라우드로 손쉽게 확장하므로 최대 50배 더 많은 공간을 확보할 수 있습니다</block>
+  <block id="b5d47b5d2ee718d3ed7be4705f31fc79" category="list-text">스토리지 최적화를 통해 평균 70%의 스토리지 비용이 절감됩니다</block>
+  <block id="8a1f08e20da0aa3ca605937149dc8c58" category="list-text">총 소유 비용이 평균 30% 절감되었습니다</block>
+  <block id="a5ab98909585acf3290da555f1d3efd4" category="list-text">애플리케이션을 리팩토링할 필요가 없습니다</block>
+  <block id="cfc39acc8a57a03f82a0c4f08264a41a" category="section-title">클라우드로 계층화하는데 어떤 종류의 데이터가 유용합니까?</block>
+  <block id="6774ec5d602722ba9f874d9a584d885f" category="paragraph">기본적으로 운영 스토리지 시스템과 2차 스토리지 시스템 모두에서 비활성 상태로 간주되는 데이터는 클라우드로 이동하는 데 적합한 대상입니다. 운영 시스템에서 이러한 데이터에는 스냅샷, 기록 레코드 및 완료된 프로젝트가 포함될 수 있습니다. 보조 시스템의 경우 DR 및 백업을 위해 만들어진 기본 데이터의 복사본이 포함된 모든 볼륨이 여기에 포함됩니다.</block>
+  <block id="b7fdfbf21e02165dcc2bf4d084323e57" category="section-title">NAS 볼륨과 SAN 볼륨 모두의 데이터를 계층화할 수 있습니까?</block>
+  <block id="b9d68db9eacfc19cb90d962488a81e37" category="paragraph">예. NAS 볼륨의 데이터를 퍼블릭 클라우드 또는 StorageGRID와 같은 프라이빗 클라우드로 계층화할 수 있습니다. SAN 프로토콜에서 액세스하는 데이터를 계층화할 경우 SAN 프로토콜이 NAS보다 연결 문제에 더 민감하기 때문에 프라이빗 클라우드를 사용하는 것이 좋습니다.</block>
+  <block id="16b6de392c01a8e8b18c95209db4abc2" category="section-title">비활성 데이터 또는 자주 사용하지 않는 데이터의 정의는 무엇이며 어떻게 제어합니까?</block>
+  <block id="c8d0b7a1b682a66185f312e984fa9632" category="paragraph">콜드 데이터라고도 할 수 있는 것에 대한 정의는 "일정 시간 동안 액세스하지 않은 볼륨 블록(메타데이터 제외)"입니다. "시간"은 Cooling-days라는 계층화 정책 속성에 의해 결정됩니다.</block>
+  <block id="5e7895e85d2a8ce94a95b1e2d63c9a62" category="section-title">Cloud Tiering을 사용하면 클라우드 계층에서 스토리지 효율성을 유지할 수 있습니까?</block>
+  <block id="ae3e415a4fc13a56be5e1868c9aa2a6e" category="paragraph">예. 데이터를 클라우드 계층으로 이동할 때 압축, 중복제거, 컴팩션과 같은 ONTAP 볼륨 레벨 스토리지 효율성이 유지됩니다.</block>
+  <block id="fe862e8407cd35832c11efb6a90397ff" category="section-title">FabricPool와 클라우드 계층화의 차이점은 무엇입니까?</block>
+  <block id="7f7e71c666ac6e3a63bc3a7132680d3e" category="paragraph">FabricPool는 ONTAP의 계층화 기술로, ONTAP CLI 및 System Manager를 통해 자가 관리되거나 클라우드 계층화를 통해 서비스형 관리될 수 있습니다. Cloud Tiering은 ONTAP와 클라우드 모두에서 고급 자동화 프로세스를 통해 FabricPool를 관리 서비스로 전환함으로써 하이브리드 및 멀티 클라우드 구축 전반에서 향상된 가시성과 계층화 제어 기능을 제공합니다.</block>
+  <block id="0dcf524393e05cee3deb3f046b007d6a" category="section-title">데이터를 클라우드로 계층화해서 재해 복구 또는 백업/아카이브에 사용할 수 있습니까?</block>
+  <block id="11a0d2337d67ae21839695ee035fc0a0" category="paragraph">아니요 볼륨의 메타데이터는 성능 계층에서 계층화되지 않으므로 오브젝트 스토리지에 저장된 데이터에 직접 액세스할 수 없습니다.</block>
+  <block id="ede19369ca5aebd79f174cfded223842" category="paragraph">하지만 Cloud Tiering을 사용하면 보조 시스템 및 SnapMirror 대상 볼륨(DP 볼륨)에서 이를 사용하여 모든 데이터를 계층화하여(메타데이터 제외) 데이터 센터의 설치 공간과 TCO를 줄임으로써 비용 효율적인 백업 및 DR을 실현할 수 있습니다.</block>
+  <block id="889a2ba97a353c789347d312f006b7c8" category="section-title">Cloud Tiering이 볼륨 또는 애그리게이트 레벨에 적용됩니까?</block>
+  <block id="20ff712f2c649ea611970e47fc3bb71d" category="paragraph">볼륨 레벨에서 Cloud Tiering은 계층화 정책을 각 볼륨과 연결하여 사용합니다. 콜드 데이터 식별은 블록 수준에서 수행됩니다.</block>
+  <block id="0a418cc130f24bc61fb16dfcfa3beaf8" category="section-title">Cloud Tiering은 어떤 블록을 클라우드에 계층화할지 어떻게 결정합니까?</block>
+  <block id="339f31b903bd01f3382f7efda1a872be" category="inline-link-macro">볼륨 계층화 정책</block>
+  <block id="679627f92e200827a33b3bcdf0e0bb7f" category="paragraph">볼륨과 연관된 계층화 정책은 계층화와 시기를 제어하는 메커니즘입니다. 이 정책은 데이터 블록 유형(스냅샷, 사용자 데이터 또는 둘 다) 및 냉각 기간을 정의합니다. 을 참조하십시오 <block ref="7c830597cf59636867131d9763d1dea8" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="4f138351e1daf377d2327bde6f6b16ce" category="section-title">Cloud Tiering은 비활성 데이터 보고를 지원합니까?</block>
+  <block id="5f7c4d8270cb1dd98f5c715afa143202" category="paragraph">예. Cloud Tiering은 각 애그리게이트에 IDR(Inactive Data Reporting)을 활성화합니다. 이 설정을 통해 저비용 오브젝트 스토리지로 계층화할 수 있는 비활성 데이터의 양을 파악할 수 있습니다.</block>
+  <block id="cd9a75b2f2fe179ebd8fccd8eeb8bb03" category="section-title">IDR을 실행하는 순간부터 정보를 표시하는 데 얼마나 걸립니까?</block>
+  <block id="0ea5aed815f8939cfee05aa5fc613dc7" category="paragraph">구성된 냉각 기간이 지난 후 IDR이 정보를 표시하기 시작합니다. IDR은 ONTAP 9.7 이하 버전을 사용하여 조정되지 않는 냉각 기간을 31일로 했습니다. ONTAP 9.8부터 IDR 냉각 기간은 최대 183일까지 구성할 수 있습니다.</block>
+  <block id="4e36d3a72c9251eabfe11ee25feb51e3" category="section-title">추가 수익 실적을</block>
+  <block id="c7c3cbbc8ffdc87ba6ed248d75026811" category="paragraph">다음 FAQ는 Cloud Tiering의 사용 라이센스 및 비용과 관련이 있습니다.</block>
+  <block id="67dcf2ad2c76ac9202261636a09b836b" category="section-title">Cloud Tiering의 비용은 얼마입니까?</block>
+  <block id="36d19ca1264fd7d33c40adad1e94f58f" category="paragraph">콜드 데이터를 퍼블릭 클라우드에 계층화할 경우:</block>
+  <block id="76e8ceb798ce071cb7a385224a57c607" category="list-text">PAYGO(pay-as-you-go)의 경우 사용량 기반 구독: GB/월 $0.05.</block>
+  <block id="d70dcca5b166b4d601318556ff7b9c0b" category="list-text">연간(BYOL)의 경우 기간 기반 가입형: GB당 $0.033/월 기준</block>
+  <block id="2d8a56626e9ef86924e67836a8d5c8da" category="paragraph">콜드 데이터를 NetApp StorageGRID 시스템(프라이빗 클라우드)에 계층화할 경우 비용이 들지 않습니다.</block>
+  <block id="a901d6a825e66cb01eb47cc7f8078f70" category="section-title">동일한 ONTAP 클러스터에 BYOL 및 PAYGO 라이센스를 모두 사용할 수 있습니까?</block>
+  <block id="51f82ca656528cf0a0e25d3afcf4094b" category="paragraph">예. Cloud Tiering을 사용하면 BYOL 라이센스, PAYGO 구독 또는 이 둘을 결합하여 사용할 수 있습니다.</block>
+  <block id="df633ebdc2836fc65b2b5c8df3071fad" category="section-title">BYOL 용량 제한에 도달하면 어떻게 됩니까?</block>
+  <block id="2a4ef466f4a2aaf004e4bd8d6ee2190f" category="paragraph">BYOL 용량 제한에 도달하면 새로운 콜드 데이터의 계층화가 중지되고 이전의 모든 계층형 데이터에 액세스할 수 있습니다. PAYGO 마켓플레이스에 _Cloud Manager - Deploy &amp; Manage Cloud Data Services_ 가입이 있는 경우, 새로운 콜드 데이터가 계속해서 오브젝트 스토리지로 계층화되고 사용 시 요금이 부과됩니다.</block>
+  <block id="01fc89841bd324e9a84c964564f22b64" category="section-title">Cloud Tiering 라이센스에는 클라우드 공급자의 이그레스 비용이 포함되어 있습니까?</block>
+  <block id="9dad9dd39241a9273189835c0c05bca9" category="paragraph">아니요, 그렇지 않습니다.</block>
+  <block id="4db80c7f4174dd6b7d23b536c737df16" category="section-title">사내 시스템의 재수화 비용은 클라우드 공급자가 부담하는 외부 비용에 따라 다릅니까?</block>
+  <block id="9c84419d8ba3386b34c3566885dd6724" category="paragraph">예. 퍼블릭 클라우드에서 읽을 때는 이그레스 비용이 부과됩니다.</block>
+  <block id="11006dd4b5de1e92671cb84abb3d0d44" category="section-title">클라우드 요금은 어떻게 예측합니까? Cloud Tiering의 "가상" 모드가 있습니까?</block>
+  <block id="4847e034bb0a55fcbc8a3380d6a3ab80" category="inline-link">설치하고</block>
+  <block id="3a580f142203677f1f0bc30898f63f53" category="inline-link">Azure를 지원합니다</block>
+  <block id="56ef2682280ac110060b881925a87b80" category="inline-link">Google 클라우드</block>
+  <block id="de130b9b09371708e2c13a8dffd46b5f" category="paragraph">클라우드 공급자가 데이터 호스팅에 얼마나 많은 비용을 청구할지 예측하는 가장 좋은 방법은 계산기를 사용하는 것입니다.<block ref="832146750434f962d95fccd63e75be1f" category="inline-link-rx"></block>,<block ref="75717a19b426dc37c8f6453abf5f30c8" category="inline-link-rx"></block> 및<block ref="f2965905675b45f3af23b46362320e65" category="inline-link-rx"></block>.</block>
+  <block id="54f567f0c8172dd99a94a339ea9351f1" category="section-title">클라우드 공급자가 오브젝트 스토리지에서 사내 스토리지로 데이터를 읽거나 검색하는 데 추가 비용이 부과됩니까?</block>
+  <block id="c75538424cfb137ff45e22419201b0ff" category="inline-link">Amazon S3 가격</block>
+  <block id="c7fe1da619ea4dc60271978fef1e44fe" category="inline-link">Blob 가격 책정 차단</block>
+  <block id="f0597479b6555c19f89fc843f1c8d98c" category="inline-link">클라우드 스토리지 가격</block>
+  <block id="80fb8aa8c4c5c3477d1c619e25dee21c" category="paragraph">예. 확인합니다<block ref="134b76f780a567f977f9c0667960c527" category="inline-link-rx"></block>,<block ref="42cfb61355c94594363648e2439176bf" category="inline-link-rx"></block>, 및<block ref="fb963a69fe55ff45676c36ad0b99dda1" category="inline-link-rx"></block> 데이터 읽기/검색으로 인해 발생한 추가 가격입니다.</block>
+  <block id="03a5e5708e2ca1e0ed97c088a2f866a3" category="section-title">Cloud Tiering을 설정하기 전에 볼륨의 절약 효과를 예측하고 콜드 데이터 보고서를 받으려면 어떻게 해야 합니까?</block>
+  <block id="a0b89ab6b5eac539fb7e734c5325f52e" category="paragraph">추정치를 얻으려면 ONTAP 클러스터를 Cloud Manager에 추가하고 계층화 탭에 있는 Cloud Tiering Clusters 대시보드를 통해 검사하기만 하면 됩니다. IDR(Inactive Data Reporting)이 비활성화되어 있거나 충분한 기간 동안 아직 활성화되지 않은 경우 Cloud Tiering은 예상 절감액을 계산하기 위해 산업 상수 70%를 사용합니다. IDR 데이터가 제공되면 Cloud Tiering은 절감 효과를 정확한 수치로 업데이트합니다.</block>
+  <block id="360f208f0200dcfe1f02d2beac7d1a99" category="section-title">Cloud Tiering에서 지원하는 ONTAP 버전은 무엇입니까?</block>
+  <block id="d221b871da22439c86adc694691b8ac6" category="paragraph">Cloud Tiering은 ONTAP 버전 9.2 이상을 지원합니다.</block>
+  <block id="83c5a7ec07bde90cd5d13c81363f989e" category="paragraph">클라우드 계층화는 단일 노드 및 고가용성 AFF, FAS, ONTAP Select 클러스터에서 지원됩니다.</block>
+  <block id="93a294a492966845cedd2b8851ba5e94" category="paragraph">FabricPool 미러 구성의 클러스터도 지원되지만 계층화 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 합니다.</block>
+  <block id="a876ec112f46ac7e9d03cc5e9d61ab8f" category="section-title">FAS 시스템에서 HDD만 사용하여 데이터를 계층화할 수 있습니까?</block>
+  <block id="6af3c671d9ae3cfdf4e5db8e741c4949" category="paragraph">예. ONTAP 9.8부터 HDD 애그리게이트에 호스팅된 볼륨의 데이터를 계층화할 수 있습니다.</block>
+  <block id="5f2bd910e80c6ecc503341b164c23796" category="section-title">HDD가 있는 FAS 노드가 있는 클러스터에 연결된 AFF의 데이터를 계층화할 수 있습니까?</block>
+  <block id="5edcff9a2294626df4faaca093740318" category="paragraph">예. Cloud Tiering은 모든 애그리게이트에서 호스팅되는 볼륨을 계층화하도록 구성할 수 있습니다. 데이터 계층화 구성은 사용되는 컨트롤러의 유형과 클러스터가 이기종 클러스터인지 여부와 관련이 없습니다.</block>
+  <block id="c7e59c5a2a6e1a7e5b4077fc15af9a55" category="paragraph">Cloud Volumes ONTAP 시스템이 있는 경우 Cloud Tiering Cluster Dashboard에서 하이브리드 클라우드 인프라에서 데이터 계층화를 완전히 파악할 수 있습니다. 그러나 Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. Cloud Tiering에서 Cloud Volumes ONTAP의 데이터 계층화를 설정할 수 없습니다.<block ref="9af043ec07eda2b8761144420bc7ff5f" category="inline-link-rx"></block>.</block>
+  <block id="3b12cd959256e1fe1998855f1f4469c7" category="section-title">ONTAP 클러스터에 필요한 다른 요구사항은 무엇입니까?</block>
+  <block id="8a35952a9fd8375f6367c7e469edb4c8" category="paragraph">콜드 데이터의 계층화 위치에 따라 달라짐 자세한 내용은 다음 링크를 참조하십시오.</block>
+  <block id="83d030b1e01c7afcd4424fd7357db055" category="inline-link-macro">Amazon S3에 데이터 계층화</block>
+  <block id="15a4c60a0f86c99eaac0eebe021afdfe" category="list-text"><block ref="15a4c60a0f86c99eaac0eebe021afdfe" category="inline-link-macro-rx"></block></block>
+  <block id="afdc652a5d53bafec9f489b5ce09cea6" category="inline-link-macro">Azure Blob 저장소에 데이터 계층화</block>
+  <block id="16c9006ef3f4688fbb41ca0acded147c" category="list-text"><block ref="16c9006ef3f4688fbb41ca0acded147c" category="inline-link-macro-rx"></block></block>
+  <block id="648737b64ba36a1b484bc9ea503a8938" category="inline-link-macro">데이터를 Google 클라우드 스토리지로 계층화</block>
+  <block id="42eec2063d7d83b3a19aef7f868bc8c0" category="list-text"><block ref="42eec2063d7d83b3a19aef7f868bc8c0" category="inline-link-macro-rx"></block></block>
+  <block id="9b1a7cdc95a00a5d18060e6475890567" category="inline-link-macro">데이터를 StorageGRID에 계층화</block>
+  <block id="ef76c48b8267776681352419137750d5" category="list-text"><block ref="ef76c48b8267776681352419137750d5" category="inline-link-macro-rx"></block></block>
+  <block id="342574295c96deee1abf758e3bba1245" category="inline-link-macro">데이터를 S3 오브젝트 스토리지로 계층화</block>
+  <block id="73a62b30e1f556f5febcb50fa982a99d" category="list-text"><block ref="73a62b30e1f556f5febcb50fa982a99d" category="inline-link-macro-rx"></block></block>
+  <block id="eeb240bdbe8975d674a61e517f39633f" category="list-text">IBM 클라우드 오브젝트 스토리지(FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 함)</block>
+  <block id="2c08a1d27d6545c0ad01ad140562498b" category="section-title">Cloud Tiering에서 Amazon S3 Glacier Flexible 및 S3 Glacier Deep Archive를 지원하지 않는 이유는 무엇입니까?</block>
+  <block id="f69e1396e6ee64547d56719752b81f87" category="paragraph">Amazon S3 Glacier Flexible 및 S3 Glacier Deep Archive가 지원되지 않는 주된 이유는 Cloud Tiering이 고성능 계층화 솔루션으로 설계되었기 때문에 데이터를 지속적으로 사용하고 신속하게 검색할 수 있어야 합니다. S3 Glacier Flexible 및 S3 Glacier Deep Archive를 사용하여 데이터 검색을 몇 분에서 48시간 이내에 수행할 수 있습니다.</block>
+  <block id="af7dafa9f010fa91db93c80604be8582" category="section-title">Wasabi와 같은 다른 S3 호환 오브젝트 스토리지 서비스를 Cloud Tiering과 함께 사용할 수 있습니까?</block>
+  <block id="84a20b13e3ea8fe117cd487b10cafd14" category="inline-link-macro">자세한 내용은 여기 를 참조하십시오</block>
+  <block id="de6d6c00be7f38cc0fb58e604e31efe9" category="paragraph">예. ONTAP 9.8 이상을 사용하는 클러스터에서는 계층화 UI를 통해 S3 호환 오브젝트 스토리지를 구성할 수 있습니다. <block ref="dfc215f15d0188a75116c167a2fbbc9d" category="inline-link-macro-rx"></block>.</block>
+  <block id="94fe0352e28f43c2dee13351ec781840" category="section-title">여러 개의 버킷을 동일한 Aggregate에 연결할 수 있습니까?</block>
+  <block id="59c02e24aae2d5e6f5ca4aecfe567460" category="paragraph">미러링 목적으로 애그리게이트당 최대 2개의 버킷을 연결할 수 있으며, 여기서 콜드 데이터는 두 버킷에 동기식으로 계층됩니다. 버킷은 여러 공급자 및 다양한 위치에서 사용할 수 있습니다. 그러나 지금은 Cloud Tiering UI를 통한 구성이 지원되지 않습니다. System Manager 또는 CLI를 통해 설정을 사용할 수 있습니다.</block>
+  <block id="dd7b95cf528df2e6a1ada6c6e3b3c8a8" category="section-title">서로 다른 버킷이 동일한 클러스터의 여러 Aggregate에 연결될 수 있습니까?</block>
+  <block id="b7e0155773c98acbf757ee23f8cc4b8c" category="paragraph">예. 일반적인 모범 사례는 하나의 버킷을 여러 애그리게이트로 연결하는 것입니다. 하지만 퍼블릭 클라우드를 사용할 경우 오브젝트 스토리지 서비스에 대한 최대 IOPS 제한이 있으므로 여러 개의 버킷을 고려해야 합니다. 그러나 지금은 Cloud Tiering UI를 통한 구성이 지원되지 않습니다. System Manager 또는 CLI를 통해 설정을 사용할 수 있습니다.</block>
+  <block id="795944e4714141aa7f5bc7bca15b9cc7" category="section-title">한 클러스터에서 다른 클러스터로 볼륨을 마이그레이션할 때 계층화된 데이터는 어떻게 됩니까?</block>
+  <block id="ac2697251023e10e659e1d144374c46f" category="paragraph">한 클러스터에서 다른 클러스터로 볼륨을 마이그레이션할 때는 모든 콜드 데이터를 클라우드 계층에서 읽습니다. 대상 클러스터의 쓰기 위치는 계층화가 설정되었는지 여부 및 소스 볼륨과 대상 볼륨에 사용된 계층화 정책의 유형에 따라 달라집니다.</block>
+  <block id="75e192e543376cd0700d28d7707c1400" category="section-title">한 노드에서 같은 클러스터의 다른 노드로 볼륨을 이동할 때 계층적 데이터는 어떻게 됩니까?</block>
+  <block id="c8e8c3de3c7e9a3523115f25ca436702" category="paragraph">대상 Aggregate에 연결된 클라우드 계층이 없는 경우 소스 애그리게이트의 클라우드 계층에서 데이터를 읽은 후 타겟 애그리게이트의 로컬 계층에 전체가 기록됩니다. 대상 애그리게이트에 클라우드 계층이 연결되어 있는 경우, 소스 애그리게이트의 클라우드 계층에서 데이터를 읽은 다음 타겟 애그리게이트의 로컬 계층에 먼저 기록함으로써 빠른 컷오버를 지원합니다. 이후 사용된 계층화 정책에 따라 클라우드 계층에 기록됩니다.</block>
+  <block id="4eb0e04ff79ba8e58d2cc578b23ac20a" category="paragraph">ONTAP 9.6부터 대상 애그리게이트는 소스 애그리게이트와 동일한 클라우드 계층을 사용하는 경우, 콜드 데이터는 로컬 계층으로 다시 이동하지 않습니다.</block>
+  <block id="67c448fda360e613a946c8d4f3fe8903" category="section-title">어떻게 하면 계층화된 데이터를 다시 온프레미스로 가져올 수 있습니까?</block>
+  <block id="594e5f8f87d3f9aee64730282f1d9d11" category="inline-link-macro">데이터를 성능 계층으로 다시 이동하는 방법을 알아보십시오</block>
+  <block id="4f73c67002a9ff6531da278f92c08e2e" category="paragraph">Write Back(다시 쓰기)은 일반적으로 읽기에 대해 수행되며 계층화 정책 유형에 따라 달라집니다. ONTAP 9.8에 앞서 볼륨 이동 작업을 통해 전체 볼륨의 쓰기를 수행할 수 있습니다. 9.8 이후, Tiering UI에는 모든 데이터를 * 되돌리거나 * 활성 파일 시스템을 다시 가져오는 옵션이 있습니다 *. <block ref="5fc989c9b1011f539a0df96bd559f635" category="inline-link-macro-rx"></block>.</block>
+  <block id="5b9fbe75fbcd16763752424288950fad" category="section-title">기존 AFF/FAS 컨트롤러를 새로운 컨트롤러로 교체할 때 계층형 데이터를 다시 온프레미스로 마이그레이션할 수 있습니까?</block>
+  <block id="954ab271743046342c8c477272ccf1e2" category="paragraph">아니요 "헤드 스왑" 절차를 수행하는 동안 변경된 것은 애그리게이트의 소유입니다. 이 경우 데이터를 이동하지 않고 새 컨트롤러로 변경됩니다.</block>
+  <block id="9ae27577765a14f9c236003effe69e5e" category="section-title">재해 복구 시나리오에서 계층형 데이터를 사용하여 볼륨 또는 시스템을 복구할 수 있습니까?</block>
+  <block id="7d552a8536eeb68fc71cd57c3774fd42" category="paragraph">아니요 볼륨의 메타데이터는 항상 로컬 성능 계층에 저장되기 때문에 재해가 있고 로컬 계층이 손실되면 메타데이터도 손실되고 계층화된 데이터를 참조할 방법이 없습니다.</block>
+  <block id="be06043e635d6e3bb909d73510b44e3d" category="section-title">클라우드 공급자의 콘솔 또는 오브젝트 스토리지 탐색기를 사용하여 데이터를 버킷으로 계층화할 수 있습니까? ONTAP 없이 오브젝트 스토리지에 저장된 데이터를 직접 사용할 수 있습니까?</block>
+  <block id="d430f061b4da1d93d76a477eed713ad9" category="paragraph">아니요 클라우드로 구축 및 계층화된 오브젝트에는 단일 파일이 아니라 여러 파일에서 최대 1,024개의 4KB 블록이 포함됩니다. 볼륨의 메타데이터는 항상 로컬 계층에 유지됩니다.</block>
+  <block id="0c5d4e7461b4c75d3988c9aa8d81ab4f" category="paragraph">다음 질문은 Cloud Manager Connector와 관련이 있습니다.</block>
+  <block id="c6dbaaf1bef168a38de37623edb997f7" category="section-title">커넥터란 무엇입니까?</block>
+  <block id="e8b472be2b48b970a46d41e8388e4a0e" category="paragraph">Connector는 클라우드 계정 내부 또는 사내에서 컴퓨팅 인스턴스에서 실행되는 소프트웨어로, Cloud Manager에서 클라우드 리소스를 안전하게 관리할 수 있도록 지원합니다. Cloud Tiering 서비스를 사용하려면 Connector를 구축해야 합니다.</block>
+  <block id="d2eea5ad2ae07890452da2aec5cffc98" category="section-title">Connector를 온-프레미스에 배포할 수 있습니까?</block>
+  <block id="b0ccf0f3fa1a27a2fbab1c35ebf8e0f5" category="inline-link">Connector를 설치 방법에 대해 알아보십시오</block>
+  <block id="de7433c1562faa5f9b2ee55c74f16fa2" category="paragraph">예. Connector 소프트웨어는 다운로드한 후 네트워크의 Linux 호스트에 수동으로 설치할 수 있습니다.<block ref="5cffbbed8cdfbd25b645e94434fee757" category="inline-link-rx"></block>.</block>
+  <block id="eef7b8a2b79a5ecae955422af0ab3b72" category="section-title">Cloud Tiering을 사용하기 전에 클라우드 서비스 공급자 계정이 필요합니까?</block>
+  <block id="71b5e4019a71131db2052326884d8bbe" category="paragraph">예. 사용할 오브젝트 스토리지를 정의하려면 먼저 계정이 있어야 합니다. VPC 또는 VNET에서 클라우드에서 Connector를 설정할 때도 클라우드 스토리지 공급자 계정이 필요합니다.</block>
+  <block id="8ca6e099f9e16583824ee8e6a5727c40" category="section-title">커넥터에 장애가 발생할 경우 어떤 영향이 있습니까?</block>
+  <block id="eaafcaeadf723bfc8a83848a1422d73e" category="paragraph">커넥터 장애가 발생할 경우 계층화된 환경에 대한 가시화만 영향을 받습니다. 모든 데이터에 액세스할 수 있으며 새로 식별된 콜드 데이터는 오브젝트 스토리지로 자동으로 계층됩니다.</block>
+  <block id="297e2ac2ec0bd88ad598062f4c07ee45" category="section-title">계층화 정책</block>
+  <block id="a98ae6e10c680f6fd9a1e3e043029254" category="section-title">사용 가능한 계층화 정책은 무엇입니까?</block>
+  <block id="da09df112eb180303169daa41b71c993" category="paragraph">다음과 같은 4가지 계층화 정책이 있습니다.</block>
+  <block id="ab41562ecd1ee6cdeb73670552480518" category="paragraph">● 없음: 모든 데이터를 항상 핫 상태로 분류하므로 볼륨의 데이터가 오브젝트 스토리지로 이동하지 않습니다. ● 콜드 스냅샷(스냅샷 전용): 콜드 스냅샷 블록만 오브젝트 스토리지로 이동합니다. ● 콜드 사용자 데이터 및 스냅샷(자동): 콜드 스냅샷 블록과 콜드 사용자 데이터 블록이 모두 오브젝트 스토리지로 이동됩니다. ● 모든 사용자 데이터(모두): 모든 데이터를 냉장(cold)으로 분류하고 전체 볼륨을 즉시 오브젝트 스토리지로 이동합니다.</block>
+  <block id="2719cad5460eb9108696993a4c233dc2" category="inline-link-macro">계층화 정책에 대해 자세히 알아보십시오</block>
+  <block id="5ef61948a073dbcdfdb7d93caa1067ac" category="paragraph"><block ref="b9368c1c43c24f87d7a3626332a607af" category="inline-link-macro-rx"></block>.</block>
+  <block id="d0252572656bbedd8e24eed72a5822ea" category="section-title">어느 시점에서 데이터가 콜드 데이터라고 간주됩니까?</block>
+  <block id="106e953d8d4bea7ebaea7ab2455cf23d" category="paragraph">데이터 계층화는 블록 레벨에서 수행되기 때문에 데이터 블록은 특정 기간 동안 액세스하지 않은 후 냉각된 것으로 간주됩니다. 이러한 데이터 블록은 계층화 정책의 최소 냉각 기간 속성에 의해 정의됩니다. 해당 범위는 ONTAP 9.7 이전 버전에서 2-63일 또는 ONTAP 9.8부터 2-183일입니다.</block>
+  <block id="aa3f449e50a7b69fa0c38b77d2315143" category="section-title">데이터를 클라우드 계층으로 계층화되기 전의 기본 냉각 기간은 얼마입니까?</block>
+  <block id="e72bc0c8a17dadf8e8ad885b9700456f" category="paragraph">콜드 스냅샷 정책의 기본 냉각 기간은 2일이고, 콜드 사용자 데이터 및 스냅샷의 기본 냉각 기간은 31일입니다. cooling-days 매개 변수는 모든 계층화 정책에 적용할 수 없습니다.</block>
+  <block id="4c8d66eef4460316cfa98d7ddb65f407" category="section-title">전체 백업을 수행할 때 오브젝트 스토리지에서 모든 계층화된 데이터를 검색합니까?</block>
+  <block id="671953573a21e1af11abf07faf93e628" category="paragraph">전체 백업 중에는 콜드 데이터가 모두 읽힙니다. 데이터 검색은 사용되는 계층화 정책에 따라 달라집니다. All 및 Cold User Data 및 Snapshots 정책을 사용할 때는 콜드 데이터가 성능 계층에 다시 기록되지 않습니다. 콜드 스냅샷 정책을 사용하는 경우 백업에 사용된 이전 스냅샷의 경우에만 해당 콜드 블록이 검색됩니다.</block>
+  <block id="0adc9a7fadfec4bdbe53c692b448ba02" category="section-title">볼륨당 계층화 크기를 선택할 수 있습니까?</block>
+  <block id="ba7eeea7b89db851a5b16f70113d0e08" category="paragraph">아니요 하지만 계층화 대상 볼륨, 계층화할 데이터 유형 및 냉각 기간을 선택할 수 있습니다. 이 작업은 계층화 정책을 해당 볼륨과 연결하여 수행합니다.</block>
+  <block id="c5d36ccefcfa686861df0abd0a5c8ebf" category="section-title">All User Data 정책이 데이터 보호 볼륨에 대한 유일한 옵션입니까?</block>
+  <block id="ab5a6f9d24c7e7bf901c7287496d5263" category="paragraph">아니요 데이터 보호(DP) 볼륨은 사용 가능한 세 가지 정책 중 어느 정책과 연결될 수 있습니다. 소스 및 대상(DP) 볼륨에 사용된 정책 유형에 따라 데이터의 쓰기 위치가 결정됩니다.</block>
+  <block id="0616057f4f78150533746bae3e2dabf8" category="section-title">볼륨의 계층화 정책을 None으로 재설정하면 콜드 데이터가 리하이드레이션되거나 향후 콜드 블록이 클라우드로 이동되지 않습니까?</block>
+  <block id="4556fde470e1bf0424f8ed56f1547bfa" category="paragraph">계층화 정책을 재설정할 때 재수화가 발생하지 않지만 새로운 콜드 블록이 클라우드 계층으로 이동하는 것을 방지합니다.</block>
+  <block id="5456196e2d96b9ebbcb1803e293c3c85" category="section-title">데이터를 클라우드에 계층화한 후 계층화 정책을 변경할 수 있습니까?</block>
+  <block id="8b13568bd4836d78a9936fc596e78696" category="paragraph">예. 변경 후 동작은 새로운 관련 정책에 따라 달라집니다.</block>
+  <block id="fbea603debc39f725cfddd0c7fa68cd2" category="section-title">특정 데이터가 클라우드로 이동하지 않으려면 어떻게 해야 합니까?</block>
+  <block id="6522850b31e6a215863b5d66a9246d80" category="paragraph">계층화 정책을 해당 데이터가 포함된 볼륨과 연결하지 마십시오.</block>
+  <block id="d24f7d2a27579d52c55ff0ec1034c183" category="section-title">파일의 메타데이터는 어디에 저장됩니까?</block>
+  <block id="15d8a1f0933c73ea4bf6b82d894a60f8" category="paragraph">볼륨의 메타데이터는 성능 계층에 항상 로컬에 저장됩니다. 따라서 클라우드로 계층화되지 않습니다.</block>
+  <block id="85db56d490cdd7a31d40697ad1c9be3c" category="section-title">네트워킹 및 보안</block>
+  <block id="7b243cebf518a158c24e8f3a9f880820" category="paragraph">다음 질문은 네트워킹 및 보안과 관련이 있습니다.</block>
+  <block id="f1285f12f811c782f68e847eb5915de3" category="list-text"><block ref="f1285f12f811c782f68e847eb5915de3" category="inline-link-macro-rx"></block></block>
+  <block id="51526efcaf0cdc54c61438382119812a" category="list-text"><block ref="51526efcaf0cdc54c61438382119812a" category="inline-link-macro-rx"></block></block>
+  <block id="616f224ea695eac57c5722b0a20e0e0f" category="list-text"><block ref="616f224ea695eac57c5722b0a20e0e0f" category="inline-link-macro-rx"></block></block>
+  <block id="b5dd11e41ad7a813bfe7dad0ea574253" category="list-text"><block ref="b5dd11e41ad7a813bfe7dad0ea574253" category="inline-link-macro-rx"></block></block>
+  <block id="aaa3c198f069c55aebfe4cb17882c73c" category="list-text"><block ref="aaa3c198f069c55aebfe4cb17882c73c" category="inline-link-macro-rx"></block></block>
+  <block id="d338c5fdb9585e3e04e3d27f58422278" category="section-title">클라우드에 저장된 콜드 데이터를 관리하기 위해 모니터링 및 보고를 위해 사용할 수 있는 툴은 무엇입니까?</block>
+  <block id="5ecb6b24c169667ff1a176768115659e" category="inline-link">Active IQ Unified Manager</block>
+  <block id="dab2edf9eaac3950e92c281ce358af01" category="inline-link">Active IQ 디지털 자문업체</block>
+  <block id="457839e2cfab34024cc5d7af42ac3a5f" category="paragraph">Cloud Tiering 이외의 경우<block ref="5ed6ecd932db92d4be0f0df08b269167" category="inline-link-rx"></block> 및<block ref="f7c27c91081209d9919b1be7040611f3" category="inline-link-rx"></block> 모니터링 및 보고에 사용할 수 있습니다.</block>
+  <block id="b8a7918ef33be8759255aec95c404a42" category="section-title">클라우드 공급자에 대한 네트워크 링크가 실패할 경우 어떤 영향이 있습니까?</block>
+  <block id="4ba6eaf1775e43d67b327809a4b849b2" category="paragraph">네트워크 장애가 발생할 경우 로컬 성능 계층은 온라인 상태를 유지하며 핫 데이터는 계속 액세스할 수 있습니다. 하지만 이미 클라우드 계층으로 이동한 블록은 액세스할 수 없으며 애플리케이션에서 해당 데이터에 액세스하려고 할 때 오류 메시지를 받게 됩니다. 연결이 복원되면 모든 데이터에 원활하게 액세스할 수 있습니다.</block>
+  <block id="eedcfa982383398670f78619f12b3aa3" category="section-title">네트워크 대역폭 권장 사항이 있습니까?</block>
+  <block id="215da7b09b683835056bcb1422a7d86a" category="paragraph">기본 FabricPool 계층화 기술의 읽기 지연 시간은 클라우드 계층과의 연결에 따라 달라집니다. 계층화는 모든 대역폭에서 작동하지만 적절한 성능을 제공하기 위해 인터클러스터 LIF를 10Gbps 포트에 배치하는 것이 좋습니다. 커넥터에 대한 권장 사항이나 대역폭 제한은 없습니다.</block>
+  <block id="96ae64d60b6d30430f56e7afb74b0084" category="section-title">사용자가 계층화된 데이터에 액세스하려고 할 때 지연이 발생합니까?</block>
+  <block id="8423b9893d6714e384ac5ab89484c361" category="paragraph">예. 지연 시간은 접속에 따라 달라지므로 클라우드 계층은 로컬 계층과 동일한 지연 시간을 제공할 수 없습니다. 오브젝트 저장소의 지연 시간 및 처리량을 추정하기 위해 Cloud Tiering은 오브젝트 저장소가 연결된 후 계층화가 설정되기 전에 사용할 수 있는 ONTAP 오브젝트 저장소 프로파일러를 기반으로 하는 클라우드 성능 테스트 를 제공합니다.</block>
+  <block id="2041cf86183d9e837c59c889cba71a41" category="section-title">내 데이터는 어떻게 보호됩니까?</block>
+  <block id="442a0da1ce36639f5c492565d5f4eaa2" category="paragraph">AES-256-GCM 암호화는 성능 계층과 클라우드 계층 모두에서 유지됩니다. TLS 1.2 암호화는 데이터를 계층 간에 이동할 때 유선으로 암호화하고, 커넥터와 ONTAP 클러스터 및 오브젝트 저장소 간의 통신을 암호화하는 데 사용됩니다.</block>
+  <block id="56a13abd2c09f8f69c9bc676e127e5d9" category="section-title">AFF에 이더넷 포트를 설치 및 구성해야 합니까?</block>
+  <block id="db5702fcf8c9d887ce36ddb56a8e8e04" category="paragraph">예. 인터클러스터 LIF는 클라우드로 계층화할 데이터로 볼륨을 호스팅하는 HA 쌍 내의 각 노드에 있는 이더넷 포트에 구성해야 합니다. 자세한 내용은 데이터를 계층화할 클라우드 공급자의 요구사항 섹션을 참조하십시오.</block>
+  <block id="1d1150417245464a6bc4030ff12d98ba" category="section-title">어떤 권한이 필요합니까?</block>
+  <block id="6d7e8531e0360d0263e2ca053e0a6984" category="inline-link-macro">Amazon의 경우 S3 버킷을 관리할 수 있는 권한이 필요합니다</block>
+  <block id="b5e9a7479354c252182b9aed30eceb39" category="list-text"><block ref="4473d2f13ecb5bcf1020f029ee281cf8" category="inline-link-macro-rx"></block>.</block>
+  <block id="7b051265cea15bef56b2013258a3a024" category="list-text">Azure의 경우 Cloud Manager에 제공해야 하는 권한 이외에 추가 권한이 필요하지 않습니다.</block>
+  <block id="ba49bda4c6c598703b1a9de3bd715d7f" category="inline-link-macro">Google Cloud의 경우 스토리지 액세스 키가 있는 서비스 계정에 스토리지 관리자 권한이 필요합니다</block>
+  <block id="b416160ef653d48172d39e018c5edc09" category="list-text"><block ref="6da5859ea88129ba1f8030c6efa043ea" category="inline-link-macro-rx"></block>.</block>
+  <block id="6e7f22bebfa4a36d17ec5f7763059b4c" category="inline-link-macro">StorageGRID의 경우 S3 권한이 필요합니다</block>
+  <block id="bb0fe2f5bdb8e22816e9fa5b1026a7f4" category="list-text"><block ref="e1a02e457fa8607cad7bf299625a3fdd" category="inline-link-macro-rx"></block>.</block>
+  <block id="049da913e478d360bf3fba0732f3ffe7" category="inline-link-macro">S3 호환 오브젝트 스토리지의 경우 S3 권한이 필요합니다</block>
+  <block id="de865f0ebc8f66fc8e1331d7e2a7f1d4" category="list-text"><block ref="2efc8cc4b2027ed3eb0bfad94737c839" category="inline-link-macro-rx"></block>.</block>
+  <block id="5904ecfefb0147d2c35e92234f70dbd9" category="paragraph">다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이센스를 사용할 수 있지만 일반 단일 노드 및 HA 구성 ONTAP 클러스터와 다른 방식으로 라이센스가 적용되어야 합니다.</block>
+  <block id="4bf0695d13fdb9614e4d0abba617654f" category="paragraph">FabricPool 미러를 사용하는 MetroCluster 구성은 현재 지원되지 않습니다</block>
 </blocks>
