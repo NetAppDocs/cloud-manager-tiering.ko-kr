@@ -691,7 +691,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-04 13:05:39 +0000">05/04/2022</time>
+    <time datetime="2022-05-04 19:51:24 +0000">05/04/2022</time>
     
   
 
@@ -706,76 +706,229 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="cloud-tiering-서비스">Cloud Tiering 서비스</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>다음 FAQ는 Cloud Tiering의 작동 방식과 관련이 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering-서비스를-사용하면-어떤-이점이-있습니까">Cloud Tiering 서비스를 사용하면 어떤 이점이 있습니까?</h3>
+<div class="paragraph">
+<p>Cloud Tiering은 빠른 데이터 증가에 따른 당면 과제를 해결하므로 다음과 같은 이점이 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>데이터 센터를 클라우드로 손쉽게 확장하므로 최대 50배 더 많은 공간을 확보할 수 있습니다</p>
+</li>
+<li>
+<p>스토리지 최적화를 통해 평균 70%의 스토리지 비용이 절감됩니다</p>
+</li>
+<li>
+<p>총 소유 비용이 평균 30% 절감되었습니다</p>
+</li>
+<li>
+<p>애플리케이션을 리팩토링할 필요가 없습니다</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="클라우드로-계층화하는데-어떤-종류의-데이터가-유용합니까">클라우드로 계층화하는데 어떤 종류의 데이터가 유용합니까?</h3>
+<div class="paragraph">
+<p>기본적으로 운영 스토리지 시스템과 2차 스토리지 시스템 모두에서 비활성 상태로 간주되는 데이터는 클라우드로 이동하는 데 적합한 대상입니다. 운영 시스템에서 이러한 데이터에는 스냅샷, 기록 레코드 및 완료된 프로젝트가 포함될 수 있습니다. 보조 시스템의 경우 DR 및 백업을 위해 만들어진 기본 데이터의 복사본이 포함된 모든 볼륨이 여기에 포함됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nas-볼륨과-san-볼륨-모두의-데이터를-계층화할-수-있습니까">NAS 볼륨과 SAN 볼륨 모두의 데이터를 계층화할 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. NAS 볼륨의 데이터를 퍼블릭 클라우드 또는 StorageGRID와 같은 프라이빗 클라우드로 계층화할 수 있습니다. SAN 프로토콜에서 액세스하는 데이터를 계층화할 경우 SAN 프로토콜이 NAS보다 연결 문제에 더 민감하기 때문에 프라이빗 클라우드를 사용하는 것이 좋습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="비활성-데이터-또는-자주-사용하지-않는-데이터의-정의는-무엇이며-어떻게-제어합니까">비활성 데이터 또는 자주 사용하지 않는 데이터의 정의는 무엇이며 어떻게 제어합니까?</h3>
+<div class="paragraph">
+<p>콜드 데이터라고도 할 수 있는 것에 대한 정의는 "일정 시간 동안 액세스하지 않은 볼륨 블록(메타데이터 제외)"입니다. "시간"은 Cooling-days라는 계층화 정책 속성에 의해 결정됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering을-사용하면-클라우드-계층에서-스토리지-효율성을-유지할-수-있습니까">Cloud Tiering을 사용하면 클라우드 계층에서 스토리지 효율성을 유지할 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. 데이터를 클라우드 계층으로 이동할 때 압축, 중복제거, 컴팩션과 같은 ONTAP 볼륨 레벨 스토리지 효율성이 유지됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fabricpool와-클라우드-계층화의-차이점은-무엇입니까">FabricPool와 클라우드 계층화의 차이점은 무엇입니까?</h3>
+<div class="paragraph">
+<p>FabricPool는 ONTAP의 계층화 기술로, ONTAP CLI 및 System Manager를 통해 자가 관리되거나 클라우드 계층화를 통해 서비스형 관리될 수 있습니다. Cloud Tiering은 ONTAP와 클라우드 모두에서 고급 자동화 프로세스를 통해 FabricPool를 관리 서비스로 전환함으로써 하이브리드 및 멀티 클라우드 구축 전반에서 향상된 가시성과 계층화 제어 기능을 제공합니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="데이터를-클라우드로-계층화해서-재해-복구-또는-백업아카이브에-사용할-수-있습니까">데이터를 클라우드로 계층화해서 재해 복구 또는 백업/아카이브에 사용할 수 있습니까?</h3>
+<div class="paragraph">
+<p>아니요 볼륨의 메타데이터는 성능 계층에서 계층화되지 않으므로 오브젝트 스토리지에 저장된 데이터에 직접 액세스할 수 없습니다.</p>
+</div>
+<div class="paragraph">
+<p>하지만 Cloud Tiering을 사용하면 보조 시스템 및 SnapMirror 대상 볼륨(DP 볼륨)에서 이를 사용하여 모든 데이터를 계층화하여(메타데이터 제외) 데이터 센터의 설치 공간과 TCO를 줄임으로써 비용 효율적인 백업 및 DR을 실현할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering이-볼륨-또는-애그리게이트-레벨에-적용됩니까">Cloud Tiering이 볼륨 또는 애그리게이트 레벨에 적용됩니까?</h3>
+<div class="paragraph">
+<p>볼륨 레벨에서 Cloud Tiering은 계층화 정책을 각 볼륨과 연결하여 사용합니다. 콜드 데이터 식별은 블록 수준에서 수행됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering은-어떤-블록을-클라우드에-계층화할지-어떻게-결정합니까">Cloud Tiering은 어떤 블록을 클라우드에 계층화할지 어떻게 결정합니까?</h3>
+<div class="paragraph">
+<p>볼륨과 연관된 계층화 정책은 계층화와 시기를 제어하는 메커니즘입니다. 이 정책은 데이터 블록 유형(스냅샷, 사용자 데이터 또는 둘 다) 및 냉각 기간을 정의합니다. 을 참조하십시오 <a href="concept-cloud-tiering.html#volume-tiering-policies">"볼륨 계층화 정책"</a> 를 참조하십시오.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering은-비활성-데이터-보고를-지원합니까">Cloud Tiering은 비활성 데이터 보고를 지원합니까?</h3>
+<div class="paragraph">
+<p>예. Cloud Tiering은 각 애그리게이트에 IDR(Inactive Data Reporting)을 활성화합니다. 이 설정을 통해 저비용 오브젝트 스토리지로 계층화할 수 있는 비활성 데이터의 양을 파악할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="idr을-실행하는-순간부터-정보를-표시하는-데-얼마나-걸립니까">IDR을 실행하는 순간부터 정보를 표시하는 데 얼마나 걸립니까?</h3>
+<div class="paragraph">
+<p>구성된 냉각 기간이 지난 후 IDR이 정보를 표시하기 시작합니다. IDR은 ONTAP 9.7 이하 버전을 사용하여 조정되지 않는 냉각 기간을 31일로 했습니다. ONTAP 9.8부터 IDR 냉각 기간은 최대 183일까지 구성할 수 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="추가-수익-실적을">추가 수익 실적을</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>다음 FAQ는 Cloud Tiering의 사용 라이센스 및 비용과 관련이 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering의-비용은-얼마입니까">Cloud Tiering의 비용은 얼마입니까?</h3>
+<div class="paragraph">
+<p>콜드 데이터를 퍼블릭 클라우드에 계층화할 경우:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PAYGO(pay-as-you-go)의 경우 사용량 기반 구독: GB/월 $0.05.</p>
+</li>
+<li>
+<p>연간(BYOL)의 경우 기간 기반 가입형: GB당 $0.033/월 기준</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>콜드 데이터를 NetApp StorageGRID 시스템(프라이빗 클라우드)에 계층화할 경우 비용이 들지 않습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="동일한-ontap-클러스터에-byol-및-paygo-라이센스를-모두-사용할-수-있습니까">동일한 ONTAP 클러스터에 BYOL 및 PAYGO 라이센스를 모두 사용할 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. Cloud Tiering을 사용하면 BYOL 라이센스, PAYGO 구독 또는 이 둘을 결합하여 사용할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="byol-용량-제한에-도달하면-어떻게-됩니까">BYOL 용량 제한에 도달하면 어떻게 됩니까?</h3>
+<div class="paragraph">
+<p>BYOL 용량 제한에 도달하면 새로운 콜드 데이터의 계층화가 중지되고 이전의 모든 계층형 데이터에 액세스할 수 있습니다. PAYGO 마켓플레이스에 <em>Cloud Manager - Deploy &amp; Manage Cloud Data Services</em> 가입이 있는 경우, 새로운 콜드 데이터가 계속해서 오브젝트 스토리지로 계층화되고 사용 시 요금이 부과됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering-라이센스에는-클라우드-공급자의-이그레스-비용이-포함되어-있습니까">Cloud Tiering 라이센스에는 클라우드 공급자의 이그레스 비용이 포함되어 있습니까?</h3>
+<div class="paragraph">
+<p>아니요, 그렇지 않습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="사내-시스템의-재수화-비용은-클라우드-공급자가-부담하는-외부-비용에-따라-다릅니까">사내 시스템의 재수화 비용은 클라우드 공급자가 부담하는 외부 비용에 따라 다릅니까?</h3>
+<div class="paragraph">
+<p>예. 퍼블릭 클라우드에서 읽을 때는 이그레스 비용이 부과됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="클라우드-요금은-어떻게-예측합니까-cloud-tiering의-가상-모드가-있습니까">클라우드 요금은 어떻게 예측합니까? Cloud Tiering의 "가상" 모드가 있습니까?</h3>
+<div class="paragraph">
+<p>클라우드 공급자가 데이터 호스팅에 얼마나 많은 비용을 청구할지 예측하는 가장 좋은 방법은 계산기를 사용하는 것입니다. <a href="https://calculator.aws/#/">"설치하고"</a>, <a href="https://azure.microsoft.com/en-us/pricing/calculator/">"Azure를 지원합니다"</a> 및 <a href="https://cloud.google.com/products/calculator">"Google 클라우드"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="클라우드-공급자가-오브젝트-스토리지에서-사내-스토리지로-데이터를-읽거나-검색하는-데-추가-비용이-부과됩니까">클라우드 공급자가 오브젝트 스토리지에서 사내 스토리지로 데이터를 읽거나 검색하는 데 추가 비용이 부과됩니까?</h3>
+<div class="paragraph">
+<p>예. 확인합니다 <a href="https://aws.amazon.com/s3/pricing/">"Amazon S3 가격"</a>, <a href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">"Blob 가격 책정 차단"</a>, 및 <a href="https://cloud.google.com/storage/pricing">"클라우드 스토리지 가격"</a> 데이터 읽기/검색으로 인해 발생한 추가 가격입니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering을-설정하기-전에-볼륨의-절약-효과를-예측하고-콜드-데이터-보고서를-받으려면-어떻게-해야-합니까">Cloud Tiering을 설정하기 전에 볼륨의 절약 효과를 예측하고 콜드 데이터 보고서를 받으려면 어떻게 해야 합니까?</h3>
+<div class="paragraph">
+<p>추정치를 얻으려면 ONTAP 클러스터를 Cloud Manager에 추가하고 계층화 탭에 있는 Cloud Tiering Clusters 대시보드를 통해 검사하기만 하면 됩니다. IDR(Inactive Data Reporting)이 비활성화되어 있거나 충분한 기간 동안 아직 활성화되지 않은 경우 Cloud Tiering은 예상 절감액을 계산하기 위해 산업 상수 70%를 사용합니다. IDR 데이터가 제공되면 Cloud Tiering은 절감 효과를 정확한 수치로 업데이트합니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="ontap">ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>다음 질문은 ONTAP과 관련이 있습니다.</p>
 </div>
 <div class="sect2">
-<h3 id="ontap-클러스터에-대한-요구사항은-무엇입니까">ONTAP 클러스터에 대한 요구사항은 무엇입니까?</h3>
+<h3 id="cloud-tiering에서-지원하는-ontap-버전은-무엇입니까">Cloud Tiering에서 지원하는 ONTAP 버전은 무엇입니까?</h3>
 <div class="paragraph">
-<p>콜드 데이터의 계층화 위치에 따라 달라짐 다음을 참조하십시오.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="task-tiering-onprem-aws.html#preparing-your-ontap-clusters">"사내 ONTAP 클러스터에서 Amazon S3로 데이터 계층화"</a></p>
-</li>
-<li>
-<p><a href="task-tiering-onprem-azure.html#preparing-your-ontap-clusters">"사내 ONTAP 클러스터에서 Azure Blob 스토리지로 데이터 계층화"</a></p>
-</li>
-<li>
-<p><a href="task-tiering-onprem-gcp.html#preparing-your-ontap-clusters">"사내 ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 계층화"</a></p>
-</li>
-<li>
-<p><a href="task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters">"사내 ONTAP 클러스터에서 StorageGRID로 데이터 계층화"</a></p>
-</li>
-<li>
-<p><a href="task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters">"사내 ONTAP 클러스터에서 S3 오브젝트 스토리지로 데이터 계층화"</a></p>
-</li>
-</ul>
+<p>Cloud Tiering은 ONTAP 버전 9.2 이상을 지원합니다.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="어떤-유형의-ontap-시스템이-지원됩니까">어떤 유형의 ONTAP 시스템이 지원됩니까?</h3>
 <div class="paragraph">
-<p>클라우드 계층화는 단일 노드 및 고가용성 AFF, FAS, ONTAP Select 클러스터에서 지원됩니다. FabricPool 미러 구성의 클러스터도 지원되지만 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 합니다.</p>
+<p>클라우드 계층화는 단일 노드 및 고가용성 AFF, FAS, ONTAP Select 클러스터에서 지원됩니다.</p>
+</div>
+<div class="paragraph">
+<p>FabricPool 미러 구성의 클러스터도 지원되지만 계층화 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 합니다.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="cloud-tiering은-비활성-데이터-보고를-지원합니까">Cloud Tiering은 비활성 데이터 보고를 지원합니까?</h3>
+<h3 id="fas-시스템에서-hdd만-사용하여-데이터를-계층화할-수-있습니까">FAS 시스템에서 HDD만 사용하여 데이터를 계층화할 수 있습니까?</h3>
 <div class="paragraph">
-<p>예. Cloud Tiering은 각 애그리게이트에 대해 비활성 데이터 보고를 지원합니다. 이 설정을 통해 저비용 오브젝트 스토리지로 계층화할 수 있는 비활성 데이터의 양을 파악할 수 있습니다.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-tiering/images/note.svg" alt="참고">
-</td>
-<td class="content">
-Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD 애그리게이트에 대해 비활성 데이터 보고를 지원합니다.
-</td>
-</tr>
-</table>
+<p>예. ONTAP 9.8부터 HDD 애그리게이트에 호스팅된 볼륨의 데이터를 계층화할 수 있습니다.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="nas-볼륨-및-san-볼륨의-데이터를-계층화할-수-있습니까">NAS 볼륨 및 SAN 볼륨의 데이터를 계층화할 수 있습니까?</h3>
+<h3 id="hdd가-있는-fas-노드가-있는-클러스터에-연결된-aff의-데이터를-계층화할-수-있습니까">HDD가 있는 FAS 노드가 있는 클러스터에 연결된 AFF의 데이터를 계층화할 수 있습니까?</h3>
 <div class="paragraph">
-<p>NAS 볼륨의 데이터를 퍼블릭 클라우드 또는 StorageGRID와 같은 프라이빗 클라우드로 계층화할 수 있습니다. SAN 프로토콜에서 액세스하는 데이터를 계층화할 경우 연결 고려사항으로 인해 프라이빗 클라우드를 사용하는 것이 좋습니다.</p>
+<p>예. Cloud Tiering은 모든 애그리게이트에서 호스팅되는 볼륨을 계층화하도록 구성할 수 있습니다. 데이터 계층화 구성은 사용되는 컨트롤러의 유형과 클러스터가 이기종 클러스터인지 여부와 관련이 없습니다.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="cloud-volumes-ontap는-어떻습니까">Cloud Volumes ONTAP는 어떻습니까?</h3>
 <div class="paragraph">
-<p>Cloud Volumes ONTAP 시스템이 있는 경우 클러스터 대시보드에서 하이브리드 클라우드 인프라의 데이터 계층화를 완전히 파악할 수 있습니다.</p>
+<p>Cloud Volumes ONTAP 시스템이 있는 경우 Cloud Tiering Cluster Dashboard에서 하이브리드 클라우드 인프라에서 데이터 계층화를 완전히 파악할 수 있습니다. 그러나 Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. Cloud Tiering에서 Cloud Volumes ONTAP의 데이터 계층화를 설정할 수 없습니다. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" target="_blank" rel="noopener">"Cloud Volumes ONTAP의 작업 환경에서 Cloud Manager의 계층화를 설정합니다"</a>.</p>
 </div>
-<div class="paragraph">
-<p>클러스터 대시보드에서 운영 상태, 현재 절감 효과, 절약 기회, 볼륨 및 Aggregate와 같은 온프레미스 ONTAP 클러스터와 유사한 계층화 정보를 확인할 수 있습니다.</p>
 </div>
+<div class="sect2">
+<h3 id="ontap-클러스터에-필요한-다른-요구사항은-무엇입니까">ONTAP 클러스터에 필요한 다른 요구사항은 무엇입니까?</h3>
 <div class="paragraph">
-<p>Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. Cloud Tiering에서 Cloud Volumes ONTAP의 데이터 계층화를 설정할 수 없습니다. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" target="_blank" rel="noopener">"Cloud Volumes ONTAP의 작업 환경에서 Cloud Manager의 계층화를 설정합니다"</a>.</p>
+<p>콜드 데이터의 계층화 위치에 따라 달라짐 자세한 내용은 다음 링크를 참조하십시오.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-tiering-onprem-aws.html#preparing-your-ontap-clusters">"Amazon S3에 데이터 계층화"</a></p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-azure.html#preparing-your-ontap-clusters">"Azure Blob 저장소에 데이터 계층화"</a></p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-gcp.html#preparing-your-ontap-clusters">"데이터를 Google 클라우드 스토리지로 계층화"</a></p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters">"데이터를 StorageGRID에 계층화"</a></p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters">"데이터를 S3 오브젝트 스토리지로 계층화"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -809,7 +962,7 @@ Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD
 <p>S3 호환 오브젝트 스토리지</p>
 </li>
 <li>
-<p>IBM 클라우드 오브젝트 스토리지(단, FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 함)</p>
+<p>IBM 클라우드 오브젝트 스토리지(FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 함)</p>
 </li>
 </ul>
 </div>
@@ -843,6 +996,18 @@ Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD
 </div>
 </div>
 <div class="sect2">
+<h3 id="cloud-tiering에서-amazon-s3-glacier-flexible-및-s3-glacier-deep-archive를-지원하지-않는-이유는-무엇입니까">Cloud Tiering에서 Amazon S3 Glacier Flexible 및 S3 Glacier Deep Archive를 지원하지 않는 이유는 무엇입니까?</h3>
+<div class="paragraph">
+<p>Amazon S3 Glacier Flexible 및 S3 Glacier Deep Archive가 지원되지 않는 주된 이유는 Cloud Tiering이 고성능 계층화 솔루션으로 설계되었기 때문에 데이터를 지속적으로 사용하고 신속하게 검색할 수 있어야 합니다. S3 Glacier Flexible 및 S3 Glacier Deep Archive를 사용하여 데이터 검색을 몇 분에서 48시간 이내에 수행할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="wasabi와-같은-다른-s3-호환-오브젝트-스토리지-서비스를-cloud-tiering과-함께-사용할-수-있습니까">Wasabi와 같은 다른 S3 호환 오브젝트 스토리지 서비스를 Cloud Tiering과 함께 사용할 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. ONTAP 9.8 이상을 사용하는 클러스터에서는 계층화 UI를 통해 S3 호환 오브젝트 스토리지를 구성할 수 있습니다. <a href="task-tiering-onprem-s3-compat.html">"자세한 내용은 여기 를 참조하십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="어떤-azure-blob-액세스-계층이-지원됩니까">어떤 Azure Blob 액세스 계층이 지원됩니까?</h3>
 <div class="paragraph">
 <p>Cloud Tiering은 비활성 데이터에 대한 _Hot_or_Cool_access 계층으로 데이터 계층화를 지원합니다. 을 참조하십시오 <a href="reference-azure-support.html">"지원되는 Azure Blob 액세스 계층"</a> 를 참조하십시오.</p>
@@ -861,6 +1026,57 @@ Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD
 </div>
 </div>
 <div class="sect2">
+<h3 id="여러-개의-버킷을-동일한-aggregate에-연결할-수-있습니까">여러 개의 버킷을 동일한 Aggregate에 연결할 수 있습니까?</h3>
+<div class="paragraph">
+<p>미러링 목적으로 애그리게이트당 최대 2개의 버킷을 연결할 수 있으며, 여기서 콜드 데이터는 두 버킷에 동기식으로 계층됩니다. 버킷은 여러 공급자 및 다양한 위치에서 사용할 수 있습니다. 그러나 지금은 Cloud Tiering UI를 통한 구성이 지원되지 않습니다. System Manager 또는 CLI를 통해 설정을 사용할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="서로-다른-버킷이-동일한-클러스터의-여러-aggregate에-연결될-수-있습니까">서로 다른 버킷이 동일한 클러스터의 여러 Aggregate에 연결될 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. 일반적인 모범 사례는 하나의 버킷을 여러 애그리게이트로 연결하는 것입니다. 하지만 퍼블릭 클라우드를 사용할 경우 오브젝트 스토리지 서비스에 대한 최대 IOPS 제한이 있으므로 여러 개의 버킷을 고려해야 합니다. 그러나 지금은 Cloud Tiering UI를 통한 구성이 지원되지 않습니다. System Manager 또는 CLI를 통해 설정을 사용할 수 있습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="한-클러스터에서-다른-클러스터로-볼륨을-마이그레이션할-때-계층화된-데이터는-어떻게-됩니까">한 클러스터에서 다른 클러스터로 볼륨을 마이그레이션할 때 계층화된 데이터는 어떻게 됩니까?</h3>
+<div class="paragraph">
+<p>한 클러스터에서 다른 클러스터로 볼륨을 마이그레이션할 때는 모든 콜드 데이터를 클라우드 계층에서 읽습니다. 대상 클러스터의 쓰기 위치는 계층화가 설정되었는지 여부 및 소스 볼륨과 대상 볼륨에 사용된 계층화 정책의 유형에 따라 달라집니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="한-노드에서-같은-클러스터의-다른-노드로-볼륨을-이동할-때-계층적-데이터는-어떻게-됩니까">한 노드에서 같은 클러스터의 다른 노드로 볼륨을 이동할 때 계층적 데이터는 어떻게 됩니까?</h3>
+<div class="paragraph">
+<p>대상 Aggregate에 연결된 클라우드 계층이 없는 경우 소스 애그리게이트의 클라우드 계층에서 데이터를 읽은 후 타겟 애그리게이트의 로컬 계층에 전체가 기록됩니다. 대상 애그리게이트에 클라우드 계층이 연결되어 있는 경우, 소스 애그리게이트의 클라우드 계층에서 데이터를 읽은 다음 타겟 애그리게이트의 로컬 계층에 먼저 기록함으로써 빠른 컷오버를 지원합니다. 이후 사용된 계층화 정책에 따라 클라우드 계층에 기록됩니다.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP 9.6부터 대상 애그리게이트는 소스 애그리게이트와 동일한 클라우드 계층을 사용하는 경우, 콜드 데이터는 로컬 계층으로 다시 이동하지 않습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="어떻게-하면-계층화된-데이터를-다시-온프레미스로-가져올-수-있습니까">어떻게 하면 계층화된 데이터를 다시 온프레미스로 가져올 수 있습니까?</h3>
+<div class="paragraph">
+<p>Write Back(다시 쓰기)은 일반적으로 읽기에 대해 수행되며 계층화 정책 유형에 따라 달라집니다. ONTAP 9.8에 앞서 볼륨 이동 작업을 통해 전체 볼륨의 쓰기를 수행할 수 있습니다. 9.8 이후, Tiering UI에는 모든 데이터를 * 되돌리거나 * 활성 파일 시스템을 다시 가져오는 옵션이 있습니다 *. <a href="task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier">"데이터를 성능 계층으로 다시 이동하는 방법을 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="기존-afffas-컨트롤러를-새로운-컨트롤러로-교체할-때-계층형-데이터를-다시-온프레미스로-마이그레이션할-수-있습니까">기존 AFF/FAS 컨트롤러를 새로운 컨트롤러로 교체할 때 계층형 데이터를 다시 온프레미스로 마이그레이션할 수 있습니까?</h3>
+<div class="paragraph">
+<p>아니요 "헤드 스왑" 절차를 수행하는 동안 변경된 것은 애그리게이트의 소유입니다. 이 경우 데이터를 이동하지 않고 새 컨트롤러로 변경됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="재해-복구-시나리오에서-계층형-데이터를-사용하여-볼륨-또는-시스템을-복구할-수-있습니까">재해 복구 시나리오에서 계층형 데이터를 사용하여 볼륨 또는 시스템을 복구할 수 있습니까?</h3>
+<div class="paragraph">
+<p>아니요 볼륨의 메타데이터는 항상 로컬 성능 계층에 저장되기 때문에 재해가 있고 로컬 계층이 손실되면 메타데이터도 손실되고 계층화된 데이터를 참조할 방법이 없습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="클라우드-공급자의-콘솔-또는-오브젝트-스토리지-탐색기를-사용하여-데이터를-버킷으로-계층화할-수-있습니까-ontap-없이-오브젝트-스토리지에-저장된-데이터를-직접-사용할-수-있습니까">클라우드 공급자의 콘솔 또는 오브젝트 스토리지 탐색기를 사용하여 데이터를 버킷으로 계층화할 수 있습니까? ONTAP 없이 오브젝트 스토리지에 저장된 데이터를 직접 사용할 수 있습니까?</h3>
+<div class="paragraph">
+<p>아니요 클라우드로 구축 및 계층화된 오브젝트에는 단일 파일이 아니라 여러 파일에서 최대 1,024개의 4KB 블록이 포함됩니다. 볼륨의 메타데이터는 항상 로컬 계층에 유지됩니다.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="계층화에-관계없이-데이터를-이동할-수-있도록-정책을-오브젝트-저장소에-적용할-수-있습니까">계층화에 관계없이 데이터를 이동할 수 있도록 정책을 오브젝트 저장소에 적용할 수 있습니까?</h3>
 <div class="paragraph">
 <p>예. Cloud Tiering은 특정 일 수가 지나면 기본 스토리지 클래스/액세스 계층에서 보다 비용 효율적인 계층으로 데이터를 전환할 수 있도록 라이프사이클 관리를 설정할 수 있습니다.</p>
@@ -875,7 +1091,13 @@ Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD
 <h2 id="커넥터">커넥터</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>다음 질문은 커넥터와 관련이 있습니다.</p>
+<p>다음 질문은 Cloud Manager Connector와 관련이 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="커넥터란-무엇입니까">커넥터란 무엇입니까?</h3>
+<div class="paragraph">
+<p>Connector는 클라우드 계정 내부 또는 사내에서 컴퓨팅 인스턴스에서 실행되는 소프트웨어로, Cloud Manager에서 클라우드 리소스를 안전하게 관리할 수 있도록 지원합니다. Cloud Tiering 서비스를 사용하려면 Connector를 구축해야 합니다.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="커넥터를-어디에-설치해야-합니까">커넥터를 어디에 설치해야 합니까?</h3>
@@ -896,13 +1118,102 @@ Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="connector를-온-프레미스에-배포할-수-있습니까">Connector를 온-프레미스에 배포할 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. Connector 소프트웨어는 다운로드한 후 네트워크의 Linux 호스트에 수동으로 설치할 수 있습니다. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html">"Connector를 설치 방법에 대해 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering을-사용하기-전에-클라우드-서비스-공급자-계정이-필요합니까">Cloud Tiering을 사용하기 전에 클라우드 서비스 공급자 계정이 필요합니까?</h3>
+<div class="paragraph">
+<p>예. 사용할 오브젝트 스토리지를 정의하려면 먼저 계정이 있어야 합니다. VPC 또는 VNET에서 클라우드에서 Connector를 설정할 때도 클라우드 스토리지 공급자 계정이 필요합니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="커넥터에-장애가-발생할-경우-어떤-영향이-있습니까">커넥터에 장애가 발생할 경우 어떤 영향이 있습니까?</h3>
+<div class="paragraph">
+<p>커넥터 장애가 발생할 경우 계층화된 환경에 대한 가시화만 영향을 받습니다. 모든 데이터에 액세스할 수 있으며 새로 식별된 콜드 데이터는 오브젝트 스토리지로 자동으로 계층됩니다.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="네트워킹">네트워킹</h2>
+<h2 id="계층화-정책">계층화 정책</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="사용-가능한-계층화-정책은-무엇입니까">사용 가능한 계층화 정책은 무엇입니까?</h3>
+<div class="paragraph">
+<p>다음과 같은 4가지 계층화 정책이 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>● 없음: 모든 데이터를 항상 핫 상태로 분류하므로 볼륨의 데이터가 오브젝트 스토리지로 이동하지 않습니다. ● 콜드 스냅샷(스냅샷 전용): 콜드 스냅샷 블록만 오브젝트 스토리지로 이동합니다. ● 콜드 사용자 데이터 및 스냅샷(자동): 콜드 스냅샷 블록과 콜드 사용자 데이터 블록이 모두 오브젝트 스토리지로 이동됩니다. ● 모든 사용자 데이터(모두): 모든 데이터를 냉장(cold)으로 분류하고 전체 볼륨을 즉시 오브젝트 스토리지로 이동합니다.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-cloud-tiering.html#volume-tiering-policies">"계층화 정책에 대해 자세히 알아보십시오"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="어느-시점에서-데이터가-콜드-데이터라고-간주됩니까">어느 시점에서 데이터가 콜드 데이터라고 간주됩니까?</h3>
+<div class="paragraph">
+<p>데이터 계층화는 블록 레벨에서 수행되기 때문에 데이터 블록은 특정 기간 동안 액세스하지 않은 후 냉각된 것으로 간주됩니다. 이러한 데이터 블록은 계층화 정책의 최소 냉각 기간 속성에 의해 정의됩니다. 해당 범위는 ONTAP 9.7 이전 버전에서 2-63일 또는 ONTAP 9.8부터 2-183일입니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="데이터를-클라우드-계층으로-계층화되기-전의-기본-냉각-기간은-얼마입니까">데이터를 클라우드 계층으로 계층화되기 전의 기본 냉각 기간은 얼마입니까?</h3>
+<div class="paragraph">
+<p>콜드 스냅샷 정책의 기본 냉각 기간은 2일이고, 콜드 사용자 데이터 및 스냅샷의 기본 냉각 기간은 31일입니다. cooling-days 매개 변수는 모든 계층화 정책에 적용할 수 없습니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="전체-백업을-수행할-때-오브젝트-스토리지에서-모든-계층화된-데이터를-검색합니까">전체 백업을 수행할 때 오브젝트 스토리지에서 모든 계층화된 데이터를 검색합니까?</h3>
+<div class="paragraph">
+<p>전체 백업 중에는 콜드 데이터가 모두 읽힙니다. 데이터 검색은 사용되는 계층화 정책에 따라 달라집니다. All 및 Cold User Data 및 Snapshots 정책을 사용할 때는 콜드 데이터가 성능 계층에 다시 기록되지 않습니다. 콜드 스냅샷 정책을 사용하는 경우 백업에 사용된 이전 스냅샷의 경우에만 해당 콜드 블록이 검색됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="볼륨당-계층화-크기를-선택할-수-있습니까">볼륨당 계층화 크기를 선택할 수 있습니까?</h3>
+<div class="paragraph">
+<p>아니요 하지만 계층화 대상 볼륨, 계층화할 데이터 유형 및 냉각 기간을 선택할 수 있습니다. 이 작업은 계층화 정책을 해당 볼륨과 연결하여 수행합니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="all-user-data-정책이-데이터-보호-볼륨에-대한-유일한-옵션입니까">All User Data 정책이 데이터 보호 볼륨에 대한 유일한 옵션입니까?</h3>
+<div class="paragraph">
+<p>아니요 데이터 보호(DP) 볼륨은 사용 가능한 세 가지 정책 중 어느 정책과 연결될 수 있습니다. 소스 및 대상(DP) 볼륨에 사용된 정책 유형에 따라 데이터의 쓰기 위치가 결정됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="볼륨의-계층화-정책을-none으로-재설정하면-콜드-데이터가-리하이드레이션되거나-향후-콜드-블록이-클라우드로-이동되지-않습니까">볼륨의 계층화 정책을 None으로 재설정하면 콜드 데이터가 리하이드레이션되거나 향후 콜드 블록이 클라우드로 이동되지 않습니까?</h3>
+<div class="paragraph">
+<p>계층화 정책을 재설정할 때 재수화가 발생하지 않지만 새로운 콜드 블록이 클라우드 계층으로 이동하는 것을 방지합니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="데이터를-클라우드에-계층화한-후-계층화-정책을-변경할-수-있습니까">데이터를 클라우드에 계층화한 후 계층화 정책을 변경할 수 있습니까?</h3>
+<div class="paragraph">
+<p>예. 변경 후 동작은 새로운 관련 정책에 따라 달라집니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="특정-데이터가-클라우드로-이동하지-않으려면-어떻게-해야-합니까">특정 데이터가 클라우드로 이동하지 않으려면 어떻게 해야 합니까?</h3>
+<div class="paragraph">
+<p>계층화 정책을 해당 데이터가 포함된 볼륨과 연결하지 마십시오.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="파일의-메타데이터는-어디에-저장됩니까">파일의 메타데이터는 어디에 저장됩니까?</h3>
+<div class="paragraph">
+<p>볼륨의 메타데이터는 성능 계층에 항상 로컬에 저장됩니다. 따라서 클라우드로 계층화되지 않습니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="네트워킹-및-보안">네트워킹 및 보안</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>다음 질문은 네트워킹과 관련이 있습니다.</p>
+<p>다음 질문은 네트워킹 및 보안과 관련이 있습니다.</p>
 </div>
 <div class="sect2">
 <h3 id="네트워킹-요구-사항은-무엇입니까">네트워킹 요구 사항은 무엇입니까?</h3>
@@ -928,59 +1239,79 @@ Cloud Tiering은 클러스터에서 ONTAP 9.6 이상이 실행 중인 경우 HDD
 <div class="ulist">
 <ul>
 <li>
-<p><a href="task-tiering-onprem-aws.html">"사내 ONTAP 클러스터에서 Amazon S3로 데이터 계층화"</a></p>
+<p><a href="task-tiering-onprem-aws.html">"Amazon S3에 데이터 계층화"</a></p>
 </li>
 <li>
-<p><a href="task-tiering-onprem-azure.html">"사내 ONTAP 클러스터에서 Azure Blob 스토리지로 데이터 계층화"</a></p>
+<p><a href="task-tiering-onprem-azure.html">"Azure Blob 저장소에 데이터 계층화"</a></p>
 </li>
 <li>
-<p><a href="task-tiering-onprem-gcp.html">"사내 ONTAP 클러스터에서 Google 클라우드 스토리지로 데이터 계층화"</a></p>
+<p><a href="task-tiering-onprem-gcp.html">"데이터를 Google 클라우드 스토리지로 계층화"</a></p>
 </li>
 <li>
-<p><a href="task-tiering-onprem-storagegrid.html">"사내 ONTAP 클러스터에서 StorageGRID로 데이터 계층화"</a></p>
+<p><a href="task-tiering-onprem-storagegrid.html">"데이터를 StorageGRID에 계층화"</a></p>
 </li>
 <li>
-<p><a href="task-tiering-onprem-s3-compat.html">"사내 ONTAP 클러스터에서 S3 오브젝트 스토리지로 데이터 계층화"</a></p>
+<p><a href="task-tiering-onprem-s3-compat.html">"데이터를 S3 오브젝트 스토리지로 계층화"</a></p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="권한">권한</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>다음 질문은 권한과 관련이 있습니다.</p>
-</div>
 <div class="sect2">
-<h3 id="aws에-필요한-사용-권한은-무엇입니까">AWS에 필요한 사용 권한은 무엇입니까?</h3>
+<h3 id="클라우드에-저장된-콜드-데이터를-관리하기-위해-모니터링-및-보고를-위해-사용할-수-있는-툴은-무엇입니까">클라우드에 저장된 콜드 데이터를 관리하기 위해 모니터링 및 보고를 위해 사용할 수 있는 툴은 무엇입니까?</h3>
 <div class="paragraph">
-<p>권한이 필요합니다 <a href="task-tiering-onprem-aws.html#preparing-amazon-s3">"S3 버킷을 관리합니다"</a>.</p>
+<p>Cloud Tiering 이외의 경우 <a href="https://docs.netapp.com/us-en/active-iq-unified-manager/" target="_blank" rel="noopener">"Active IQ Unified Manager"</a> 및 <a href="https://docs.netapp.com/us-en/active-iq/index.html" target="_blank" rel="noopener">"Active IQ 디지털 자문업체"</a> 모니터링 및 보고에 사용할 수 있습니다.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="azure에-필요한-사용-권한은-무엇입니까">Azure에 필요한 사용 권한은 무엇입니까?</h3>
+<h3 id="클라우드-공급자에-대한-네트워크-링크가-실패할-경우-어떤-영향이-있습니까">클라우드 공급자에 대한 네트워크 링크가 실패할 경우 어떤 영향이 있습니까?</h3>
 <div class="paragraph">
-<p>Cloud Manager에 제공해야 하는 권한 이외에 추가 권한이 필요하지 않습니다.</p>
+<p>네트워크 장애가 발생할 경우 로컬 성능 계층은 온라인 상태를 유지하며 핫 데이터는 계속 액세스할 수 있습니다. 하지만 이미 클라우드 계층으로 이동한 블록은 액세스할 수 없으며 애플리케이션에서 해당 데이터에 액세스하려고 할 때 오류 메시지를 받게 됩니다. 연결이 복원되면 모든 데이터에 원활하게 액세스할 수 있습니다.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="google-cloud-platform에-필요한-사용-권한은-무엇입니까">Google Cloud Platform에 필요한 사용 권한은 무엇입니까?</h3>
+<h3 id="네트워크-대역폭-권장-사항이-있습니까">네트워크 대역폭 권장 사항이 있습니까?</h3>
 <div class="paragraph">
-<p>에 대한 스토리지 관리 권한이 필요합니다 <a href="task-tiering-onprem-gcp.html#preparing-google-cloud-storage">"스토리지 액세스 키가 있는 서비스 계정입니다"</a>.</p>
+<p>기본 FabricPool 계층화 기술의 읽기 지연 시간은 클라우드 계층과의 연결에 따라 달라집니다. 계층화는 모든 대역폭에서 작동하지만 적절한 성능을 제공하기 위해 인터클러스터 LIF를 10Gbps 포트에 배치하는 것이 좋습니다. 커넥터에 대한 권장 사항이나 대역폭 제한은 없습니다.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="storagegrid에-필요한-권한은-무엇입니까">StorageGRID에 필요한 권한은 무엇입니까?</h3>
+<h3 id="사용자가-계층화된-데이터에-액세스하려고-할-때-지연이-발생합니까">사용자가 계층화된 데이터에 액세스하려고 할 때 지연이 발생합니까?</h3>
 <div class="paragraph">
-<p><a href="task-tiering-onprem-storagegrid.html#preparing-storagegrid">"S3 권한이 필요합니다"</a>.</p>
+<p>예. 지연 시간은 접속에 따라 달라지므로 클라우드 계층은 로컬 계층과 동일한 지연 시간을 제공할 수 없습니다. 오브젝트 저장소의 지연 시간 및 처리량을 추정하기 위해 Cloud Tiering은 오브젝트 저장소가 연결된 후 계층화가 설정되기 전에 사용할 수 있는 ONTAP 오브젝트 저장소 프로파일러를 기반으로 하는 클라우드 성능 테스트 를 제공합니다.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="s3-호환-오브젝트-스토리지에-필요한-권한은-무엇입니까">S3 호환 오브젝트 스토리지에 필요한 권한은 무엇입니까?</h3>
+<h3 id="내-데이터는-어떻게-보호됩니까">내 데이터는 어떻게 보호됩니까?</h3>
 <div class="paragraph">
-<p><a href="task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage">"S3 권한이 필요합니다"</a>.</p>
+<p>AES-256-GCM 암호화는 성능 계층과 클라우드 계층 모두에서 유지됩니다. TLS 1.2 암호화는 데이터를 계층 간에 이동할 때 유선으로 암호화하고, 커넥터와 ONTAP 클러스터 및 오브젝트 저장소 간의 통신을 암호화하는 데 사용됩니다.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aff에-이더넷-포트를-설치-및-구성해야-합니까">AFF에 이더넷 포트를 설치 및 구성해야 합니까?</h3>
+<div class="paragraph">
+<p>예. 인터클러스터 LIF는 클라우드로 계층화할 데이터로 볼륨을 호스팅하는 HA 쌍 내의 각 노드에 있는 이더넷 포트에 구성해야 합니다. 자세한 내용은 데이터를 계층화할 클라우드 공급자의 요구사항 섹션을 참조하십시오.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="어떤-권한이-필요합니까">어떤 권한이 필요합니까?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-tiering-onprem-aws.html#preparing-amazon-s3">"Amazon의 경우 S3 버킷을 관리할 수 있는 권한이 필요합니다"</a>.</p>
+</li>
+<li>
+<p>Azure의 경우 Cloud Manager에 제공해야 하는 권한 이외에 추가 권한이 필요하지 않습니다.</p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-gcp.html#preparing-google-cloud-storage">"Google Cloud의 경우 스토리지 액세스 키가 있는 서비스 계정에 스토리지 관리자 권한이 필요합니다"</a>.</p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-storagegrid.html#preparing-storagegrid">"StorageGRID의 경우 S3 권한이 필요합니다"</a>.</p>
+</li>
+<li>
+<p><a href="task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage">"S3 호환 오브젝트 스토리지의 경우 S3 권한이 필요합니다"</a>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
