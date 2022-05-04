@@ -691,7 +691,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 08:20:00 +0000">04/18/2022</time>
+    <time datetime="2022-05-04 13:05:39 +0000">05/04/2022</time>
     
   
 
@@ -707,19 +707,10 @@
 <p>Cloud Tiering 서비스는 _FabricPool_의 기능을 활용합니다. FabricPool는 데이터를 저비용 오브젝트 스토리지로 자동 계층화하는 NetApp Data Fabric 기술입니다. 활성(핫) 데이터는 로컬 계층(사내 ONTAP 애그리게이트)에 남아 있고 비활성(콜드) 데이터는 클라우드 계층으로 이동되며 ONTAP 데이터 효율성은 그대로 유지됩니다.</p>
 </div>
 <div class="paragraph">
-<p>원래 AFF 및 All-SSD 애그리게이트를 포함한 FAS 시스템에서 지원되었지만 ONTAP 9.8부터는 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 모두 계층화할 수 있습니다. 을 참조하십시오 <a href="https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html" target="_blank" rel="noopener">"FabricPool 사용에 대한 고려 사항 및 요구 사항"</a> 를 참조하십시오.</p>
+<p>원래 ONTAP 9.8부터 All-SSD 애그리게이트를 포함한 AFF, FAS 및 ONTAP Select 시스템에서 지원되어 HDD로 구성된 애그리게이트 데이터와 고성능 SSD를 함께 계층화할 수 있습니다. 을 참조하십시오 <a href="https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html" target="_blank" rel="noopener">"FabricPool 사용에 대한 고려 사항 및 요구 사항"</a> 를 참조하십시오.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-tiering/images/tip.svg" alt="팁">
-</td>
-<td class="content">
-Cloud Tiering은 AFF, FAS 및 ONTAP Select 시스템에서 지원됩니다.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Tiering 라이센스는 FabricPool 미러 구성(MetroCluster 구성 제외)에 있는 클러스터와도 공유할 수 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만 <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations">"이러한 유형의 클러스터에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다."</a></p>
 </div>
 </div>
 </div>
@@ -792,6 +783,9 @@ Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. <a 
 <p>NetApp StorageGRID를 참조하십시오</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Cloud Tiering 라이센스는 데이터를 IBM Cloud Object Storage로 계층화하는 클러스터와 공유할 수도 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 수행해야 하지만 <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations">"이러한 유형의 구성에 대한 라이센스는 Cloud Tiering을 사용하여 수행합니다."</a></p>
 </div>
 <div class="admonitionblock note">
 <table>
