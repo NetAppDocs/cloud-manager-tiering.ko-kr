@@ -691,7 +691,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-04 19:51:24 +0000">05/04/2022</time>
+    <time datetime="2022-05-09 15:08:14 +0000">05/09/2022</time>
     
   
 
@@ -782,6 +782,12 @@
 <h3 id="cloud-tiering은-어떤-블록을-클라우드에-계층화할지-어떻게-결정합니까">Cloud Tiering은 어떤 블록을 클라우드에 계층화할지 어떻게 결정합니까?</h3>
 <div class="paragraph">
 <p>볼륨과 연관된 계층화 정책은 계층화와 시기를 제어하는 메커니즘입니다. 이 정책은 데이터 블록 유형(스냅샷, 사용자 데이터 또는 둘 다) 및 냉각 기간을 정의합니다. 을 참조하십시오 <a href="concept-cloud-tiering.html#volume-tiering-policies">"볼륨 계층화 정책"</a> 를 참조하십시오.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-tiering은-볼륨-용량에-어떤-영향을-미칩니까">Cloud Tiering은 볼륨 용량에 어떤 영향을 미칩니까?</h3>
+<div class="paragraph">
+<p>Cloud Tiering은 볼륨의 용량에 영향을 주지 않고 애그리게이트의 성능 계층 사용에 영향을 줍니다.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1020,6 +1026,12 @@
 </div>
 </div>
 <div class="sect2">
+<h3 id="cloud-tiering은-라이프사이클-관리-정책의-사용을-지원합니까">Cloud Tiering은 라이프사이클 관리 정책의 사용을 지원합니까?</h3>
+<div class="paragraph">
+<p>예. Cloud Tiering은 특정 일 수가 지나면 기본 스토리지 클래스/액세스 계층에서 보다 비용 효율적인 계층으로 데이터를 전환할 수 있도록 라이프사이클 관리를 설정할 수 있습니다. 라이프사이클 규칙은 Amazon S3 및 Google Cloud 스토리지에 대해 선택한 버킷의 모든 오브젝트 및 Azure Blob에 대해 선택한 스토리지 계정의 모든 컨테이너에 적용됩니다.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="cloud-tiering은-전체-클러스터에-대해-하나의-오브젝트-저장소를-사용합니까-아니면-애그리게이트당-하나를-사용합니까">Cloud Tiering은 전체 클러스터에 대해 하나의 오브젝트 저장소를 사용합니까, 아니면 애그리게이트당 하나를 사용합니까?</h3>
 <div class="paragraph">
 <p>전체 클러스터에 대해 하나의 오브젝트 저장소</p>
@@ -1053,9 +1065,9 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="어떻게-하면-계층화된-데이터를-다시-온프레미스로-가져올-수-있습니까">어떻게 하면 계층화된 데이터를 다시 온프레미스로 가져올 수 있습니까?</h3>
+<h3 id="계층화된-데이터를-다시-성능-계층으로-가져오려면-어떻게-해야-합니까">계층화된 데이터를 다시 성능 계층으로 가져오려면 어떻게 해야 합니까?</h3>
 <div class="paragraph">
-<p>Write Back(다시 쓰기)은 일반적으로 읽기에 대해 수행되며 계층화 정책 유형에 따라 달라집니다. ONTAP 9.8에 앞서 볼륨 이동 작업을 통해 전체 볼륨의 쓰기를 수행할 수 있습니다. 9.8 이후, Tiering UI에는 모든 데이터를 * 되돌리거나 * 활성 파일 시스템을 다시 가져오는 옵션이 있습니다 *. <a href="task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier">"데이터를 성능 계층으로 다시 이동하는 방법을 알아보십시오"</a>.</p>
+<p>Write Back(다시 쓰기)은 일반적으로 읽기에 대해 수행되며 계층화 정책 유형에 따라 달라집니다. ONTAP 9.8 이전에는 전체 볼륨의 쓰기를 _volume move_operation으로 수행할 수 있습니다. ONTAP 9.8부터 계층화 UI에는 모든 데이터를 * 되돌리거나 * 활성 파일 시스템을 * 가져오는 옵션이 있습니다 *. <a href="task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier">"데이터를 성능 계층으로 다시 이동하는 방법을 알아보십시오"</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1074,15 +1086,6 @@
 <h3 id="클라우드-공급자의-콘솔-또는-오브젝트-스토리지-탐색기를-사용하여-데이터를-버킷으로-계층화할-수-있습니까-ontap-없이-오브젝트-스토리지에-저장된-데이터를-직접-사용할-수-있습니까">클라우드 공급자의 콘솔 또는 오브젝트 스토리지 탐색기를 사용하여 데이터를 버킷으로 계층화할 수 있습니까? ONTAP 없이 오브젝트 스토리지에 저장된 데이터를 직접 사용할 수 있습니까?</h3>
 <div class="paragraph">
 <p>아니요 클라우드로 구축 및 계층화된 오브젝트에는 단일 파일이 아니라 여러 파일에서 최대 1,024개의 4KB 블록이 포함됩니다. 볼륨의 메타데이터는 항상 로컬 계층에 유지됩니다.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="계층화에-관계없이-데이터를-이동할-수-있도록-정책을-오브젝트-저장소에-적용할-수-있습니까">계층화에 관계없이 데이터를 이동할 수 있도록 정책을 오브젝트 저장소에 적용할 수 있습니까?</h3>
-<div class="paragraph">
-<p>예. Cloud Tiering은 특정 일 수가 지나면 기본 스토리지 클래스/액세스 계층에서 보다 비용 효율적인 계층으로 데이터를 전환할 수 있도록 라이프사이클 관리를 설정할 수 있습니다.</p>
-</div>
-<div class="paragraph">
-<p>라이프사이클 규칙은 Amazon S3 및 Google Cloud 스토리지에 대해 선택한 버킷의 모든 오브젝트 및 Azure Blob에 대해 선택한 스토리지 계정의 모든 컨테이너에 적용됩니다.</p>
 </div>
 </div>
 </div>
