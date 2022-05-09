@@ -503,9 +503,6 @@
   <block id="a315b97ead114b01711324b00318fede" category="paragraph">Cloud Tiering은 _Standard_, _Nearline_, _Coldline_ 및 _Archive_ 스토리지 클래스에 대한 데이터 계층화를 지원합니다. 을 참조하십시오 <block ref="7bf35a231ca3eab0ba1eb206f6515726" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="cbf85819c0ec3bd08aea6103a838e42f" category="section-title">Cloud Tiering은 전체 클러스터에 대해 하나의 오브젝트 저장소를 사용합니까, 아니면 애그리게이트당 하나를 사용합니까?</block>
   <block id="cb8d52e5219592f36bdfb68231d97d04" category="paragraph">전체 클러스터에 대해 하나의 오브젝트 저장소</block>
-  <block id="bda5b6e359cdbe29207c5288673c5583" category="section-title">계층화에 관계없이 데이터를 이동할 수 있도록 정책을 오브젝트 저장소에 적용할 수 있습니까?</block>
-  <block id="76897a6305088a3a5d1fece5a33249ea" category="paragraph">예. Cloud Tiering은 특정 일 수가 지나면 기본 스토리지 클래스/액세스 계층에서 보다 비용 효율적인 계층으로 데이터를 전환할 수 있도록 라이프사이클 관리를 설정할 수 있습니다.</block>
-  <block id="984a9d1964e75fac051f5e1514887373" category="paragraph">라이프사이클 규칙은 Amazon S3 및 Google Cloud 스토리지에 대해 선택한 버킷의 모든 오브젝트 및 Azure Blob에 대해 선택한 스토리지 계정의 모든 컨테이너에 적용됩니다.</block>
   <block id="fe4a785cf549e843e958f443c4baf0fe" category="section-title">커넥터</block>
   <block id="417cf0f3678f81efde443c4a85c2acb8" category="section-title">커넥터를 어디에 설치해야 합니까?</block>
   <block id="ca4f429ffa25591e74f6645a3406d7cd" category="list-text">데이터를 S3로 계층화할 때 Connector는 AWS VPC 또는 사내에 상주할 수 있습니다.</block>
@@ -1021,9 +1018,7 @@
   <block id="75e192e543376cd0700d28d7707c1400" category="section-title">한 노드에서 같은 클러스터의 다른 노드로 볼륨을 이동할 때 계층적 데이터는 어떻게 됩니까?</block>
   <block id="c8e8c3de3c7e9a3523115f25ca436702" category="paragraph">대상 Aggregate에 연결된 클라우드 계층이 없는 경우 소스 애그리게이트의 클라우드 계층에서 데이터를 읽은 후 타겟 애그리게이트의 로컬 계층에 전체가 기록됩니다. 대상 애그리게이트에 클라우드 계층이 연결되어 있는 경우, 소스 애그리게이트의 클라우드 계층에서 데이터를 읽은 다음 타겟 애그리게이트의 로컬 계층에 먼저 기록함으로써 빠른 컷오버를 지원합니다. 이후 사용된 계층화 정책에 따라 클라우드 계층에 기록됩니다.</block>
   <block id="4eb0e04ff79ba8e58d2cc578b23ac20a" category="paragraph">ONTAP 9.6부터 대상 애그리게이트는 소스 애그리게이트와 동일한 클라우드 계층을 사용하는 경우, 콜드 데이터는 로컬 계층으로 다시 이동하지 않습니다.</block>
-  <block id="67c448fda360e613a946c8d4f3fe8903" category="section-title">어떻게 하면 계층화된 데이터를 다시 온프레미스로 가져올 수 있습니까?</block>
   <block id="594e5f8f87d3f9aee64730282f1d9d11" category="inline-link-macro">데이터를 성능 계층으로 다시 이동하는 방법을 알아보십시오</block>
-  <block id="4f73c67002a9ff6531da278f92c08e2e" category="paragraph">Write Back(다시 쓰기)은 일반적으로 읽기에 대해 수행되며 계층화 정책 유형에 따라 달라집니다. ONTAP 9.8에 앞서 볼륨 이동 작업을 통해 전체 볼륨의 쓰기를 수행할 수 있습니다. 9.8 이후, Tiering UI에는 모든 데이터를 * 되돌리거나 * 활성 파일 시스템을 다시 가져오는 옵션이 있습니다 *. <block ref="5fc989c9b1011f539a0df96bd559f635" category="inline-link-macro-rx"></block>.</block>
   <block id="5b9fbe75fbcd16763752424288950fad" category="section-title">기존 AFF/FAS 컨트롤러를 새로운 컨트롤러로 교체할 때 계층형 데이터를 다시 온프레미스로 마이그레이션할 수 있습니까?</block>
   <block id="954ab271743046342c8c477272ccf1e2" category="paragraph">아니요 "헤드 스왑" 절차를 수행하는 동안 변경된 것은 애그리게이트의 소유입니다. 이 경우 데이터를 이동하지 않고 새 컨트롤러로 변경됩니다.</block>
   <block id="9ae27577765a14f9c236003effe69e5e" category="section-title">재해 복구 시나리오에서 계층형 데이터를 사용하여 볼륨 또는 시스템을 복구할 수 있습니까?</block>
@@ -1097,4 +1092,10 @@
   <block id="de865f0ebc8f66fc8e1331d7e2a7f1d4" category="list-text"><block ref="2efc8cc4b2027ed3eb0bfad94737c839" category="inline-link-macro-rx"></block>.</block>
   <block id="5904ecfefb0147d2c35e92234f70dbd9" category="paragraph">다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이센스를 사용할 수 있지만 일반 단일 노드 및 HA 구성 ONTAP 클러스터와 다른 방식으로 라이센스가 적용되어야 합니다.</block>
   <block id="4bf0695d13fdb9614e4d0abba617654f" category="paragraph">FabricPool 미러를 사용하는 MetroCluster 구성은 현재 지원되지 않습니다</block>
+  <block id="6ace93b12d62dd3912b132e79298337d" category="section-title">Cloud Tiering은 볼륨 용량에 어떤 영향을 미칩니까?</block>
+  <block id="9edbed19ba22406e2515654036d6d7af" category="paragraph">Cloud Tiering은 볼륨의 용량에 영향을 주지 않고 애그리게이트의 성능 계층 사용에 영향을 줍니다.</block>
+  <block id="bd661fa541ade4c845ce21fee80a6364" category="section-title">Cloud Tiering은 라이프사이클 관리 정책의 사용을 지원합니까?</block>
+  <block id="ab432a40ce280c4620566a0570350625" category="paragraph">예. Cloud Tiering은 특정 일 수가 지나면 기본 스토리지 클래스/액세스 계층에서 보다 비용 효율적인 계층으로 데이터를 전환할 수 있도록 라이프사이클 관리를 설정할 수 있습니다. 라이프사이클 규칙은 Amazon S3 및 Google Cloud 스토리지에 대해 선택한 버킷의 모든 오브젝트 및 Azure Blob에 대해 선택한 스토리지 계정의 모든 컨테이너에 적용됩니다.</block>
+  <block id="864bccaf8b856c65bcec49d71eaad8e6" category="section-title">계층화된 데이터를 다시 성능 계층으로 가져오려면 어떻게 해야 합니까?</block>
+  <block id="f8677b4c8b811cc562ebfa540cd716ff" category="paragraph">Write Back(다시 쓰기)은 일반적으로 읽기에 대해 수행되며 계층화 정책 유형에 따라 달라집니다. ONTAP 9.8 이전에는 전체 볼륨의 쓰기를 _volume move_operation으로 수행할 수 있습니다. ONTAP 9.8부터 계층화 UI에는 모든 데이터를 * 되돌리거나 * 활성 파일 시스템을 * 가져오는 옵션이 있습니다 *. <block ref="5fc989c9b1011f539a0df96bd559f635" category="inline-link-macro-rx"></block>.</block>
 </blocks>
