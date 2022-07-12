@@ -136,7 +136,6 @@
   <block id="183b2a428b6d80ef4823ebe68b96c34d" category="list-text">ONTAP 9.4 이상</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="list-text">라이센싱</block>
   <block id="9cda06c7df5991375adfd503e3cc7329" category="list-text">Cloud Manager 계정에는 Cloud Tiering 라이센스가 필요하지 않으며 데이터를 StorageGRID로 계층화할 때 ONTAP 클러스터에 FabricPool 라이센스가 필요하지 않습니다.</block>
-  <block id="90f0a3a28474de656c0a9aff945622b8" category="list-text">ONTAP 클러스터는 사용자가 지정한 포트를 통해 StorageGRID에 HTTPS 연결을 시작합니다(계층화 설정 중에 포트 구성 가능).</block>
   <block id="b00b6421202892ef9c6f947253e944b4" category="list-text">Connector에서 인바운드 연결이 필요하며, 이는 구내에 상주해야 합니다.</block>
   <block id="3cb09efd98df836314cbd254dcf63296" category="admonition">Cloud Tiering은 ONTAP 9.5부터 FlexGroup 볼륨을 지원합니다. 설치 프로그램은 다른 볼륨과 동일하게 작동합니다.</block>
   <block id="32c974abc8de44f817076a1e8eb5d4c8" category="paragraph">콜드 데이터 계층화를 시작하려면 Cloud Manager Canvas에서 온프레미스 ONTAP 작업 환경을 만들어야 합니다.</block>
@@ -154,12 +153,10 @@
   <block id="a3049b761ff526799f3b1881932b1c8c" category="list-text">포트 443을 통해 StorageGRID에 HTTPS로 연결합니다</block>
   <block id="de9570886e9849852133b61caefd03b2" category="section-title">첫 번째 클러스터에서 StorageGRID로 비활성 데이터 계층화</block>
   <block id="a71f0f53c9824602e78a79bc5fa52d43" category="paragraph">환경을 준비한 후 첫 번째 클러스터에서 비활성 데이터의 계층화를 시작합니다.</block>
-  <block id="d30a5cb40eea3a32f653b4e43b30bbf1" category="list-text">StorageGRID 서버의 FQDN과 HTTPS 통신에 사용될 포트입니다.</block>
   <block id="1b8a3756b590cb811f9726f247097028" category="list-text">필요한 S3 권한이 있는 AWS 액세스 키</block>
   <block id="85cd1fc1600a51fdeb99ebc5121fa64e" category="inline-image-macro">온-프레미스 ONTAP 작업 환경을 선택한 후 화면 오른쪽에 표시되는 설치 계층화 옵션을 보여 주는 스크린샷</block>
   <block id="23d57e0aa543c12cc6f2de0e1d5a38fb" category="paragraph"><block ref="23d57e0aa543c12cc6f2de0e1d5a38fb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b9a857184ba34b2173935c63cafd8508" category="list-text">* 제공업체 선택 *: * StorageGRID * 을 선택하고 * 계속 * 을 클릭합니다.</block>
-  <block id="7206fa4dd4f20feee98bcfa09c10759c" category="list-text">* 서버 *: StorageGRID 서버의 FQDN, ONTAP이 StorageGRID와 HTTPS 통신에 사용해야 하는 포트, 필요한 S3 권한이 있는 계정의 액세스 키 및 암호 키를 입력합니다.</block>
   <block id="4014800981ed7ad3b1ab16a5a86574ce" category="list-text">* 버킷 *: 새 버킷을 추가하거나 prefix_fabric-pool_로 시작하는 기존 버킷을 선택하고 * 계속 * 을 클릭합니다.</block>
   <block id="65baf260014f5ed41f70e43c8bae3790" category="list-text">* 클러스터 네트워크 *: ONTAP가 오브젝트 스토리지에 연결하는 데 사용해야 하는 IPspace를 선택하고 * 계속 * 을 클릭합니다.</block>
   <block id="6770c476e7cf4e5329f4a574f524ae3a" category="paragraph">올바른 IPspace를 선택하면 클라우드 계층화를 통해 ONTAP에서 StorageGRID 오브젝트 스토리지로의 연결을 설정할 수 있습니다.</block>
@@ -1099,4 +1096,7 @@
   <block id="7598b57246c073bebfc5a46a79eecdd5" category="list-text">"하위" 계층화 라이센스가 각 클러스터에 자동으로 설치되어 "상위" 라이센스와 통신합니다.</block>
   <block id="fbad6353250385bdb538aa04a8ef4983" category="admonition">System Manager 또는 ONTAP CLI에서 "하위" 라이센스에 대한 라이센스 용량 및 만료 날짜가 실제 정보가 아니므로 정보가 동일하지 않을 수 있습니다. 이러한 값은 Cloud Tiering 소프트웨어에서 내부적으로 관리됩니다. 실제 정보는 디지털 지갑에서 추적됩니다.</block>
   <block id="8646b811e05af9f8486c9225ac0c39f3" category="paragraph">데이터가 계층화 미러 구성을 위해 서로 다른 두 오브젝트 스토리지 위치로 계층화되므로 데이터를 두 위치로 계층화할 수 있는 충분한 용량의 라이센스를 구입해야 합니다.</block>
+  <block id="d356e706a5a76e1d07d019ae07df9f40" category="list-text">ONTAP 클러스터는 사용자가 지정한 포트를 통해 StorageGRID 게이트웨이 노드에 대한 HTTPS 연결을 시작합니다(계층화 설정 중에 포트를 구성할 수 있음).</block>
+  <block id="8763f6e8f73d9edf1525960ebd813b27" category="list-text">StorageGRID 게이트웨이 노드의 FQDN과 HTTPS 통신에 사용될 포트입니다.</block>
+  <block id="c880a19df6feb2c1dcf1bda2267bb2be" category="list-text">* 서버 *: StorageGRID 게이트웨이 노드의 FQDN, ONTAP이 StorageGRID와 HTTPS 통신에 사용해야 하는 포트, 필요한 S3 권한이 있는 계정의 액세스 키 및 암호 키를 입력합니다.</block>
 </blocks>
